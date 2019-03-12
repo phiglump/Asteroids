@@ -6,7 +6,10 @@
         xmlns:local="clr-namespace:Asteroids"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+    <Grid Background="Black">
+        <Button x:Name="Start" Content="START" HorizontalAlignment="Center" Margin="292,243,297,0" VerticalAlignment="Top" Width="203" Height="35" Background="#FF0F0101" Foreground="White" BorderBrush="Black" FontSize="24" Click="Button_Click"/>
+        <Button x:Name="Highscores" Content="HIGHSCORES" HorizontalAlignment="Left" Margin="292,283,0,0" VerticalAlignment="Top" Width="203" Height="35" Background="#FF0F0101" Foreground="White" BorderBrush="Black" FontSize="24" Click="Button_Click"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="161,99,0,0" TextWrapping="Wrap" Text="ASTEROIDS" VerticalAlignment="Top" Height="120" Width="464" Foreground="White" FontSize="90"/>
+
     </Grid>
 </Window>
