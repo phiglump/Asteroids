@@ -24,6 +24,7 @@ namespace Asteroids
         {
             InitializeComponent();
         }
+        double angle = 0;
         private void Canvas_KeyDown(object sender, KeyEventArgs e)
         {
             // This is the key down event linked to the canvas
@@ -55,24 +56,23 @@ namespace Asteroids
                 Canvas.SetLeft(rec1, Canvas.GetLeft(rec1) + 10);
                 // if these conditions are met then we move the object 10 pixels to the right
             }
-            int angle = 0;
-            if (e.Key == Key.A)
+            else if (e.Key == Key.A)
             {
-                RotateTransform rotateTransform1 = new RotateTransform();
-                rotateTransform1.CenterX = 25;
-                rotateTransform1.CenterY = 25;
-                rotateTransform1.Angle = angle + 15;
-                rec1.RenderTransform = rotateTransform1;
-                angle = angle + 15;
+                RotateTransform rotateTransform2 = new RotateTransform();
+                rotateTransform2.CenterX = 25;
+                rotateTransform2.CenterY = 25;
+                angle = angle - 10;
+                rotateTransform2.Angle = angle;
+                rec1.RenderTransform = rotateTransform2;
             }
             else if (e.Key == Key.D)
             {
                 RotateTransform rotateTransform1 = new RotateTransform();
                 rotateTransform1.CenterX = 25;
                 rotateTransform1.CenterY = 25;
-                rotateTransform1.Angle = angle - 15;
+                angle = angle + 10;
+                rotateTransform1.Angle = angle;
                 rec1.RenderTransform = rotateTransform1;
-                angle = angle - 15;
             }
         }
     }
