@@ -9,7 +9,7 @@
       Title="StartScreen">
 
     <Grid Background="Black">
-        <Button x:Name="Start" Content="START" HorizontalAlignment="Left" Margin="338,274,0,0" VerticalAlignment="Top" Width="136" BorderBrush="Black" Background="Black" Foreground="White" Height="28" FontSize="18"/>
+        <Button x:Name="Start" Content="START" HorizontalAlignment="Left" Margin="338,274,0,0" VerticalAlignment="Top" Width="136" BorderBrush="Black" Background="Black" Foreground="White" Height="28" FontSize="18" Click="Start_Click"/>
         <Button x:Name="Start_Copy" Content="HIGHSCORES" HorizontalAlignment="Left" Margin="338,302,0,0" VerticalAlignment="Top" Width="136" BorderBrush="Black" Background="Black" Foreground="White" Height="28" FontSize="18" Click="Start_Copy_Click"/>
         <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="213,121,0,0" TextWrapping="Wrap" Text="ASTEROIDS" VerticalAlignment="Top" Height="98" Width="369" FontSize="72" Background="Black" Foreground="White"/>
     </Grid>

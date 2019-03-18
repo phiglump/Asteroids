@@ -24,5 +24,56 @@ namespace Asteroids
         {
             InitializeComponent();
         }
+        private void Canvas_KeyDown(object sender, KeyEventArgs e)
+        {
+            // This is the key down event linked to the canvas
+            if (e.Key == Key.Down && Canvas.GetTop(rec1) + rec1.Height < 420)
+            {
+                // in this if statement we are checking if the down key is pressed
+                // AND the rec1 objects top plus the height is less than 420 pixels
+                Canvas.SetTop(rec1, Canvas.GetTop(rec1) + 10);
+                // if these conditions match then we move the object down 10 pixels
+            }
+            else if (e.Key == Key.Up && Canvas.GetTop(rec1) > 0)
+            {
+                // in this if statement we are checking if they up key is pressed
+                // and rec1s top is greater than 10 pixels
+                Canvas.SetTop(rec1, Canvas.GetTop(rec1) - 10);
+                // if these conditions are met then we move the object up 10 pixels
+            }
+            else if (e.Key == Key.Left && Canvas.GetLeft(rec1) > 0)
+            {
+                // in this if statement we are checking if they left key is pressed
+                // and rec1s left is greater than 0 pixels
+                Canvas.SetLeft(rec1, Canvas.GetLeft(rec1) - 10);
+                // if these conditions are met then we move the object left 10 pixels
+            }
+            else if (e.Key == Key.Right && Canvas.GetLeft(rec1) + rec1.Width < 790)
+            {
+                // in this if statement we are checking if the right key is pressed
+                // and rec1s right and rec1s width is less than 790 pixels
+                Canvas.SetLeft(rec1, Canvas.GetLeft(rec1) + 10);
+                // if these conditions are met then we move the object 10 pixels to the right
+            }
+            int angle = 0;
+            if (e.Key == Key.A)
+            {
+                RotateTransform rotateTransform1 = new RotateTransform();
+                rotateTransform1.CenterX = 25;
+                rotateTransform1.CenterY = 25;
+                rotateTransform1.Angle = angle + 15;
+                rec1.RenderTransform = rotateTransform1;
+                angle = angle + 15;
+            }
+            else if (e.Key == Key.D)
+            {
+                RotateTransform rotateTransform1 = new RotateTransform();
+                rotateTransform1.CenterX = 25;
+                rotateTransform1.CenterY = 25;
+                rotateTransform1.Angle = angle - 15;
+                rec1.RenderTransform = rotateTransform1;
+                angle = angle - 15;
+            }
+        }
     }
 }
