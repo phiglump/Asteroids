@@ -30,6 +30,27 @@
                     <RotateTransform CenterX="0" CenterY="0" Angle="0" />
                 </Rectangle.RenderTransform>
             </Rectangle>
+            <TextBlock x:Name="Scores" Canvas.Left="10" TextWrapping="Wrap" Text="SCORE" Canvas.Top="10" Foreground="White" Height="27" Width="61" FontSize="20">
+                <TextBlock.Background>
+                    <ImageBrush/>
+                </TextBlock.Background>
+            </TextBlock>
+            <TextBlock x:Name="Lives" Canvas.Left="121" TextWrapping="Wrap" Text="LIVES" Canvas.Top="10" Foreground="White" Height="27" Width="49" FontSize="20">
+                <TextBlock.Background>
+                    <ImageBrush/>
+                </TextBlock.Background>
+            </TextBlock>
+            <Image Source="images\ThisIsTheSpaceShipImage.png" Height="27" Width="21" Canvas.Left="100" Canvas.Top="37"></Image>
+            <TextBlock x:Name="scoredisplayed" Canvas.Left="10" TextWrapping="Wrap" Text="    0" Canvas.Top="37" Foreground="White" Height="27" Width="61" FontSize="20">
+                <TextBlock.Background>
+                    <ImageBrush/>
+                </TextBlock.Background>
+            </TextBlock>
+            <Image Source="images/ThisIsTheSpaceShipImage.png" Height="27" Width="21" Canvas.Left="121" Canvas.Top="37"/>
+            <Image Source="images/ThisIsTheSpaceShipImage.png" Height="27" Width="21" Canvas.Left="142" Canvas.Top="37"/>
+            <Image Source="images/ThisIsTheSpaceShipImage.png" Height="27" Width="21" Canvas.Left="163" Canvas.Top="37"/>
         </Canvas>
     </Grid>
 </Page>
+
+
