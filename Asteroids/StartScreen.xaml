@@ -5,15 +5,17 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Asteroids"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      SizeToContent="WidthAndHeight"
+      d:DesignHeight="500" d:DesignWidth="960"
       Title="StartScreen" Foreground="{x:Null}">
     <Page.Background>
         <ImageBrush ImageSource="C:\Users\foota_000\source\repos\Asteroids\Asteroids\images\Stars.png" Stretch="UniformToFill"/>
     </Page.Background>
 
     <Grid Margin="0,0,-19,-18">
-        <Button x:Name="Start" Content="START" HorizontalAlignment="Left" Margin="322,269,0,0" VerticalAlignment="Top" Width="136" BorderBrush="Black" Background="Black" Foreground="White" Height="28" FontSize="18" Click="Start_Click"/>
-        <Button x:Name="Start_Copy" Content="HIGHSCORES" HorizontalAlignment="Left" Margin="322,297,0,0" VerticalAlignment="Top" Width="136" BorderBrush="Black" Background="Black" Foreground="White" Height="28" FontSize="18" Click="Start_Copy_Click"/>
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="197,116,0,0" TextWrapping="Wrap" Text="ASTEROIDS" VerticalAlignment="Top" Height="98" Width="369" FontSize="72" Background="Black" Foreground="White"/>
+        <Button x:Name="Start" Content="START" HorizontalAlignment="Center" Margin="349,278,381,170" VerticalAlignment="Center" Width="230" BorderBrush="Black" Background="Black" Foreground="White" Height="52" FontSize="36" Click="Start_Click"/>
+        <Button x:Name="Start_Copy" Content="HIGHSCORES" HorizontalAlignment="Center" Margin="349,330,381,119" VerticalAlignment="Center" Width="230" BorderBrush="Black" Background="Black" Foreground="White" Height="51" FontSize="36" Click="Highscores_Click"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Center" Margin="10,0,10,211" TextWrapping="Wrap" Text="ASTEROIDS" VerticalAlignment="Center" Height="289" Width="940" FontSize="185" Background="Black" Foreground="White" FontFamily="Bauhaus 93"/>
+        <Button x:Name="Exit" Content="EXIT" HorizontalAlignment="Center" Margin="349,381,381,68" VerticalAlignment="Center" Width="230" BorderBrush="Black" Background="Black" Foreground="White" Height="51" FontSize="36" Click="Exit_Click"/>
     </Grid>
 </Page>

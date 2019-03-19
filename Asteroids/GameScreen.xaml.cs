@@ -22,8 +22,8 @@ namespace Asteroids
     /// </summary>
     public partial class GameScreen : Page
     {
-        double x = 0;
-        double y = 0;
+        double x = 480;
+        double y = 366;
         double angle;
         public GameScreen()
         {
