@@ -34,27 +34,27 @@ namespace Asteroids
         }
         private void MovePlayer(object sender, EventArgs e)
         {
-            if (Keyboard.IsKeyDown(Key.Left))
+            if (Keyboard.IsKeyDown(Key.A))
             {
                 x -= .05;
                 Canvas.SetLeft(rec1, x);
             }
-            if (Keyboard.IsKeyDown(Key.Up))
+            if (Keyboard.IsKeyDown(Key.W))
             {
                 y -= .05;
                 Canvas.SetTop(rec1, y);
             }
-            if (Keyboard.IsKeyDown(Key.Down))
+            if (Keyboard.IsKeyDown(Key.S))
             {
                 y += .05;
                 Canvas.SetTop(rec1, y);
             }
-            if (Keyboard.IsKeyDown(Key.Right))
+            if (Keyboard.IsKeyDown(Key.D))
             {
                 x += .05;
                 Canvas.SetLeft(rec1, x);
             }
-            if (Keyboard.IsKeyDown(Key.A))
+            if (Keyboard.IsKeyDown(Key.Left))
             {
                 RotateTransform rotateTransform2 = new RotateTransform();
                 rotateTransform2.CenterX = 25;
@@ -63,7 +63,7 @@ namespace Asteroids
                 rotateTransform2.Angle = angle;
                 rec1.RenderTransform = rotateTransform2;
             }
-            if (Keyboard.IsKeyDown(Key.D))
+            if (Keyboard.IsKeyDown(Key.Right))
             {
                 RotateTransform rotateTransform1 = new RotateTransform();
                 rotateTransform1.CenterX = 25;
