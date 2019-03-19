@@ -7,16 +7,16 @@
       xmlns:Properties="clr-namespace:Asteroids.Properties" x:Class="Asteroids.GameScreen"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="GameScreen"
-      >
+      Title="GameScreen" Foreground="{x:Null}" FocusManager.FocusedElement="{Binding ElementName=MyCanvas}">
 
     <Grid Background="Black">
         <Canvas x:Name="MyCanvas" Focusable="True" >
-            <Image Name="Image" />
-
+            <Canvas.Background>
+                <ImageBrush ImageSource="C:\Users\foota_000\source\repos\Asteroids\Asteroids\images\Stars.png"/>
+            </Canvas.Background>
             <Rectangle x:Name="rec1" Focusable ="True" Width="50" Height="50" Margin="0" Canvas.Left="377" Canvas.Top="323" >
                 <Rectangle.Fill>
-                    <ImageBrush ImageSource="C:\Users\foota_000\source\repos\Asteroids\Asteroids\Resources\ThisIsTheSpaceShipImage.png" />
+                    <ImageBrush ImageSource="C:\Users\foota_000\source\repos\Asteroids\Asteroids\images\ThisIsTheSpaceShipImage.png" />
                 </Rectangle.Fill>
                 <Rectangle.RenderTransform>
                     <RotateTransform CenterX="0" CenterY="0" Angle="0" />
