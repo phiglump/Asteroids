@@ -16,7 +16,15 @@
             </Canvas.Background>
             <Rectangle x:Name="rec1" Focusable ="True" Width="50" Height="50" Margin="0" Canvas.Left="451" Canvas.Top="398" >
                 <Rectangle.Fill>
-                    <ImageBrush ImageSource="images\ThisIsTheSpaceShipImage.png" />
+                    <ImageBrush ImageSource="images\ThisIsTheSpaceShipImage.png" Stretch="UniformToFill" />
+                </Rectangle.Fill>
+                <Rectangle.RenderTransform>
+                    <RotateTransform CenterX="0" CenterY="0" Angle="0" />
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Rectangle x:Name="asteroid" Focusable ="True" Width="50" Height="50" Margin="0" Canvas.Left="10" Canvas.Top="10" >
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="images\Asteroid3.gif" Stretch="UniformToFill" />
                 </Rectangle.Fill>
                 <Rectangle.RenderTransform>
                     <RotateTransform CenterX="0" CenterY="0" Angle="0" />

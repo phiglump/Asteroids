@@ -22,6 +22,7 @@ namespace Asteroids
     /// </summary>
     public partial class GameScreen : Page
     {
+        public TimeSpan Interval { get; set; }
         double x = 480;
         double y = 366;
         double angle;
@@ -31,6 +32,25 @@ namespace Asteroids
             DispatcherTimer timer = new DispatcherTimer();
             timer.Tick += new EventHandler(MovePlayer);
             timer.Start();
+            DispatcherTimer timer2 = new DispatcherTimer();
+            timer2.Tick += MoveAsteroid;
+            timer2.Interval = TimeSpan.FromMilliseconds(12);
+            timer2.Start();
+        }
+        int iSpeed = 5;
+        int fDirection = 125;
+        double b = 0;
+        double c = 0;
+        private void MoveAsteroid(object sender, EventArgs e)
+        {
+            // use trig to work out new value for X & Y based on Speed and direction vector
+            int iNewX = (int)(iSpeed * System.Math.Sin((System.Math.PI * fDirection) / 180));  // uses radians
+            int iNewY = -(int)(iSpeed * System.Math.Cos((System.Math.PI * fDirection) / 180));
+            b += iNewX;
+            c += iNewY;
+            Canvas.SetLeft(asteroid, b);
+            Canvas.SetTop(asteroid, c);
+
         }
         private void MovePlayer(object sender, EventArgs e)
         {
