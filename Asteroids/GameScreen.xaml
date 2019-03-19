@@ -12,11 +12,11 @@
     <Grid Background="Black">
         <Canvas x:Name="MyCanvas" Focusable="True" >
             <Canvas.Background>
-                <ImageBrush ImageSource="C:\Users\foota_000\source\repos\Asteroids\Asteroids\images\Stars.png"/>
+                <ImageBrush ImageSource="images\Stars.png"/>
             </Canvas.Background>
-            <Rectangle x:Name="rec1" Focusable ="True" Width="50" Height="50" Margin="0" Canvas.Left="480" Canvas.Top="250" >
+            <Rectangle x:Name="rec1" Focusable ="True" Width="50" Height="50" Margin="0" Canvas.Left="451" Canvas.Top="398" >
                 <Rectangle.Fill>
-                    <ImageBrush ImageSource="C:\Users\foota_000\source\repos\Asteroids\Asteroids\images\ThisIsTheSpaceShipImage.png" />
+                    <ImageBrush ImageSource="images\ThisIsTheSpaceShipImage.png" />
                 </Rectangle.Fill>
                 <Rectangle.RenderTransform>
                     <RotateTransform CenterX="0" CenterY="0" Angle="0" />

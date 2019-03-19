@@ -8,12 +8,24 @@
       d:DesignHeight="500" d:DesignWidth="960"
       Title="StartScreen" Foreground="{x:Null}">
     <Page.Background>
-        <ImageBrush ImageSource="C:\Users\foota_000\source\repos\Asteroids\Asteroids\images\Stars.png" Stretch="UniformToFill"/>
+        <ImageBrush ImageSource="images\Stars.png" Stretch="UniformToFill"/>
     </Page.Background>
 
     <Grid>
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Center" Margin="23,10,31,0" TextWrapping="Wrap" Text="Highscores" VerticalAlignment="Top" Height="245" Width="906" Foreground="White" Background="Black" FontSize="185" TextDecorations="{x:Null}" FontFamily="Bauhaus 93"/>
-        <TextBlock x:Name="textBlock1" HorizontalAlignment="Center" Margin="320,218,363,0" TextWrapping="Wrap" Text="_ _ _" VerticalAlignment="Top" Height="198" Width="277" TextDecorations="{x:Null}" Background="Black" Foreground="White" FontSize="150"/>
-        <Button x:Name="button" Content="Exit" HorizontalAlignment="Center" Margin="333,0,375,0" VerticalAlignment="Bottom" Width="252" Height="69" Background="Black" Foreground="White" BorderBrush="Black" FontSize="48" Click="Button_Click"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Center" Margin="23,10,31,0" TextWrapping="Wrap" Text="Highscores" VerticalAlignment="Top" Height="245" Width="906" Foreground="White" FontSize="185" TextDecorations="{x:Null}" FontFamily="Bauhaus 93">
+            <TextBlock.Background>
+                <ImageBrush/>
+            </TextBlock.Background>
+        </TextBlock>
+        <TextBlock x:Name="textBlock1" HorizontalAlignment="Center" Margin="320,218,363,0" TextWrapping="Wrap" Text="_ _ _" VerticalAlignment="Top" Height="198" Width="277" TextDecorations="{x:Null}" Foreground="White" FontSize="150">
+            <TextBlock.Background>
+                <ImageBrush/>
+            </TextBlock.Background>
+        </TextBlock>
+        <Button x:Name="button" Content="Exit" HorizontalAlignment="Center" Margin="333,0,375,0" VerticalAlignment="Bottom" Width="252" Height="69" Foreground="White" BorderBrush="Black" FontSize="48" Click="Button_Click">
+            <Button.Background>
+                <ImageBrush/>
+            </Button.Background>
+        </Button>
     </Grid>
 </Page>

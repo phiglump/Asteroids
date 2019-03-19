@@ -116,6 +116,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="images\Stars.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\ThisIsTheSpaceShipImage.png" />
+  </ItemGroup>
+  <ItemGroup>
     <Folder Include="images\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
