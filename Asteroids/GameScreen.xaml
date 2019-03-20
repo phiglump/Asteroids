@@ -10,7 +10,7 @@
       Title="GameScreen" Foreground="{x:Null}" FocusManager.FocusedElement="{Binding ElementName=MyCanvas}">
 
     <Grid Background="Black">
-        <Canvas x:Name="MyCanvas" Focusable="True" >
+        <Canvas x:Name="MyCanvas" Focusable="True" Height="500" Width="960">
             <Canvas.Background>
                 <ImageBrush ImageSource="images\Stars.png"/>
             </Canvas.Background>
@@ -22,12 +22,27 @@
                     <RotateTransform CenterX="0" CenterY="0" Angle="0" />
                 </Rectangle.RenderTransform>
             </Rectangle>
-            <Rectangle x:Name="asteroid" Focusable ="True" Width="50" Height="50" Margin="0" Canvas.Left="10" Canvas.Top="10" >
+            <Rectangle x:Name="asteroid1" Focusable ="True" Width="50" Height="50" Margin="0" Canvas.Left="10" Canvas.Top="10" >
                 <Rectangle.Fill>
                     <ImageBrush ImageSource="images\Asteroid3.gif" Stretch="UniformToFill" />
                 </Rectangle.Fill>
             </Rectangle>
-            <Rectangle x:Name="asteroid1" Focusable ="True" Width="50" Height="50" Margin="0" Canvas.Left="100" Canvas.Top="100" >
+            <Rectangle x:Name="asteroid2" Focusable ="True" Width="50" Height="50" Margin="0" Canvas.Left="100" Canvas.Top="100" >
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="images\Asteroid3.gif" Stretch="UniformToFill" />
+                </Rectangle.Fill>
+            </Rectangle>
+            <Rectangle x:Name="asteroid3" Focusable ="True" Width="50" Height="50" Margin="0" Canvas.Left="100" Canvas.Top="100" >
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="images\Asteroid3.gif" Stretch="UniformToFill" />
+                </Rectangle.Fill>
+            </Rectangle>
+            <Rectangle x:Name="asteroid4" Focusable ="True" Width="50" Height="50" Margin="0" Canvas.Left="100" Canvas.Top="100" >
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="images\Asteroid3.gif" Stretch="UniformToFill" />
+                </Rectangle.Fill>
+            </Rectangle>
+            <Rectangle x:Name="asteroid5" Focusable ="True" Width="50" Height="50" Margin="0" Canvas.Left="100" Canvas.Top="100" >
                 <Rectangle.Fill>
                     <ImageBrush ImageSource="images\Asteroid3.gif" Stretch="UniformToFill" />
                 </Rectangle.Fill>
