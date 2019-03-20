@@ -12,17 +12,12 @@
     </Page.Background>
 
     <Grid>
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Center" Margin="23,10,31,0" TextWrapping="Wrap" Text="Highscores" VerticalAlignment="Top" Height="245" Width="906" Foreground="White" FontSize="185" TextDecorations="{x:Null}" FontFamily="Bauhaus 93">
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Center" Margin="377,0,404,0" TextWrapping="Wrap" Text="Highscores" VerticalAlignment="Top" Height="45" Width="179" Foreground="White" FontSize="36" TextDecorations="{x:Null}" FontFamily="Bauhaus 93">
             <TextBlock.Background>
                 <ImageBrush/>
             </TextBlock.Background>
         </TextBlock>
-        <TextBlock x:Name="textBlock1" HorizontalAlignment="Center" Margin="320,218,363,0" TextWrapping="Wrap" Text="_ _ _" VerticalAlignment="Top" Height="198" Width="277" TextDecorations="{x:Null}" Foreground="White" FontSize="150">
-            <TextBlock.Background>
-                <ImageBrush/>
-            </TextBlock.Background>
-        </TextBlock>
-        <Button x:Name="button" Content="Exit" HorizontalAlignment="Center" Margin="333,0,375,0" VerticalAlignment="Bottom" Width="252" Height="69" Foreground="White" BorderBrush="Black" FontSize="48" Click="Button_Click">
+        <Button x:Name="button" Content="Exit" HorizontalAlignment="Center" Margin="430,0,465,0" VerticalAlignment="Bottom" Width="65" Height="53" Foreground="White" BorderBrush="Black" FontSize="36" Click="Button_Click" FontFamily="Bauhaus 93">
             <Button.Background>
                 <ImageBrush/>
             </Button.Background>

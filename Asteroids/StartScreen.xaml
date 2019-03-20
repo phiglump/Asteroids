@@ -12,12 +12,12 @@
     </Page.Background>
 
     <Grid Margin="0,0,-19,-18">
-        <Button x:Name="Start" Content="START" HorizontalAlignment="Center" Margin="349,278,381,170" VerticalAlignment="Center" Width="230" BorderBrush="Black" Foreground="White" Height="52" FontSize="36" Click="Start_Click">
+        <Button x:Name="Start" Content="START" HorizontalAlignment="Center" Margin="349,278,381,170" VerticalAlignment="Center" Width="230" BorderBrush="Black" Foreground="White" Height="52" FontSize="36" Click="Start_Click" FontFamily="Bauhaus 93">
             <Button.Background>
                 <ImageBrush/>
             </Button.Background>
         </Button>
-        <Button x:Name="Start_Copy" Content="HIGHSCORES" HorizontalAlignment="Center" Margin="349,330,381,119" VerticalAlignment="Center" Width="230" BorderBrush="Black" Foreground="White" Height="51" FontSize="36" Click="Highscores_Click">
+        <Button x:Name="Start_Copy" Content="HIGHSCORES" HorizontalAlignment="Center" Margin="349,330,381,119" VerticalAlignment="Center" Width="230" BorderBrush="Black" Foreground="White" Height="51" FontSize="36" Click="Highscores_Click" FontFamily="Bauhaus 93">
             <Button.Background>
                 <ImageBrush/>
             </Button.Background>
@@ -27,7 +27,7 @@
                 <ImageBrush/>
             </TextBlock.Background>
         </TextBlock>
-        <Button x:Name="Exit" Content="EXIT" HorizontalAlignment="Center" Margin="349,381,381,68" VerticalAlignment="Center" Width="230" BorderBrush="Black" Foreground="White" Height="51" FontSize="36" Click="Exit_Click">
+        <Button x:Name="Exit" Content="EXIT" HorizontalAlignment="Center" Margin="349,381,381,68" VerticalAlignment="Center" Width="230" BorderBrush="Black" Foreground="White" Height="51" FontSize="36" Click="Exit_Click" FontFamily="Bauhaus 93">
             <Button.Background>
                 <ImageBrush/>
             </Button.Background>
