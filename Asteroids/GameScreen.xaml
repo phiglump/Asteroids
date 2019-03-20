@@ -26,9 +26,11 @@
                 <Rectangle.Fill>
                     <ImageBrush ImageSource="images\Asteroid3.gif" Stretch="UniformToFill" />
                 </Rectangle.Fill>
-                <Rectangle.RenderTransform>
-                    <RotateTransform CenterX="0" CenterY="0" Angle="0" />
-                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Rectangle x:Name="asteroid1" Focusable ="True" Width="50" Height="50" Margin="0" Canvas.Left="100" Canvas.Top="100" >
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="images\Asteroid3.gif" Stretch="UniformToFill" />
+                </Rectangle.Fill>
             </Rectangle>
             <TextBlock x:Name="Scores" Canvas.Left="10" TextWrapping="Wrap" Text="SCORE" Canvas.Top="10" Foreground="White" Height="27" Width="61" FontSize="20">
                 <TextBlock.Background>

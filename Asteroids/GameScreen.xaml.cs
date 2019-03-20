@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -23,8 +24,8 @@ namespace Asteroids
     public partial class GameScreen : Page
     {
         public TimeSpan Interval { get; set; }
-        double x = 480;
-        double y = 366;
+        double b = 480;
+        double c = 366;
         double angle;
         public GameScreen()
         {
@@ -36,43 +37,117 @@ namespace Asteroids
             timer2.Tick += MoveAsteroid;
             timer2.Interval = TimeSpan.FromMilliseconds(12);
             timer2.Start();
+            DispatcherTimer timer3 = new DispatcherTimer();
+            timer3.Tick += MoveAsteroid1;
+            timer3.Interval = TimeSpan.FromMilliseconds(12);
+            timer3.Start();
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
         }
+        Stopwatch stopwatch1 = Stopwatch.StartNew();
+        Stopwatch stopwatch2 = Stopwatch.StartNew();
+        Random rand = new Random();
         int iSpeed = 5;
-        int fDirection = 125;
-        double b = 0;
-        double c = 0;
+        int fDirection1 = 135;
+        int fDirection2 = 135;
+        double x = 0;
+        double y = 0;
+        double a = 100;
+        double d = 100;
         private void MoveAsteroid(object sender, EventArgs e)
         {
             // use trig to work out new value for X & Y based on Speed and direction vector
-            int iNewX = (int)(iSpeed * System.Math.Sin((System.Math.PI * fDirection) / 180));  // uses radians
-            int iNewY = -(int)(iSpeed * System.Math.Cos((System.Math.PI * fDirection) / 180));
-            b += iNewX;
-            c += iNewY;
-            Canvas.SetLeft(asteroid, b);
-            Canvas.SetTop(asteroid, c);
+            int iNewX = (int)(iSpeed * System.Math.Sin((System.Math.PI * fDirection1) / 180));  // uses radians
+            int iNewY = -(int)(iSpeed * System.Math.Cos((System.Math.PI * fDirection1) / 180));
+            x += iNewX;
+            y += iNewY;
+            Canvas.SetLeft(asteroid, x);
+            Canvas.SetTop(asteroid, y);
+            if(stopwatch1.Elapsed >= TimeSpan.FromSeconds(8))
+            {
+                x = rand.Next(0, 960);
+                y = rand.Next(0, 500);
+                stopwatch1.Restart();
+                //Quadrant 1
+                if (x >= 480 && y < 250)
+                {
+                    fDirection1 = rand.Next(180, 260);
+                }
+                //Quadrant 2
+                else if (x < 480 && y < 250)
+                {
+                    fDirection1 = rand.Next(90, 180);
+                }
+                //Quadrant 3
+                else if (x < 480 && y >= 250)
+                {
+                    fDirection1 = rand.Next(0, 90);
+                }
+                //Quadrant 4
+                else if (x >= 480 && y >= 250)
+                {
+                    fDirection1 = rand.Next(260, 360);
+                }
+            }
+        }
+        private void MoveAsteroid1(object sender, EventArgs e)
+        {
+            // use trig to work out new value for X & Y based on Speed and direction vector
+            int iNewX = (int)(iSpeed * System.Math.Sin((System.Math.PI * fDirection2) / 180));  // uses radians
+            int iNewY = -(int)(iSpeed * System.Math.Cos((System.Math.PI * fDirection2) / 180));
+            a += iNewX;
+            d += iNewY;
+            Canvas.SetLeft(asteroid1, a);
+            Canvas.SetTop(asteroid1, d);
+            if (stopwatch2.Elapsed >= TimeSpan.FromSeconds(8))
+            {
+                a = rand.Next(0, 960);
+                d = rand.Next(0, 500);
+                stopwatch2.Restart();
+                //Quadrant 1
+                if (a >= 480 && d < 250)
+                {
+                    fDirection2 = rand.Next(180, 260);
+                }
+                //Quadrant 2
+                else if (a < 480 && d < 250)
+                {
+                    fDirection2 = rand.Next(90, 180);
+                }
+                //Quadrant 3
+                else if (a < 480 && d >= 250)
+                {
+                    fDirection2 = rand.Next(0, 90);
+                }
+                //Quadrant 4
+                else if (a >= 480 && d >= 250)
+                {
+                    fDirection2 = rand.Next(260, 360);
+                }
+            }
 
         }
         private void MovePlayer(object sender, EventArgs e)
         {
             if (Keyboard.IsKeyDown(Key.A))
             {
-                x -= .05;
-                Canvas.SetLeft(rec1, x);
+                b -= .05;
+                Canvas.SetLeft(rec1, b);
             }
             if (Keyboard.IsKeyDown(Key.W))
             {
-                y -= .05;
-                Canvas.SetTop(rec1, y);
+                c -= .05;
+                Canvas.SetTop(rec1, c);
             }
             if (Keyboard.IsKeyDown(Key.S))
             {
-                y += .05;
-                Canvas.SetTop(rec1, y);
+                c += .05;
+                Canvas.SetTop(rec1, c);
             }
             if (Keyboard.IsKeyDown(Key.D))
             {
-                x += .05;
-                Canvas.SetLeft(rec1, x);
+                b += .05;
+                Canvas.SetLeft(rec1, b);
             }
             if (Keyboard.IsKeyDown(Key.Left))
             {
