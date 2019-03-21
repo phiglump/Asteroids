@@ -61,6 +61,11 @@
     <Compile Include="HighScoreScreen.xaml.cs">
       <DependentUpon>HighScoreScreen.xaml</DependentUpon>
     </Compile>
+    <Compile Include="HighscoresDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HighscoresDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="StartScreen.xaml.cs">
       <DependentUpon>StartScreen.xaml</DependentUpon>
     </Compile>
@@ -107,6 +112,17 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="HighscoresDataSet.xsc">
+      <DependentUpon>HighscoresDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="HighscoresDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HighscoresDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HighscoresDataSet.xss">
+      <DependentUpon>HighscoresDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -121,7 +137,11 @@
   <ItemGroup>
     <Resource Include="images\ThisIsTheSpaceShipImage.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Highscores.accdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="images\Asteroid3.gif" />
   </ItemGroup>
