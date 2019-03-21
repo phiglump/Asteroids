@@ -42,5 +42,10 @@ namespace Asteroids
         {
             System.Windows.Application.Current.Shutdown();
         }
+
+        private void Button_Click_Menu(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new Uri("StartScreen.xaml", UriKind.Relative));
+        }
     }
 }

@@ -52,7 +52,7 @@
                     <ImageBrush/>
                 </TextBlock.Background>
             </TextBlock>
-            <TextBlock x:Name="Lives" Canvas.Left="121" TextWrapping="Wrap" Text="LIVES" Canvas.Top="10" Foreground="White" Height="27" Width="49" FontSize="20">
+            <TextBlock x:Name="Lives" Canvas.Left="114" TextWrapping="Wrap" Text="LIVES" Canvas.Top="10" Foreground="White" Height="27" Width="49" FontSize="20">
                 <TextBlock.Background>
                     <ImageBrush/>
                 </TextBlock.Background>
