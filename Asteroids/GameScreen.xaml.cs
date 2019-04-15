@@ -288,8 +288,8 @@ namespace Asteroids
             if (Keyboard.IsKeyDown(Key.Left))
             {
                 RotateTransform rotateTransform2 = new RotateTransform();
-                rotateTransform2.CenterX = 25;
-                rotateTransform2.CenterY = 25;
+                rotateTransform2.CenterX = 1;
+                rotateTransform2.CenterY = 1;
                 angle = angle - 0.125;
                 rotateTransform2.Angle = angle;
                 rec1.RenderTransform = rotateTransform2;
@@ -297,8 +297,8 @@ namespace Asteroids
             if (Keyboard.IsKeyDown(Key.Right))
             {
                 RotateTransform rotateTransform1 = new RotateTransform();
-                rotateTransform1.CenterX = 25;
-                rotateTransform1.CenterY = 25;
+                rotateTransform1.CenterX = 1;
+                rotateTransform1.CenterY = 1;
                 angle = angle + 0.125;
                 rotateTransform1.Angle = angle;
                 rec1.RenderTransform = rotateTransform1;
