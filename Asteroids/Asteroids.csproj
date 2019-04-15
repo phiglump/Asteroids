@@ -138,8 +138,8 @@
     <Content Include="Highscores.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Resource Include="images\Ship.jpg" />
     <Resource Include="images\Asteroid.jpg" />
+    <Resource Include="images\Ship.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
