@@ -659,7 +659,7 @@ We are hoping to create a full Asteroids remake. This means that there is a poin
 First we want to create a moving background to give a more pleasing look. We also want to make the asteroids break apart into smaller asteroids after destruction. Another possible goal would be to add more color to the game. 
 
 \subsection{Requirements}
-As part of fleshing out the scope of your requirements, you'll also need to keep in mind both your functional and non-functional requirements.  These should be listed, and explained in detail as necessary.  Use this area to explain how you gathered these requirements.
+We have a total of 8 requirements for our project. Our first requirement is to have asteroids that appear randomly on screen and continue to move until destroyed. The next requirement is to implement a high score table that list the top 10 scores and that can be viewed by the user and updated when a higher score is made. This will be done in the same theme as the 1979 version entailed, displaying the top 10 scores and having a maximum of only 3 letters as the name. Our third requirement is to create a ship that moves and spins around the screen effortlessly. To install a working laser would be our forth requirement. The laser will be fired from the front of the ship and will damage/destroy hostile entities upon impact. The fifth requirement is to allow the ship, the laser beams, and hostile entities to exit from one side of the screen and appear on the adjacent side of the screen. This was also implemented in the original game by accident, however everyone liked in and so they kept it, so we intend to keep it to. The sixth and arguably the most important requirement would be to implement hit detection. This will be applied to the ship, the laser, and any hostile entities. The seventh requirement is to implement the breaking of the asteroids into smaller pieces. This will happen 2 times until finally destroyed as it was in the original game. The final requirement is to add custom audio files for the sounds effect in the game. We decided to add these custom files to bring a unique feel to the once futuristic sounding game.
 
 \subsubsection{Functional}
 \begin{itemize}
@@ -668,6 +668,10 @@ As part of fleshing out the scope of your requirements, you'll also need to keep
 \item The game will run when the user hits the start button
 \item When the user presses the high score button the screen will display the high score list.
 \item The game can be exited when the user presses the exit button.
+\item Asteroids that appear and move across the screen.
+\item A ship that can move and spin around and shoot and hostile entities.
+\item A laser that is shot from the front of the ship that destroys hostile entities upon impact.
+\item ships will break apart into smaller pieces after being shot. This will happen a total of 2 times and then they will be completely destroyed.
 \end{itemize}
 
 \subsubsection{Non-Functional}
@@ -693,7 +697,7 @@ Use Case ID & Use Case Name & Primary Actor & Complexity & Priority \\
 \hline
 
 \end{tabular}
-\caption{Sample use case table}
+\caption{Use cases}
 \label{tab:useCaseIndex}
 \end{table}
 
@@ -744,26 +748,31 @@ You will then need to continue to flesh out all use cases you have identified fo
 \begin{figure}[ht!]
 \includegraphics[height=150px, width=250px]{Start.png}
 \caption{The is what the start screen looks like}
-\label{Startscreen}
+\label{Start screen}
 \end{figure}
 
 \begin{figure}[ht!]
 \includegraphics[height=150px, width=250px]{Game.png}
 \caption{The is what the game screen looks like}
-\label{Startscreen}
+\label{Game screen}
 \end{figure}
 
 \begin{figure}[ht!]
 \includegraphics[height=150px, width=250px]{Highscore.png}
 \caption{The is what the highscore screen looks like}
-\label{Startscreen}
+\label{High Score screen}
 \end{figure}
 
 \subsection{Interface Mockups}
 
 \section{Project Timeline}
-Go back to your notes and look up a typical project development life cycle for the Waterfall approach.  How will you follow this life cycle over the remainder of this semester?  This will usually involve a chart showing your proposed timeline, with specific milestones plotted out.  Make sure you have deliverable dates from the course schedule listed, with a plan to meet them (NOTE: these are generally optimistic deadlines).
+Our chart is on the last page.
 
+\begin{figure}[ht!]
+\includegraphics[height=700px, width=500px]{Timeline.png}
+\caption{Our timeline for this project}
+\label{Timeline}
+\end{figure}
 
 \section{Project Structure}
 At first, this will be a little empty (it will need to be filled in by the time you turn in your final report).  This is your chance to discuss all of your design decisions (consider this the README's big brother).
@@ -771,25 +780,15 @@ At first, this will be a little empty (it will need to be filled in by the time 
 \subsection{UML Outline}
 Show the full structure of your program.  Make sure to keep on updating this section as your project evolves (you often start out with one plan, but end up modifying things as you move along).  As a note, while Dia fails miserably at generating pdfs (probably my fault), I have had much success with png files.  Make sure to wrap your images in a \texttt{figure} environment, and to reference with the \texttt{ref} command.  For example, see Figure \ref{cat2}.
 
-\begin{figure}[ht!]
-\includegraphics[scale=1.5]{cat2.jpg}
-\caption{Your figures should be in the \emph{figure} environment, and have captions.  Should also be of diagrams pertaining to your project, not random internet kittens}
-\label{cat2}
-\end{figure}
-
 
 \subsection{Design Patterns Used}
 Make sure to actually use at least 2 design patterns from this class.  This is not normally part of such documentation, but largely just specific to this class -- I want to see you use the patterns!
 
 
 \section{Results}
-This section will start out a little vague, but it should grow as your project evolves.  With each deliverable you hand in, give me a final summary of where your project stands.  By the end, this should be a reflective section discussing how many of your original goals you managed to attain/how many desired use cases you implemented/how many extra features you added.
+Currently we have our 3 out of 8 requirements completely finished. Our project currently has a high scores table which in implemented through access. We also have asteroids that appear randomly on screen and move to the other side off the screen, however we do not yet have hit detection or the feature that allows objects to move of the screen and appear back on the adjacent side. We also have a ship that moves and spins effortlessly within the screen. We are working now on the 8th, 4th and 6th this week and plan to work on the last two (the 7th and 5th) from April 18th-24th.
 
 \subsection{Future Work}
-
-
-
-
 
 
 % if have a single appendix:
