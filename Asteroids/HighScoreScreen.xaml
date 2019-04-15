@@ -11,7 +11,7 @@
         <ImageBrush ImageSource="images\Stars.png" Stretch="UniformToFill"/>
     </Page.Background>
 
-    <Grid>
+    <Grid Margin="0,0,-19,-18">
         <TextBlock x:Name="textBlock" HorizontalAlignment="Center" Margin="300,-24,311,0" TextWrapping="Wrap" Text="Highscores" VerticalAlignment="Top" Height="92" Width="349" Foreground="White" FontSize="72" TextDecorations="{x:Null}" FontFamily="Bauhaus 93">
             <TextBlock.Background>
                 <ImageBrush/>

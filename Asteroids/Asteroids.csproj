@@ -141,6 +141,8 @@
     <Content Include="Highscores.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Resource Include="images\Ship.jpeg" />
+    <Resource Include="images\Asteroid.jpeg" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="images\Asteroid3.gif" />

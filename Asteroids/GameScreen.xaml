@@ -14,9 +14,9 @@
             <Canvas.Background>
                 <ImageBrush ImageSource="images\Stars.png"/>
             </Canvas.Background>
-            <Rectangle x:Name="rec1" Focusable ="True" Width="50" Height="50" Margin="0" Canvas.Left="451" Canvas.Top="398" >
+            <Rectangle x:Name="rec1" Focusable ="True" Width="27" Height="28" Margin="0" Canvas.Left="451" Canvas.Top="420" >
                 <Rectangle.Fill>
-                    <ImageBrush ImageSource="images\ThisIsTheSpaceShipImage.png" Stretch="UniformToFill" />
+                    <ImageBrush ImageSource="images\Ship.jpeg" Stretch="UniformToFill" />
                 </Rectangle.Fill>
                 <Rectangle.RenderTransform>
                     <RotateTransform CenterX="0" CenterY="0" Angle="0" />
@@ -24,27 +24,27 @@
             </Rectangle>
             <Rectangle x:Name="asteroid1" Focusable ="True" Width="50" Height="50" Margin="0" Canvas.Left="10" Canvas.Top="10" >
                 <Rectangle.Fill>
-                    <ImageBrush ImageSource="images\Asteroid3.gif" Stretch="UniformToFill" />
+                    <ImageBrush ImageSource="images\Asteroid.jpeg" Stretch="UniformToFill" />
                 </Rectangle.Fill>
             </Rectangle>
             <Rectangle x:Name="asteroid2" Focusable ="True" Width="50" Height="50" Margin="0" Canvas.Left="100" Canvas.Top="100" >
                 <Rectangle.Fill>
-                    <ImageBrush ImageSource="images\Asteroid3.gif" Stretch="UniformToFill" />
+                    <ImageBrush ImageSource="images\Asteroid.jpeg" Stretch="UniformToFill" />
                 </Rectangle.Fill>
             </Rectangle>
             <Rectangle x:Name="asteroid3" Focusable ="True" Width="50" Height="50" Margin="0" Canvas.Left="100" Canvas.Top="100" >
                 <Rectangle.Fill>
-                    <ImageBrush ImageSource="images\Asteroid3.gif" Stretch="UniformToFill" />
+                    <ImageBrush ImageSource="images\Asteroid.jpeg" Stretch="UniformToFill" />
                 </Rectangle.Fill>
             </Rectangle>
             <Rectangle x:Name="asteroid4" Focusable ="True" Width="50" Height="50" Margin="0" Canvas.Left="100" Canvas.Top="100" >
                 <Rectangle.Fill>
-                    <ImageBrush ImageSource="images\Asteroid3.gif" Stretch="UniformToFill" />
+                    <ImageBrush ImageSource="images\Asteroid.jpeg" Stretch="UniformToFill" />
                 </Rectangle.Fill>
             </Rectangle>
             <Rectangle x:Name="asteroid5" Focusable ="True" Width="50" Height="50" Margin="0" Canvas.Left="100" Canvas.Top="100" >
                 <Rectangle.Fill>
-                    <ImageBrush ImageSource="images\Asteroid3.gif" Stretch="UniformToFill" />
+                    <ImageBrush ImageSource="images\Asteroid.jpeg" Stretch="UniformToFill" />
                 </Rectangle.Fill>
             </Rectangle>
             <TextBlock x:Name="Scores" Canvas.Left="10" TextWrapping="Wrap" Text="SCORE" Canvas.Top="10" Foreground="White" Height="27" Width="61" FontSize="20">
@@ -57,15 +57,15 @@
                     <ImageBrush/>
                 </TextBlock.Background>
             </TextBlock>
-            <Image Source="images\ThisIsTheSpaceShipImage.png" Height="27" Width="21" Canvas.Left="100" Canvas.Top="37"></Image>
+            <Image Source="images\Ship.jpeg" Height="27" Width="21" Canvas.Left="100" Canvas.Top="37"></Image>
             <TextBlock x:Name="scoredisplayed" Canvas.Left="10" TextWrapping="Wrap" Text="    0" Canvas.Top="37" Foreground="White" Height="27" Width="61" FontSize="20">
                 <TextBlock.Background>
                     <ImageBrush/>
                 </TextBlock.Background>
             </TextBlock>
-            <Image Source="images/ThisIsTheSpaceShipImage.png" Height="27" Width="21" Canvas.Left="121" Canvas.Top="37"/>
-            <Image Source="images/ThisIsTheSpaceShipImage.png" Height="27" Width="21" Canvas.Left="142" Canvas.Top="37"/>
-            <Image Source="images/ThisIsTheSpaceShipImage.png" Height="27" Width="21" Canvas.Left="163" Canvas.Top="37"/>
+            <Image Source="images\Ship.jpeg" Height="27" Width="21" Canvas.Left="121" Canvas.Top="37"/>
+            <Image Source="images\Ship.jpeg" Height="27" Width="21" Canvas.Left="142" Canvas.Top="37"/>
+            <Image Source="images\Ship.jpeg" Height="27" Width="21" Canvas.Left="163" Canvas.Top="37"/>
         </Canvas>
     </Grid>
 </Page>
