@@ -29,6 +29,7 @@ namespace Asteroids
         double angle;
         public GameScreen()
         {
+            #region Timers
             InitializeComponent();
             DispatcherTimer timer = new DispatcherTimer();
             timer.Tick += new EventHandler(MovePlayer);
@@ -53,24 +54,25 @@ namespace Asteroids
             timer6.Tick += MoveAsteroid5;
             timer6.Interval = TimeSpan.FromMilliseconds(12);
             timer6.Start();
+            #endregion
         }
         Random rand = new Random();
         int iSpeed = 3;
         int fDirection1 = 135;
-        int fDirection2 = 135;
-        int fDirection3 = 135;
-        int fDirection4 = 135;
-        int fDirection5 = 135;
+        int fDirection2 = 200;
+        int fDirection3 = 200;
+        int fDirection4 = 300;
+        int fDirection5 = 300;
         double Ast1X = 0;
         double Ast1Y = 0;
-        double Ast2X = 100;
+        double Ast2X = 960;
         double Ast2Y = 100;
-        double Ast3X = 100;
+        double Ast3X = 800;
         double Ast3Y = 100;
-        double Ast4X = 100;
-        double Ast4Y = 100;
-        double Ast5X = 100;
-        double Ast5Y = 100;
+        double Ast4X = 600;
+        double Ast4Y = 400;
+        double Ast5X = 500;
+        double Ast5Y = 400;
         #region Asteriod1
         private void MoveAsteroid1(object sender, EventArgs e)
         {
@@ -81,29 +83,29 @@ namespace Asteroids
             Ast1Y += iNewY;
             Canvas.SetLeft(asteroid1, Ast1X);
             Canvas.SetTop(asteroid1, Ast1Y);
-            if(Ast1X > 960 || Ast1X <0 || Ast1Y > 500 || Ast1Y < 0)
+            if(Ast1X > 1010 || Ast1X <-50 || Ast1Y > 550 || Ast1Y < -50)
             {
                 Ast1X = rand.Next(0, 960);
                 Ast1Y = rand.Next(0, 500);
                 //Quadrant 1
                 if (Ast1X >= 480 && Ast1Y < 250)
                 {
-                    fDirection1 = rand.Next(180, 260);
+                    fDirection1 = rand.Next(190, 260);
                 }
                 //Quadrant 2
                 else if (Ast1X < 480 && Ast1Y < 250)
                 {
-                    fDirection1 = rand.Next(90, 180);
+                    fDirection1 = rand.Next(100, 170);
                 }
                 //Quadrant 3
                 else if (Ast1X < 480 && Ast1Y >= 250)
                 {
-                    fDirection1 = rand.Next(0, 90);
+                    fDirection1 = rand.Next(10, 80);
                 }
                 //Quadrant 4
                 else if (Ast1X >= 480 && Ast1Y >= 250)
                 {
-                    fDirection1 = rand.Next(260, 360);
+                    fDirection1 = rand.Next(270, 350);
                 }
             }
         }
@@ -118,29 +120,29 @@ namespace Asteroids
             Ast2Y += iNewY;
             Canvas.SetLeft(asteroid2, Ast2X);
             Canvas.SetTop(asteroid2, Ast2Y);
-            if (Ast2X > 960 || Ast2X < 0 || Ast2Y > 500 || Ast2Y < 0)
+            if (Ast2X > 1010 || Ast2X < -50 || Ast2Y > 550 || Ast2Y < -50)
             {
                 Ast2X = rand.Next(0, 960);
                 Ast2Y = rand.Next(0, 500);
                 //Quadrant 1
                 if (Ast2X >= 480 && Ast2Y < 250)
                 {
-                    fDirection2 = rand.Next(180, 260);
+                    fDirection2 = rand.Next(190, 260);
                 }
                 //Quadrant 2
                 else if (Ast2X < 480 && Ast2Y < 250)
                 {
-                    fDirection2 = rand.Next(90, 180);
+                    fDirection2 = rand.Next(100, 170);
                 }
                 //Quadrant 3
                 else if (Ast2X < 480 && Ast2Y >= 250)
                 {
-                    fDirection2 = rand.Next(0, 90);
+                    fDirection2 = rand.Next(10, 80);
                 }
                 //Quadrant 4
                 else if (Ast2X >= 480 && Ast2Y >= 250)
                 {
-                    fDirection2 = rand.Next(260, 360);
+                    fDirection2 = rand.Next(280, 350);
                 }
             }
 
@@ -156,29 +158,29 @@ namespace Asteroids
             Ast3Y += iNewY;
             Canvas.SetLeft(asteroid3, Ast3X);
             Canvas.SetTop(asteroid3, Ast3Y);
-            if (Ast3X > 960 || Ast3X < 0 || Ast3Y > 500 || Ast3Y < 0)
+            if (Ast3X > 1010 || Ast3X < -50 || Ast3Y > 550 || Ast3Y < -50)
             {
                 Ast3X = rand.Next(0, 960);
                 Ast3Y = rand.Next(0, 500);
                 //Quadrant 1
                 if (Ast3X >= 480 && Ast3Y < 250)
                 {
-                    fDirection3 = rand.Next(180, 260);
+                    fDirection3 = rand.Next(190, 260);
                 }
                 //Quadrant 2
                 else if (Ast3X < 480 && Ast3Y < 250)
                 {
-                    fDirection3 = rand.Next(90, 180);
+                    fDirection3 = rand.Next(100, 170);
                 }
                 //Quadrant 3
                 else if (Ast3X < 480 && Ast3Y >= 250)
                 {
-                    fDirection3 = rand.Next(0, 90);
+                    fDirection3 = rand.Next(10, 80);
                 }
                 //Quadrant 4
                 else if (Ast3X >= 480 && Ast3Y >= 250)
                 {
-                    fDirection3 = rand.Next(260, 360);
+                    fDirection3 = rand.Next(280, 350);
                 }
             }
 
@@ -194,29 +196,29 @@ namespace Asteroids
             Ast4Y += iNewY;
             Canvas.SetLeft(asteroid4, Ast4X);
             Canvas.SetTop(asteroid4, Ast4Y);
-            if (Ast4X > 960 || Ast4X < 0 || Ast4Y > 500 || Ast4Y < 0)
+            if (Ast4X > 1010 || Ast4X < -50 || Ast4Y > 550 || Ast4Y < -50)
             {
                 Ast4X = rand.Next(0, 960);
                 Ast4Y = rand.Next(0, 500);
                 //Quadrant 1
                 if (Ast4X >= 480 && Ast4Y < 250)
                 {
-                    fDirection4 = rand.Next(180, 260);
+                    fDirection4 = rand.Next(190, 260);
                 }
                 //Quadrant 2
                 else if (Ast4X < 480 && Ast4Y < 250)
                 {
-                    fDirection4 = rand.Next(90, 180);
+                    fDirection4 = rand.Next(100, 170);
                 }
                 //Quadrant 3
                 else if (Ast4X < 480 && Ast4Y >= 250)
                 {
-                    fDirection4 = rand.Next(0, 90);
+                    fDirection4 = rand.Next(10, 80);
                 }
                 //Quadrant 4
                 else if (Ast4X >= 480 && Ast4Y >= 250)
                 {
-                    fDirection4 = rand.Next(260, 360);
+                    fDirection4 = rand.Next(280, 350);
                 }
             }
 
@@ -232,34 +234,35 @@ namespace Asteroids
             Ast5Y += iNewY;
             Canvas.SetLeft(asteroid5, Ast5X);
             Canvas.SetTop(asteroid5, Ast5Y);
-            if (Ast5X > 960 || Ast5X < 0 || Ast5Y > 500 || Ast5Y < 0)
+            if (Ast5X > 1010 || Ast5X < -50 || Ast5Y > 550 || Ast5Y < -50)
             {
                 Ast5X = rand.Next(0, 960);
                 Ast5Y = rand.Next(0, 500);
                 //Quadrant 1
                 if (Ast5X >= 480 && Ast5Y < 250)
                 {
-                    fDirection5 = rand.Next(180, 260);
+                    fDirection5 = rand.Next(190, 260);
                 }
                 //Quadrant 2
                 else if (Ast5X < 480 && Ast5Y < 250)
                 {
-                    fDirection5 = rand.Next(90, 180);
+                    fDirection5 = rand.Next(100, 170);
                 }
                 //Quadrant 3
                 else if (Ast5X < 480 && Ast5Y >= 250)
                 {
-                    fDirection5 = rand.Next(0, 90);
+                    fDirection5 = rand.Next(10, 80);
                 }
                 //Quadrant 4
                 else if (Ast5X >= 480 && Ast5Y >= 250)
                 {
-                    fDirection5 = rand.Next(260, 360);
+                    fDirection5 = rand.Next(280, 350);
                 }
             }
 
         }
         #endregion
+        #region Player Movement
         private void MovePlayer(object sender, EventArgs e)
         {
             if (Keyboard.IsKeyDown(Key.A))
@@ -285,8 +288,8 @@ namespace Asteroids
             if (Keyboard.IsKeyDown(Key.Left))
             {
                 RotateTransform rotateTransform2 = new RotateTransform();
-                rotateTransform2.CenterX = 25;
-                rotateTransform2.CenterY = 25;
+                rotateTransform2.CenterX = 1;
+                rotateTransform2.CenterY = 1;
                 angle = angle - 0.125;
                 rotateTransform2.Angle = angle;
                 rec1.RenderTransform = rotateTransform2;
@@ -294,12 +297,13 @@ namespace Asteroids
             if (Keyboard.IsKeyDown(Key.Right))
             {
                 RotateTransform rotateTransform1 = new RotateTransform();
-                rotateTransform1.CenterX = 25;
-                rotateTransform1.CenterY = 25;
+                rotateTransform1.CenterX = 1;
+                rotateTransform1.CenterY = 1;
                 angle = angle + 0.125;
                 rotateTransform1.Angle = angle;
                 rec1.RenderTransform = rotateTransform1;
             }
         }
+        #endregion
     }
 }

@@ -11,18 +11,19 @@
         <ImageBrush ImageSource="images\Stars.png" Stretch="UniformToFill"/>
     </Page.Background>
 
-    <Grid>
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Center" Margin="23,10,31,0" TextWrapping="Wrap" Text="Highscores" VerticalAlignment="Top" Height="245" Width="906" Foreground="White" FontSize="185" TextDecorations="{x:Null}" FontFamily="Bauhaus 93">
+    <Grid Margin="0,0,-19,-18">
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Center" Margin="300,-24,311,0" TextWrapping="Wrap" Text="Highscores" VerticalAlignment="Top" Height="92" Width="349" Foreground="White" FontSize="72" TextDecorations="{x:Null}" FontFamily="Bauhaus 93">
             <TextBlock.Background>
                 <ImageBrush/>
             </TextBlock.Background>
         </TextBlock>
-        <TextBlock x:Name="textBlock1" HorizontalAlignment="Center" Margin="320,218,363,0" TextWrapping="Wrap" Text="_ _ _" VerticalAlignment="Top" Height="198" Width="277" TextDecorations="{x:Null}" Foreground="White" FontSize="150">
-            <TextBlock.Background>
+        <Button x:Name="button" Content="Exit" HorizontalAlignment="Center" Margin="532,444,365,0" VerticalAlignment="Top" Width="63" Height="56" Foreground="White" BorderBrush="Black" FontSize="36" Click="Button_Click" FontFamily="Bauhaus 93">
+            <Button.Background>
                 <ImageBrush/>
-            </TextBlock.Background>
-        </TextBlock>
-        <Button x:Name="button" Content="Exit" HorizontalAlignment="Center" Margin="333,0,375,0" VerticalAlignment="Bottom" Width="252" Height="69" Foreground="White" BorderBrush="Black" FontSize="48" Click="Button_Click">
+            </Button.Background>
+        </Button>
+        <TextBlock x:Name="Text1" HorizontalAlignment="Center" Margin="300,88,311,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="351" Width="349" Foreground="White" FontSize="29"/>
+        <Button x:Name="Menu" Content="Menu" HorizontalAlignment="Center" Margin="346,439,524,0" VerticalAlignment="Top" Width="90" Height="56" Foreground="White" BorderBrush="Black" FontSize="36" Click="Button_Click_Menu" FontFamily="Bauhaus 93">
             <Button.Background>
                 <ImageBrush/>
             </Button.Background>
