@@ -764,9 +764,10 @@ You will then need to continue to flesh out all use cases you have identified fo
 \end{figure}
 
 \subsection{Interface Mockups}
+For example, see Figures above \ref{Start screen} (Start Screen), \ref{Game screen} (Game Screen), or \ref{High Score screen} (High Score Screen).
 
 \section{Project Timeline}
-Our chart is on the last page.
+Go to \ref{Timeline} for the project timeline.
 
 \begin{figure}[ht!]
 \includegraphics[height=700px, width=500px]{Timeline.png}
@@ -775,14 +776,19 @@ Our chart is on the last page.
 \end{figure}
 
 \section{Project Structure}
-At first, this will be a little empty (it will need to be filled in by the time you turn in your final report).  This is your chance to discuss all of your design decisions (consider this the README's big brother).
+Our project is centered around a WPF window that once certain buttons are pressed or specified events occur then the window will alter its contents into a desired page. The Main window will open and start the "StartScreen" page that includes the buttons Start, Highscores, and Exit. Based on the button press the buttons will either lead to the "GameScreen" page, "HighScoresScreen" page, or exit the entire window that the project is hosted inside. This was done so that navigation was pretty straight forward and seemless. We found that this way prevented us from having to open and close windows when a new page was needed. We have created seperate classes for both the Asteroids and the Spaceship to make it easier to understand where all of the information is stored for the program. Our project incorporates a small database to store the information for the highscores. 
 
 \subsection{UML Outline}
-Show the full structure of your program.  Make sure to keep on updating this section as your project evolves (you often start out with one plan, but end up modifying things as you move along).  As a note, while Dia fails miserably at generating pdfs (probably my fault), I have had much success with png files.  Make sure to wrap your images in a \texttt{figure} environment, and to reference with the \texttt{ref} command.  For example, see Figure \ref{cat2}.
-
+Here is the UML outline for the Asteroids project: \ref{AsteroidsDia}.
+\begin{figure}[ht!]
+\includegraphics[height=700px, width=500px]{AsteroidsUML.png}
+\caption{Our UML layout for Asteroids}
+\label{AsteroidsDia}
+\end{figure}
 
 \subsection{Design Patterns Used}
-Make sure to actually use at least 2 design patterns from this class.  This is not normally part of such documentation, but largely just specific to this class -- I want to see you use the patterns!
+The first pattern we decided to specifically implement was the Observer Pattern. The idea is that there will be a constant observer ran over the spaceship that will watch for the isShipDestroyed bool to come back true.  When that occurs,  the observer will then update the GameScreen lives to one less. 
+The second design pattern we are using is the State pattern. We implemented this in a way that the game could be paused and resumed by the user. The code would determine whether the specific key was pressed and if it was then the games objects and timers would be paused. 
 
 
 \section{Results}
