@@ -138,6 +138,7 @@
     <Content Include="Highscores.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Resource Include="images\PaperStart.png" />
     <Resource Include="images\Asteroid.png" />
     <Resource Include="images\Ship.png" />
     <Resource Include="images\Paper.jpeg" />

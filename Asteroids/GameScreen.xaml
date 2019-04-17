@@ -52,12 +52,12 @@
                     <ImageBrush ImageSource="images\Asteroid.png" Stretch="UniformToFill" />
                 </Rectangle.Fill>
             </Rectangle>
-            <TextBlock x:Name="Scores" Canvas.Left="22" TextWrapping="Wrap" Text="SCORE" Canvas.Top="10" Foreground="White" Height="27" Width="61" FontSize="20">
+            <TextBlock x:Name="Scores" Canvas.Left="22" TextWrapping="Wrap" Text="SCORE" Canvas.Top="10" Foreground="Black" Height="27" Width="61" FontSize="20">
                 <TextBlock.Background>
                     <ImageBrush/>
                 </TextBlock.Background>
             </TextBlock>
-            <TextBlock x:Name="Lives" Canvas.Left="114" TextWrapping="Wrap" Text="LIVES" Canvas.Top="10" Foreground="White" Height="27" Width="49" FontSize="20">
+            <TextBlock x:Name="Lives" Canvas.Left="114" TextWrapping="Wrap" Text="LIVES" Canvas.Top="10" Foreground="Black" Height="27" Width="49" FontSize="20">
                 <TextBlock.Background>
                     <ImageBrush/>
                 </TextBlock.Background>
@@ -67,7 +67,7 @@
                     <ImageBrush ImageSource="images/Ship.png"/>
                 </Image.OpacityMask>
             </Image>
-            <TextBlock x:Name="scoredisplayed" Canvas.Left="22" TextWrapping="Wrap" Text="    0" Canvas.Top="37" Foreground="White" Height="27" Width="49" FontSize="20" RenderTransformOrigin="0.908,0.446">
+            <TextBlock x:Name="scoredisplayed" Canvas.Left="22" TextWrapping="Wrap" Text="    0" Canvas.Top="37" Foreground="Black" Height="27" Width="49" FontSize="20" RenderTransformOrigin="0.908,0.446">
                 <TextBlock.Background>
                     <ImageBrush/>
                 </TextBlock.Background>
