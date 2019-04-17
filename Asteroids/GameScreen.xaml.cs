@@ -415,21 +415,38 @@ namespace Asteroids
             {
                 b -= .05;
                 Canvas.SetLeft(rec1, b);
+                if(b < -10)
+                {
+                    b = 960;
+                }
             }
             if (Keyboard.IsKeyDown(Key.W))
             {
                 c -= .05;
                 Canvas.SetTop(rec1, c);
+                if (c < -10)
+                {
+                    c = 500;
+                }
+
             }
             if (Keyboard.IsKeyDown(Key.S))
             {
                 c += .05;
                 Canvas.SetTop(rec1, c);
+                if (c > 505)
+                {
+                    c = 0;
+                }
             }
             if (Keyboard.IsKeyDown(Key.D))
             {
                 b += .05;
                 Canvas.SetLeft(rec1, b);
+                if(b > 965)
+                {
+                    b = 0;
+                }
             }
             if (Keyboard.IsKeyDown(Key.NumPad4))
             {
