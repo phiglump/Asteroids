@@ -8,24 +8,24 @@
       d:DesignHeight="500" d:DesignWidth="960"
       Title="StartScreen" Foreground="{x:Null}">
     <Page.Background>
-        <ImageBrush ImageSource="images\PaperStart.png" Stretch="UniformToFill"/>
+        <ImageBrush ImageSource="images\NewPaperStart.png" Stretch="UniformToFill"/>
     </Page.Background>
 
     <Grid Margin="0,0,-19,-18">
         <Grid.Background>
             <ImageBrush/>
         </Grid.Background>
-        <Button x:Name="Start" Content="" HorizontalAlignment="Center" Margin="423,320,401,166" VerticalAlignment="Center" Width="155" BorderBrush="{x:Null}" Foreground="White" Height="32" FontSize="24" Click="Start_Click" FontFamily="Bauhaus 93">
+        <Button x:Name="Start" Content="" HorizontalAlignment="Center" Margin="424,289,423,197" VerticalAlignment="Center" Width="132" BorderBrush="{x:Null}" Foreground="White" Height="32" FontSize="24" Click="Start_Click" FontFamily="Bauhaus 93" Opacity="0">
             <Button.Background>
                 <ImageBrush/>
             </Button.Background>
         </Button>
-        <Button x:Name="Start_Copy" Content="" HorizontalAlignment="Center" Margin="333,352,330,132" VerticalAlignment="Center" Width="316" BorderBrush="{x:Null}" Foreground="White" Height="34" FontSize="24" Click="Highscores_Click" FontFamily="Bauhaus 93">
+        <Button x:Name="Start_Copy" Content="" HorizontalAlignment="Center" Margin="345,321,362,169" VerticalAlignment="Center" Width="272" BorderBrush="{x:Null}" Foreground="White" Height="28" FontSize="24" Click="Highscores_Click" FontFamily="Bauhaus 93" Opacity="0">
             <Button.Background>
                 <ImageBrush/>
             </Button.Background>
         </Button>
-        <Button x:Name="Exit" Content="" HorizontalAlignment="Center" Margin="443,386,423,95" VerticalAlignment="Center" Width="113" BorderBrush="{x:Null}" Foreground="White" Height="37" FontSize="24" Click="Exit_Click" FontFamily="Bauhaus 93">
+        <Button x:Name="Exit" Content="" HorizontalAlignment="Center" Margin="442,349,442,136" VerticalAlignment="Center" Width="95" BorderBrush="{x:Null}" Foreground="White" Height="33" FontSize="24" Click="Exit_Click" FontFamily="Bauhaus 93" Opacity="0">
             <Button.Background>
                 <ImageBrush/>
             </Button.Background>

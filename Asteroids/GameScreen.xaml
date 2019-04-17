@@ -14,7 +14,7 @@
             <Canvas.Background>
                 <ImageBrush ImageSource="images\Paper.jpeg"/>
             </Canvas.Background>
-            <Rectangle x:Name="rec1" Focusable ="True" Width="27" Height="27" Margin="0" Canvas.Left="451" Canvas.Top="421" RenderTransformOrigin="0.498,0.477" >
+            <Rectangle x:Name="rec1" Focusable ="True" Width="21" Height="27" Margin="0" Canvas.Left="454" Canvas.Top="377" RenderTransformOrigin="0.498,0.477" >
                 <Rectangle.Fill>
                     <ImageBrush ImageSource="images/Ship.png" Stretch="UniformToFill"/>
                 </Rectangle.Fill>
@@ -22,67 +22,67 @@
                     <TransformGroup>
                         <ScaleTransform/>
                         <SkewTransform/>
-                        <RotateTransform Angle="-358.713"/>
+                        <RotateTransform Angle="-359.971"/>
                         <TranslateTransform X="0.122" Y="-0.123"/>
                     </TransformGroup>
                 </Rectangle.RenderTransform>
             </Rectangle>
-            <Rectangle x:Name="asteroid1" Focusable ="True" Width="57" Height="50" Margin="0" Canvas.Left="163" Canvas.Top="304" >
+            <Rectangle x:Name="asteroid1" Focusable ="True" Width="75" Height="60" Margin="0" Canvas.Left="163" Canvas.Top="304" >
                 <Rectangle.Fill>
                     <ImageBrush ImageSource="images\Asteroid.png" Stretch="UniformToFill" />
                 </Rectangle.Fill>
             </Rectangle>
-            <Rectangle x:Name="asteroid2" Focusable ="True" Width="63" Height="50" Margin="0" Canvas.Left="100" Canvas.Top="134" >
+            <Rectangle x:Name="asteroid2" Focusable ="True" Width="75" Height="60" Margin="0" Canvas.Left="100" Canvas.Top="134" >
                 <Rectangle.Fill>
                     <ImageBrush ImageSource="images\Asteroid.png" Stretch="UniformToFill" />
                 </Rectangle.Fill>
             </Rectangle>
-            <Rectangle x:Name="asteroid3" Focusable ="True" Width="57" Height="50" Margin="0" Canvas.Left="225" Canvas.Top="14" >
+            <Rectangle x:Name="asteroid3" Focusable ="True" Width="75" Height="60" Margin="0" Canvas.Left="225" Canvas.Top="14" >
                 <Rectangle.Fill>
                     <ImageBrush ImageSource="images\Asteroid.png" Stretch="UniformToFill" />
                 </Rectangle.Fill>
             </Rectangle>
-            <Rectangle x:Name="asteroid4" Focusable ="True" Width="54" Height="50" Margin="0" Canvas.Left="529" Canvas.Top="207" >
+            <Rectangle x:Name="asteroid4" Focusable ="True" Width="75" Height="60" Margin="0" Canvas.Left="529" Canvas.Top="149" >
                 <Rectangle.Fill>
                     <ImageBrush ImageSource="images\Asteroid.png" Stretch="UniformToFill" />
                 </Rectangle.Fill>
             </Rectangle>
-            <Rectangle x:Name="asteroid5" Focusable ="True" Width="55" Height="50" Margin="0" Canvas.Left="796" Canvas.Top="59" >
+            <Rectangle x:Name="asteroid5" Focusable ="True" Width="75" Height="60" Margin="0" Canvas.Left="796" Canvas.Top="59" >
                 <Rectangle.Fill>
                     <ImageBrush ImageSource="images\Asteroid.png" Stretch="UniformToFill" />
                 </Rectangle.Fill>
             </Rectangle>
-            <TextBlock x:Name="Scores" Canvas.Left="22" TextWrapping="Wrap" Text="SCORE" Canvas.Top="10" Foreground="Black" Height="27" Width="61" FontSize="20">
+            <TextBlock x:Name="Scores" Canvas.Left="10" TextWrapping="Wrap" Text="SCORE" Canvas.Top="20" Foreground="Black" Height="27" Width="74" FontSize="20" Opacity="0.5" FontFamily="Bradley Hand ITC">
                 <TextBlock.Background>
                     <ImageBrush/>
                 </TextBlock.Background>
             </TextBlock>
-            <TextBlock x:Name="Lives" Canvas.Left="114" TextWrapping="Wrap" Text="LIVES" Canvas.Top="10" Foreground="Black" Height="27" Width="49" FontSize="20">
+            <TextBlock x:Name="Lives" Canvas.Left="114" TextWrapping="Wrap" Text="LIVES" Canvas.Top="20" Foreground="Black" Height="27" Width="61" FontSize="20" Opacity="0.5" FontFamily="Bradley Hand ITC">
                 <TextBlock.Background>
                     <ImageBrush/>
                 </TextBlock.Background>
             </TextBlock>
-            <Image Source="images\Ship.png" Height="27" Width="21" Canvas.Left="100" Canvas.Top="37">
+            <Image Source="images\Ship.png" Height="27" Width="21" Canvas.Left="100" Canvas.Top="42" Opacity="0.75">
                 <Image.OpacityMask>
                     <ImageBrush ImageSource="images/Ship.png"/>
                 </Image.OpacityMask>
             </Image>
-            <TextBlock x:Name="scoredisplayed" Canvas.Left="22" TextWrapping="Wrap" Text="    0" Canvas.Top="37" Foreground="Black" Height="27" Width="49" FontSize="20" RenderTransformOrigin="0.908,0.446">
+            <TextBlock x:Name="scoredisplayed" Canvas.Left="10" TextWrapping="Wrap" Text="    0" Canvas.Top="42" Foreground="Black" Height="24" Width="61" FontSize="24" RenderTransformOrigin="0.908,0.446" Opacity="0.5" FontFamily="Bradley Hand ITC">
                 <TextBlock.Background>
                     <ImageBrush/>
                 </TextBlock.Background>
             </TextBlock>
-            <Image Source="images\Ship.png" Height="27" Width="21" Canvas.Left="121" Canvas.Top="37">
+            <Image Source="images\Ship.png" Height="27" Width="21" Canvas.Left="121" Canvas.Top="42" Opacity="0.75">
                 <Image.OpacityMask>
                     <ImageBrush ImageSource="images/Ship.png"/>
                 </Image.OpacityMask>
             </Image>
-            <Image Source="images\Ship.png" Height="27" Width="21" Canvas.Left="142" Canvas.Top="37">
+            <Image Source="images\Ship.png" Height="27" Width="21" Canvas.Left="142" Canvas.Top="42" Opacity="0.75">
                 <Image.OpacityMask>
                     <ImageBrush ImageSource="images/Ship.png"/>
                 </Image.OpacityMask>
             </Image>
-            <Image Source="images\Ship.png" Height="27" Width="21" Canvas.Left="163" Canvas.Top="37">
+            <Image Source="images\Ship.png" Height="27" Width="21" Canvas.Left="163" Canvas.Top="42" Opacity="0.75">
                 <Image.OpacityMask>
                     <ImageBrush ImageSource="images/Ship.png" Stretch="UniformToFill"/>
                 </Image.OpacityMask>
