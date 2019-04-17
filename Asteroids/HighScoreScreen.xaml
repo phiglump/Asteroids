@@ -8,7 +8,7 @@
       d:DesignHeight="500" d:DesignWidth="960"
       Title="StartScreen" Foreground="{x:Null}">
     <Page.Background>
-        <ImageBrush ImageSource="images\Stars.png" Stretch="UniformToFill"/>
+        <ImageBrush ImageSource="images\Paper.jpeg" Stretch="UniformToFill"/>
     </Page.Background>
 
     <Grid Margin="0,0,-19,-18">
