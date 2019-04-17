@@ -29,6 +29,7 @@ namespace Asteroids
         double angle;
         public GameScreen()
         {
+            
             #region Timers
             InitializeComponent();
             DispatcherTimer timer = new DispatcherTimer();
@@ -38,6 +39,7 @@ namespace Asteroids
             timer2.Tick += MoveAsteroid1;
             timer2.Interval = TimeSpan.FromMilliseconds(12);
             timer2.Start();
+            /*
             DispatcherTimer timer3 = new DispatcherTimer();
             timer3.Tick += MoveAsteroid2;
             timer3.Interval = TimeSpan.FromMilliseconds(12);
@@ -54,6 +56,7 @@ namespace Asteroids
             timer6.Tick += MoveAsteroid5;
             timer6.Interval = TimeSpan.FromMilliseconds(12);
             timer6.Start();
+            */
             #endregion
         }
         Random rand = new Random();
@@ -109,7 +112,9 @@ namespace Asteroids
                 }
             }
         }
-        #endregion 
+
+        #endregion
+        /*
         #region Asteroid2
         private void MoveAsteroid2(object sender, EventArgs e)
         {
@@ -261,7 +266,10 @@ namespace Asteroids
             }
 
         }
+        
         #endregion
+        */
+        
         #region Player Movement
         private void MovePlayer(object sender, EventArgs e)
         {
