@@ -55,10 +55,16 @@ namespace Asteroids
             timer6.Tick += MoveAsteroid5;
             timer6.Interval = TimeSpan.FromMilliseconds(12);
             timer6.Start();
+            DispatcherTimer timer7 = new DispatcherTimer();
+            timer7.Tick += RandomXYGen;
+            timer7.Interval = TimeSpan.FromMilliseconds(1);
+            timer7.Start();
 
             #endregion
         }
         Random rand = new Random();
+        int tempX = 0;
+        int tempY = 0;
         int iSpeed = 3;
         int fDirection1 = 135;
         int fDirection2 = 200;
@@ -80,6 +86,33 @@ namespace Asteroids
         int counter3 = 0;
         int counter4 = 0;
         int counter5 = 0;
+        private void RandomXYGen(object sender, EventArgs e)
+        {
+            int[] intXValues = { -5, -4, -3, -2, -1, 96, 192, 288, 384, 479, 576, 672, 768, 864, 959, 961, 962, 963, 964};
+            int[] intYValues = { 50, 100, 150, 200, 249, 300, 350, 400, 450, 499};
+            int[] intYValuesTB = { -5, -4, -3, -2, -1, 501, 502, 503, 504, 505 };
+            int temp1;
+            int temp2;
+            temp1 = rand.Next(intXValues.Length);
+            if(temp1 < 0)
+            {
+                temp2 = rand.Next(intYValues.Length);
+                tempX = intXValues[temp1];
+                tempY = intYValues[temp2];
+            }
+            else if(0 < temp1 && temp1 < 960)
+            {
+                temp2 = rand.Next(intYValuesTB.Length);
+                tempX = intXValues[temp1];
+                tempY = intYValuesTB[temp2];
+            }
+            else if(temp1 > 960)
+            {
+                temp2 = rand.Next(intYValues.Length);
+                tempX = intXValues[temp1];
+                tempY = intYValues[temp2];
+            }
+        }
         #region Asteriod1
         private void MoveAsteroid1(object sender, EventArgs e)
         {
@@ -115,8 +148,8 @@ namespace Asteroids
             }
             else if (Ast1X > 965 || Ast1X < -5 || Ast1Y > 505 || Ast1Y < -5)
             {
-                Ast1X = rand.Next(0, 960);
-                Ast1Y = rand.Next(0, 500);
+                Ast1X = tempX;
+                Ast1Y = tempY;
                 //Quadrant 1
                 if (Ast1X >= 480 && Ast1Y < 250)
                 {
@@ -181,8 +214,8 @@ namespace Asteroids
             }
             else if (Ast2X > 965 || Ast2X < -5 || Ast2Y > 505 || Ast2Y < -5)
             {
-                Ast2X = rand.Next(0, 960);
-                Ast2Y = rand.Next(0, 500);
+                Ast2X = tempX;
+                Ast2Y = tempY;
                 //Quadrant 1
                 if (Ast2X >= 480 && Ast2Y < 250)
                 {
@@ -246,8 +279,8 @@ namespace Asteroids
             }
             else if (Ast3X > 965 || Ast3X < -5 || Ast3Y > 505 || Ast3Y < -5)
             {
-                Ast3X = rand.Next(0, 960);
-                Ast3Y = rand.Next(0, 500);
+                Ast3X = tempX;
+                Ast3Y = tempY;
                 //Quadrant 1
                 if (Ast3X >= 480 && Ast3Y < 250)
                 {
@@ -311,8 +344,8 @@ namespace Asteroids
             }
             else if (Ast4X > 965 || Ast4X < -5 || Ast4Y > 505 || Ast4Y < -5)
             {
-                Ast4X = rand.Next(0, 960);
-                Ast4Y = rand.Next(0, 500);
+                Ast4X = tempX;
+                Ast4Y = tempY;
                 //Quadrant 1
                 if (Ast4X >= 480 && Ast4Y < 250)
                 {
@@ -376,8 +409,8 @@ namespace Asteroids
             }
             else if (Ast5X > 965 || Ast5X < -5 || Ast5Y > 505 || Ast5Y < -5)
             {
-                Ast5X = rand.Next(0, 960);
-                Ast5Y = rand.Next(0, 500);
+                Ast5X = tempX;
+                Ast5Y = tempY;
                 //Quadrant 1
                 if (Ast5X >= 480 && Ast5Y < 250)
                 {
