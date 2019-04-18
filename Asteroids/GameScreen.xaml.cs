@@ -29,7 +29,6 @@ namespace Asteroids
         double angle;
         public GameScreen()
         {
-
             #region Timers
             InitializeComponent();
             DispatcherTimer timer = new DispatcherTimer();
