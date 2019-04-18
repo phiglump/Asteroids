@@ -34,30 +34,41 @@ namespace Asteroids
             DispatcherTimer timer = new DispatcherTimer();
             timer.Tick += new EventHandler(MovePlayer);
             timer.Start();
+
             DispatcherTimer timer2 = new DispatcherTimer();
             timer2.Tick += MoveAsteroid1;
             timer2.Interval = TimeSpan.FromMilliseconds(12);
             timer2.Start();
+
             DispatcherTimer timer3 = new DispatcherTimer();
             timer3.Tick += MoveAsteroid2;
             timer3.Interval = TimeSpan.FromMilliseconds(12);
             timer3.Start();
+
             DispatcherTimer timer4 = new DispatcherTimer();
             timer4.Tick += MoveAsteroid3;
             timer4.Interval = TimeSpan.FromMilliseconds(12);
             timer4.Start();
+
             DispatcherTimer timer5 = new DispatcherTimer();
             timer5.Tick += MoveAsteroid4;
             timer5.Interval = TimeSpan.FromMilliseconds(12);
             timer5.Start();
+
             DispatcherTimer timer6 = new DispatcherTimer();
             timer6.Tick += MoveAsteroid5;
             timer6.Interval = TimeSpan.FromMilliseconds(12);
             timer6.Start();
+
             DispatcherTimer timer7 = new DispatcherTimer();
             timer7.Tick += RandomXYGen;
             timer7.Interval = TimeSpan.FromMilliseconds(1);
             timer7.Start();
+
+            DispatcherTimer timer8 = new DispatcherTimer();
+            timer6.Tick += new EventHandler(FireLaser);
+            timer6.Interval = TimeSpan.FromMilliseconds(12);
+            timer6.Start();
 
             #endregion
         }
@@ -439,6 +450,20 @@ namespace Asteroids
         }
 
         #endregion
+
+        private void FireLaser(object sender, EventArgs e)
+        {
+            if (Keyboard.IsKeyToggled(Key.Space))
+            {
+                c -= 3.5;
+                Canvas.SetTop(laser, c);
+                if (c < -2)
+                {
+                    c = 500;
+                }
+            }
+
+        }
 
         #region Player Movement
         private void MovePlayer(object sender, EventArgs e)

@@ -8,22 +8,22 @@
       d:DesignHeight="500" d:DesignWidth="960"
       Title="StartScreen" Foreground="{x:Null}">
     <Page.Background>
-        <ImageBrush ImageSource="images\Paper.jpeg" Stretch="UniformToFill"/>
+        <ImageBrush ImageSource="images\NewPaper.png" Stretch="UniformToFill"/>
     </Page.Background>
 
     <Grid Margin="0,0,-19,-18">
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Center" Margin="300,-24,311,0" TextWrapping="Wrap" Text="Highscores" VerticalAlignment="Top" Height="92" Width="349" Foreground="White" FontSize="72" TextDecorations="{x:Null}" FontFamily="Bauhaus 93">
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Center" Margin="310,0,321,425" TextWrapping="Wrap" Text="Highscores" VerticalAlignment="Bottom" Height="83" Width="348" Foreground="Black" FontSize="72" TextDecorations="{x:Null}" FontFamily="Bradley Hand ITC" Opacity="0.5">
             <TextBlock.Background>
                 <ImageBrush/>
             </TextBlock.Background>
         </TextBlock>
-        <Button x:Name="button" Content="Exit" HorizontalAlignment="Center" Margin="532,444,365,0" VerticalAlignment="Top" Width="63" Height="56" Foreground="White" BorderBrush="Black" FontSize="36" Click="Button_Click" FontFamily="Bauhaus 93">
+        <Button x:Name="button" Content="Exit" HorizontalAlignment="Center" Margin="538,0,379,22" VerticalAlignment="Bottom" Width="62" Height="38" Foreground="Black" FontSize="36" Click="Button_Click" FontFamily="Bradley Hand ITC" BorderBrush="{x:Null}" Opacity="0.5">
             <Button.Background>
                 <ImageBrush/>
             </Button.Background>
         </Button>
-        <TextBlock x:Name="Text1" HorizontalAlignment="Center" Margin="300,88,311,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="351" Width="349" Foreground="White" FontSize="29"/>
-        <Button x:Name="Menu" Content="Menu" HorizontalAlignment="Center" Margin="346,439,524,0" VerticalAlignment="Top" Width="90" Height="56" Foreground="White" BorderBrush="Black" FontSize="36" Click="Button_Click_Menu" FontFamily="Bauhaus 93">
+        <TextBlock x:Name="Text1" HorizontalAlignment="Center" Margin="310,0,321,60" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Bottom" Height="346" Width="348" Foreground="Black" FontSize="26" FontFamily="Bradley Hand ITC" Opacity="0.5"/>
+        <Button x:Name="Menu" Content="Menu" HorizontalAlignment="Center" Margin="346,0,543,22" VerticalAlignment="Bottom" Width="90" Height="38" Foreground="Black" BorderBrush="{x:Null}" FontSize="36" Click="Button_Click_Menu" FontFamily="Bradley Hand ITC" Opacity="0.5">
             <Button.Background>
                 <ImageBrush/>
             </Button.Background>
