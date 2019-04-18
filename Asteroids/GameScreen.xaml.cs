@@ -24,6 +24,7 @@ namespace Asteroids
     public partial class GameScreen : Page
     {
         public TimeSpan Interval { get; set; }
+        double a = 400;
         double b = 451;
         double c = 421;
         double angle;
@@ -456,11 +457,11 @@ namespace Asteroids
         {
             if (Keyboard.IsKeyToggled(Key.Space))
             {
-                c -= 3.5;
-                Canvas.SetTop(laser, c);
-                if (c < -2)
+                a -= 3.5;
+                Canvas.SetTop(laser, a);
+                if (a < -2)
                 {
-                    c = 500;
+                    a = 500;
                 }
             }
 
