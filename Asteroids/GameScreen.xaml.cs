@@ -440,6 +440,18 @@ namespace Asteroids
         }
 
         #endregion
+        #region Score
+        private void Score(object sender, EventArgs e)
+        {
+            const int score_increment = 20;
+            int score = 0;
+
+            if (true == int.TryParse(scoredisplayed.Text, out score))
+            {
+                scoredisplayed.Text = (score + score_increment).ToString();
+            }
+        }
+        #endregion
 
         #region Player Movement
         private void MovePlayer(object sender, EventArgs e)
