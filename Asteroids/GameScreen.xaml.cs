@@ -254,6 +254,7 @@ namespace Asteroids
 
         }
         #endregion
+
         #region Asteroid3
         private void MoveAsteroid3(object sender, EventArgs e)
         {
@@ -319,6 +320,7 @@ namespace Asteroids
 
         }
         #endregion
+
         #region Asteroid4
         private void MoveAsteroid4(object sender, EventArgs e)
         {
@@ -384,6 +386,7 @@ namespace Asteroids
 
         }
         #endregion
+
         #region Asteroid5
         private void MoveAsteroid5(object sender, EventArgs e)
         {

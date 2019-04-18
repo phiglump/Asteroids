@@ -14,8 +14,9 @@ namespace Asteroids
         {
             if (true == int.TryParse(scoredisplayed.Text, out score))
             {
-                scoredisplayed.Text = (score + score_increment).ToString();
                 score = score + score_increment;
+                scoredisplayed.Text = (score).ToString();
+                
             }
         }
     }
