@@ -44,5 +44,10 @@ namespace Asteroids
             //This will exit the game when the exit button is clicked
             System.Windows.Application.Current.Shutdown();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new Uri("GameOverScreen.xaml", UriKind.Relative));
+        }
     }
 }

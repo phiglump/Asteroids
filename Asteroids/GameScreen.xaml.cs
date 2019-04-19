@@ -126,18 +126,22 @@ namespace Asteroids
                 {
                     spaceShipLives -= 1;
                     isHit = true;
-                    shiplives4.Visibility = Visibility.Hidden;
-                    if(spaceShipLives == 3)
+                    if (spaceShipLives == 3)
+                    {
+                        shiplives4.Visibility = Visibility.Hidden;
+                    }
+                    if(spaceShipLives == 2)
                     {
                         shiplives3.Visibility = Visibility.Hidden;
                     }
-                    if (spaceShipLives == 2)
+                    if (spaceShipLives == 1)
                     {
                         shiplives2.Visibility = Visibility.Hidden;
                     }
-                    if (spaceShipLives == 1)
+                    if (spaceShipLives == 0)
                     {
                         shiplives1.Visibility = Visibility.Hidden;
+                        this.NavigationService.Navigate(new Uri("GameOverScreen.xaml", UriKind.Relative));
                     }
 
                 }
@@ -145,72 +149,88 @@ namespace Asteroids
                 {
                     spaceShipLives -= 1;
                     isHit = true;
-                    shiplives4.Visibility = Visibility.Hidden;
                     if (spaceShipLives == 3)
                     {
-                        shiplives3.Visibility = Visibility.Hidden;
+                        shiplives4.Visibility = Visibility.Hidden;
                     }
                     if (spaceShipLives == 2)
                     {
-                        shiplives2.Visibility = Visibility.Hidden;
+                        shiplives3.Visibility = Visibility.Hidden;
                     }
                     if (spaceShipLives == 1)
                     {
+                        shiplives2.Visibility = Visibility.Hidden;
+                    }
+                    if (spaceShipLives == 0)
+                    {
                         shiplives1.Visibility = Visibility.Hidden;
+                        this.NavigationService.Navigate(new Uri("GameOverScreen.xaml", UriKind.Relative));
                     }
                 }
                 if (spaceShip.IntersectsWith(ast3))
                 {
                     spaceShipLives -= 1;
                     isHit = true;
-                    shiplives4.Visibility = Visibility.Hidden;
                     if (spaceShipLives == 3)
                     {
-                        shiplives3.Visibility = Visibility.Hidden;
+                        shiplives4.Visibility = Visibility.Hidden;
                     }
                     if (spaceShipLives == 2)
                     {
-                        shiplives2.Visibility = Visibility.Hidden;
+                        shiplives3.Visibility = Visibility.Hidden;
                     }
                     if (spaceShipLives == 1)
                     {
+                        shiplives2.Visibility = Visibility.Hidden;
+                    }
+                    if (spaceShipLives == 0)
+                    {
                         shiplives1.Visibility = Visibility.Hidden;
+                        this.NavigationService.Navigate(new Uri("GameOverScreen.xaml", UriKind.Relative));
                     }
                 }
                 if (spaceShip.IntersectsWith(ast4))
                 {
                     spaceShipLives -= 1;
                     isHit = true;
-                    shiplives4.Visibility = Visibility.Hidden;
                     if (spaceShipLives == 3)
                     {
-                        shiplives3.Visibility = Visibility.Hidden;
+                        shiplives4.Visibility = Visibility.Hidden;
                     }
                     if (spaceShipLives == 2)
                     {
-                        shiplives2.Visibility = Visibility.Hidden;
+                        shiplives3.Visibility = Visibility.Hidden;
                     }
                     if (spaceShipLives == 1)
                     {
+                        shiplives2.Visibility = Visibility.Hidden;
+                    }
+                    if (spaceShipLives == 0)
+                    {
                         shiplives1.Visibility = Visibility.Hidden;
+                        this.NavigationService.Navigate(new Uri("GameOverScreen.xaml", UriKind.Relative));
                     }
                 }
                 if (spaceShip.IntersectsWith(ast5))
                 {
                     spaceShipLives -= 1;
                     isHit = true;
-                    shiplives4.Visibility = Visibility.Hidden;
                     if (spaceShipLives == 3)
                     {
-                        shiplives3.Visibility = Visibility.Hidden;
+                        shiplives4.Visibility = Visibility.Hidden;
                     }
                     if (spaceShipLives == 2)
                     {
-                        shiplives2.Visibility = Visibility.Hidden;
+                        shiplives3.Visibility = Visibility.Hidden;
                     }
                     if (spaceShipLives == 1)
                     {
+                        shiplives2.Visibility = Visibility.Hidden;
+                    }
+                    if (spaceShipLives == 0)
+                    {
                         shiplives1.Visibility = Visibility.Hidden;
+                        this.NavigationService.Navigate(new Uri("GameOverScreen.xaml", UriKind.Relative));
                     }
                 }
             }
