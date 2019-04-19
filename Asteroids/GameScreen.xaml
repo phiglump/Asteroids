@@ -14,7 +14,7 @@
             <Canvas.Background>
                 <ImageBrush ImageSource="images\Paper.jpeg"/>
             </Canvas.Background>
-            <Rectangle x:Name="rec1" Focusable ="True" Width="21" Height="27" Margin="0" Canvas.Left="454" Canvas.Top="377" RenderTransformOrigin="0.498,0.477" >
+            <Rectangle x:Name="SpaceShip" Focusable ="True" Width="21" Height="27" Margin="0" Canvas.Left="454" Canvas.Top="377" RenderTransformOrigin="0.498,0.477" >
                 <Rectangle.Fill>
                     <ImageBrush ImageSource="images/Ship.png" Stretch="UniformToFill"/>
                 </Rectangle.Fill>

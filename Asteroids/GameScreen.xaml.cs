@@ -23,57 +23,54 @@ namespace Asteroids
     /// </summary>
     public partial class GameScreen : Page
     {
+        
+        public GameScreen()
+        {
+            InitializeComponent();
+            startTimers();
+        }
+        #region Timers
+        public void startTimers()
+        {
+            DispatcherTimer timerShip = new DispatcherTimer();
+            timerShip.Tick += new EventHandler(MovePlayer);
+            timerShip.Start();
+
+            DispatcherTimer timerLaser = new DispatcherTimer();
+            timerLaser.Tick += new EventHandler(FireLaser);
+            timerLaser.Interval = TimeSpan.FromMilliseconds(10);
+            timerLaser.Start();
+
+            DispatcherTimer timerAsteroids = new DispatcherTimer();
+            timerAsteroids.Tick += MoveAsteroid1;
+            timerAsteroids.Tick += MoveAsteroid2;
+            timerAsteroids.Tick += MoveAsteroid3;
+            timerAsteroids.Tick += MoveAsteroid4;
+            timerAsteroids.Tick += MoveAsteroid5;
+            timerAsteroids.Interval = TimeSpan.FromMilliseconds(12);
+            timerAsteroids.Start();
+
+            DispatcherTimer timerXYGen = new DispatcherTimer();
+            timerXYGen.Tick += RandomXYGen;
+            timerXYGen.Interval = TimeSpan.FromMilliseconds(1);
+            timerXYGen.Start();
+
+            DispatcherTimer timerHitDetection = new DispatcherTimer();
+            timerHitDetection.Tick += HitDetection;
+            timerHitDetection.Interval = TimeSpan.FromMilliseconds(100);
+            timerHitDetection.Start();
+            
+        }
+        #endregion
+
+        #region Variables
         public TimeSpan Interval { get; set; }
         double a = 400;
         double b = 451;
         double c = 421;
         double angle;
-        public GameScreen()
-        {
-            #region Timers
-            InitializeComponent();
-            DispatcherTimer timer = new DispatcherTimer();
-            timer.Tick += new EventHandler(MovePlayer);
-            timer.Start();
-
-            DispatcherTimer timer2 = new DispatcherTimer();
-            timer2.Tick += MoveAsteroid1;
-            timer2.Interval = TimeSpan.FromMilliseconds(12);
-            timer2.Start();
-
-            DispatcherTimer timer3 = new DispatcherTimer();
-            timer3.Tick += MoveAsteroid2;
-            timer3.Interval = TimeSpan.FromMilliseconds(12);
-            timer3.Start();
-
-            DispatcherTimer timer4 = new DispatcherTimer();
-            timer4.Tick += MoveAsteroid3;
-            timer4.Interval = TimeSpan.FromMilliseconds(12);
-            timer4.Start();
-
-            DispatcherTimer timer5 = new DispatcherTimer();
-            timer5.Tick += MoveAsteroid4;
-            timer5.Interval = TimeSpan.FromMilliseconds(12);
-            timer5.Start();
-
-            DispatcherTimer timer6 = new DispatcherTimer();
-            timer6.Tick += MoveAsteroid5;
-            timer6.Interval = TimeSpan.FromMilliseconds(12);
-            timer6.Start();
-
-            DispatcherTimer timer7 = new DispatcherTimer();
-            timer7.Tick += RandomXYGen;
-            timer7.Interval = TimeSpan.FromMilliseconds(1);
-            timer7.Start();
-
-            DispatcherTimer timer8 = new DispatcherTimer();
-            timer8.Tick += new EventHandler(FireLaser);
-            timer8.Interval = TimeSpan.FromMilliseconds(12);
-            timer8.Start();
-
-            #endregion
-        }
         Random rand = new Random();
+        int spaceShipLives = 4;
         int tempX = 0;
         int tempY = 0;
         int iSpeed = 3;
@@ -97,6 +94,62 @@ namespace Asteroids
         int counter3 = 0;
         int counter4 = 0;
         int counter5 = 0;
+        Stopwatch watch = new Stopwatch();
+        bool isHit = false;
+        #endregion
+
+        #region Hit Detection
+        public void HitDetection(object sender, EventArgs e)
+        {
+            scoredisplayed.Text = spaceShipLives.ToString();
+            Rect spaceShip = new Rect(Canvas.GetLeft(SpaceShip), Canvas.GetTop(SpaceShip), SpaceShip.Width , SpaceShip.Height);
+            Rect ast1 = new Rect(Canvas.GetLeft(asteroid1), Canvas.GetTop(asteroid1), asteroid1.Width, asteroid1.Height);
+            Rect ast2 = new Rect(Canvas.GetLeft(asteroid2), Canvas.GetTop(asteroid2), asteroid2.Width, asteroid2.Height);
+            Rect ast3 = new Rect(Canvas.GetLeft(asteroid3), Canvas.GetTop(asteroid3), asteroid3.Width, asteroid3.Height);
+            Rect ast4 = new Rect(Canvas.GetLeft(asteroid4), Canvas.GetTop(asteroid4), asteroid4.Width, asteroid4.Height);
+            Rect ast5 = new Rect(Canvas.GetLeft(asteroid5), Canvas.GetTop(asteroid5), asteroid5.Width, asteroid5.Height);
+            if (isHit == false)
+            {
+                if (spaceShip.IntersectsWith(ast1))
+                {
+                    spaceShipLives -= 1;
+                    isHit = true;
+                }
+                if (spaceShip.IntersectsWith(ast2))
+                {
+                    spaceShipLives -= 1;
+                    isHit = true;
+                }
+                if (spaceShip.IntersectsWith(ast3))
+                {
+                    spaceShipLives -= 1;
+                    isHit = true;
+                }
+                if (spaceShip.IntersectsWith(ast4))
+                {
+                    spaceShipLives -= 1;
+                    isHit = true;
+                }
+                if (spaceShip.IntersectsWith(ast5))
+                {
+                    spaceShipLives -= 1;
+                    isHit = true;
+                }
+            }
+            if (isHit == true)
+            {
+                watch.Start();
+                if(watch.ElapsedMilliseconds > 3000)
+                {
+                    watch.Stop();
+                    watch.Reset();
+                    isHit = false;
+                }
+            }
+        }
+        #endregion
+
+        #region XYGenerator
         private void RandomXYGen(object sender, EventArgs e)
         {
             int[] intXValues = { -5, -4, -3, -2, -1, 96, 192, 288, 384, 479, 576, 672, 768, 864, 959, 961, 962, 963, 964 };
@@ -124,6 +177,8 @@ namespace Asteroids
                 tempY = intYValues[temp2];
             }
         }
+        #endregion
+
         #region Asteriod1
         private void MoveAsteroid1(object sender, EventArgs e)
         {
@@ -455,6 +510,7 @@ namespace Asteroids
 
         #endregion
 
+        #region Laser
         private void FireLaser(object sender, EventArgs e)
         {
             if (Keyboard.IsKeyToggled(Key.Space))
@@ -464,6 +520,7 @@ namespace Asteroids
             }
 
         }
+        #endregion
 
         #region Player Movement
         private void MovePlayer(object sender, EventArgs e)
@@ -471,7 +528,7 @@ namespace Asteroids
             if (Keyboard.IsKeyDown(Key.A))
             {
                 b -= .05;
-                Canvas.SetLeft(rec1, b);
+                Canvas.SetLeft(SpaceShip, b);
                 if (b < -10)
                 {
                     b = 960;
@@ -480,7 +537,7 @@ namespace Asteroids
             if (Keyboard.IsKeyDown(Key.W))
             {
                 c -= .05;
-                Canvas.SetTop(rec1, c);
+                Canvas.SetTop(SpaceShip, c);
                 if (c < -10)
                 {
                     c = 500;
@@ -490,7 +547,7 @@ namespace Asteroids
             if (Keyboard.IsKeyDown(Key.S))
             {
                 c += .05;
-                Canvas.SetTop(rec1, c);
+                Canvas.SetTop(SpaceShip, c);
                 if (c > 505)
                 {
                     c = 0;
@@ -499,7 +556,7 @@ namespace Asteroids
             if (Keyboard.IsKeyDown(Key.D))
             {
                 b += .05;
-                Canvas.SetLeft(rec1, b);
+                Canvas.SetLeft(SpaceShip, b);
                 if (b > 965)
                 {
                     b = 0;
@@ -512,7 +569,7 @@ namespace Asteroids
                 rotateTransform2.CenterY = 1;
                 angle = angle - 0.125;
                 rotateTransform2.Angle = angle;
-                rec1.RenderTransform = rotateTransform2;
+                SpaceShip.RenderTransform = rotateTransform2;
             }
             if (Keyboard.IsKeyDown(Key.NumPad6))
             {
@@ -521,7 +578,7 @@ namespace Asteroids
                 rotateTransform1.CenterY = 1;
                 angle = angle + 0.125;
                 rotateTransform1.Angle = angle;
-                rec1.RenderTransform = rotateTransform1;
+                SpaceShip.RenderTransform = rotateTransform1;
             }
         }
         #endregion
