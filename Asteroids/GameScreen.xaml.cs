@@ -23,6 +23,7 @@ namespace Asteroids
     /// </summary>
     public partial class GameScreen : Page
     {
+        public TimeSpan Interval { get; set; }
         double a = 400;
         double b = 451;
         double c = 421;
@@ -31,14 +32,9 @@ namespace Asteroids
         {
             #region Timers
             InitializeComponent();
-            DispatcherTimer timer0 = new DispatcherTimer();
-            timer0.Tick += new EventHandler(MovePlayer);
-            timer0.Start();
-
-            DispatcherTimer timer1 = new DispatcherTimer();
-            timer1.Tick += new EventHandler(FireLaser);
-            timer1.Interval = TimeSpan.FromMilliseconds(12);
-            timer1.Start();
+            DispatcherTimer timer = new DispatcherTimer();
+            timer.Tick += new EventHandler(MovePlayer);
+            timer.Start();
 
             DispatcherTimer timer2 = new DispatcherTimer();
             timer2.Tick += MoveAsteroid1;
@@ -77,10 +73,6 @@ namespace Asteroids
 
             #endregion
         }
-
-        #region Variables
-        public TimeSpan Interval { get; set; }
-        GameScreen game = new GameScreen();
         Random rand = new Random();
         int tempX = 0;
         int tempY = 0;
@@ -105,7 +97,6 @@ namespace Asteroids
         int counter3 = 0;
         int counter4 = 0;
         int counter5 = 0;
-        #endregion
         private void RandomXYGen(object sender, EventArgs e)
         {
             int[] intXValues = { -5, -4, -3, -2, -1, 96, 192, 288, 384, 479, 576, 672, 768, 864, 959, 961, 962, 963, 964 };
@@ -133,7 +124,6 @@ namespace Asteroids
                 tempY = intYValues[temp2];
             }
         }
-
         #region Asteriod1
         private void MoveAsteroid1(object sender, EventArgs e)
         {
@@ -464,6 +454,7 @@ namespace Asteroids
         }
 
         #endregion
+
         private void FireLaser(object sender, EventArgs e)
         {
             if (Keyboard.IsKeyToggled(Key.Space))
@@ -481,7 +472,7 @@ namespace Asteroids
             {
                 b -= .05;
                 Canvas.SetLeft(rec1, b);
-                if(b < -10)
+                if (b < -10)
                 {
                     b = 960;
                 }
@@ -509,7 +500,7 @@ namespace Asteroids
             {
                 b += .05;
                 Canvas.SetLeft(rec1, b);
-                if(b > 965)
+                if (b > 965)
                 {
                     b = 0;
                 }
