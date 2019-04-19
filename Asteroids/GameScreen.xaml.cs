@@ -72,7 +72,7 @@ namespace Asteroids
         double shipX = 451;
         double shipY = 421;
         double angle;
-        int spaceShipLives = 4;
+        int spaceShipLives = 20;
         //All of the following is for the asteroids
         //It contains variables that represent the Direction, Position, and Speed
         int tempX = 0;
@@ -124,27 +124,28 @@ namespace Asteroids
                 //applies to all of the internal if statements below for each of the asteroids
                 if (spaceShip.IntersectsWith(ast1))
                 {
-                    spaceShipLives -= 1;
+                    spaceShipLives -= 20;
                     isHit = true;
+                    
                 }
                 if (spaceShip.IntersectsWith(ast2))
                 {
-                    spaceShipLives -= 1;
+                    spaceShipLives -= 20;
                     isHit = true;
                 }
                 if (spaceShip.IntersectsWith(ast3))
                 {
-                    spaceShipLives -= 1;
+                    spaceShipLives -= 20;
                     isHit = true;
                 }
                 if (spaceShip.IntersectsWith(ast4))
                 {
-                    spaceShipLives -= 1;
+                    spaceShipLives -= 20;
                     isHit = true;
                 }
                 if (spaceShip.IntersectsWith(ast5))
                 {
-                    spaceShipLives -= 1;
+                    spaceShipLives -= 20;
                     isHit = true;
                 }
             }
