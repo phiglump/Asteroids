@@ -29,6 +29,7 @@ namespace Asteroids
         private void Start_Click(object sender, RoutedEventArgs e)
         {
             this.NavigationService.Navigate(new Uri("GameScreen.xaml", UriKind.Relative));
+            
         }
 
         private void Highscores_Click(object sender, RoutedEventArgs e)

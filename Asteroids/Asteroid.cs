@@ -1,78 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
 
 namespace Asteroids
 {
-    /// <summary>
-    /// Interaction logic for GameScreen.xaml
-    /// </summary>
-    public partial class GameScreen : Page
+    class Asteroid : GameScreen
     {
-        double a = 400;
-        double b = 451;
-        double c = 421;
-        double angle;
-        public GameScreen()
-        {
-            #region Timers
-            InitializeComponent();
-            DispatcherTimer timer0 = new DispatcherTimer();
-            timer0.Tick += new EventHandler(MovePlayer);
-            timer0.Start();
-
-            DispatcherTimer timer1 = new DispatcherTimer();
-            timer1.Tick += new EventHandler(FireLaser);
-            timer1.Interval = TimeSpan.FromMilliseconds(12);
-            timer1.Start();
-
-            DispatcherTimer timer2 = new DispatcherTimer();
-            timer2.Tick += MoveAsteroid1;
-            timer2.Interval = TimeSpan.FromMilliseconds(12);
-            timer2.Start();
-
-            DispatcherTimer timer3 = new DispatcherTimer();
-            timer3.Tick += MoveAsteroid2;
-            timer3.Interval = TimeSpan.FromMilliseconds(12);
-            timer3.Start();
-
-            DispatcherTimer timer4 = new DispatcherTimer();
-            timer4.Tick += MoveAsteroid3;
-            timer4.Interval = TimeSpan.FromMilliseconds(12);
-            timer4.Start();
-
-            DispatcherTimer timer5 = new DispatcherTimer();
-            timer5.Tick += MoveAsteroid4;
-            timer5.Interval = TimeSpan.FromMilliseconds(12);
-            timer5.Start();
-
-            DispatcherTimer timer6 = new DispatcherTimer();
-            timer6.Tick += MoveAsteroid5;
-            timer6.Interval = TimeSpan.FromMilliseconds(12);
-            timer6.Start();
-
-            DispatcherTimer timer7 = new DispatcherTimer();
-            timer7.Tick += RandomXYGen;
-            timer7.Interval = TimeSpan.FromMilliseconds(1);
-            timer7.Start();
-
-            #endregion
-        }
-
         #region Variables
         public TimeSpan Interval { get; set; }
         GameScreen game = new GameScreen();
@@ -458,80 +398,6 @@ namespace Asteroids
 
         }
 
-        #endregion
-        private void FireLaser(object sender, EventArgs e)
-        {
-            if (Keyboard.IsKeyToggled(Key.Space))
-            {
-                a -= 3.5;
-                Canvas.SetTop(laser, a);
-                if (a < -2)
-                {
-                    a = 500;
-                }
-            }
-
-        }
-
-        #region Player Movement
-        private void MovePlayer(object sender, EventArgs e)
-        {
-            if (Keyboard.IsKeyDown(Key.A))
-            {
-                b -= .05;
-                Canvas.SetLeft(rec1, b);
-                if(b < -10)
-                {
-                    b = 960;
-                }
-            }
-            if (Keyboard.IsKeyDown(Key.W))
-            {
-                c -= .05;
-                Canvas.SetTop(rec1, c);
-                if (c < -10)
-                {
-                    c = 500;
-                }
-
-            }
-            if (Keyboard.IsKeyDown(Key.S))
-            {
-                c += .05;
-                Canvas.SetTop(rec1, c);
-                if (c > 505)
-                {
-                    c = 0;
-                }
-            }
-            if (Keyboard.IsKeyDown(Key.D))
-            {
-                b += .05;
-                Canvas.SetLeft(rec1, b);
-                if(b > 965)
-                {
-                    b = 0;
-                }
-            }
-            if (Keyboard.IsKeyDown(Key.NumPad4))
-            {
-                RotateTransform rotateTransform2 = new RotateTransform();
-                rotateTransform2.CenterX = 1;
-                rotateTransform2.CenterY = 1;
-                angle = angle - 0.125;
-                rotateTransform2.Angle = angle;
-                rec1.RenderTransform = rotateTransform2;
-            }
-            if (Keyboard.IsKeyDown(Key.NumPad6))
-            {
-                RotateTransform rotateTransform1 = new RotateTransform();
-                rotateTransform1.CenterX = 1;
-                rotateTransform1.CenterY = 1;
-                angle = angle + 0.125;
-                rotateTransform1.Angle = angle;
-                rec1.RenderTransform = rotateTransform1;
-            }
-        }
         #endregion
     }
 }
