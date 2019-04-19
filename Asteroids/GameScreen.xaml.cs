@@ -67,9 +67,9 @@ namespace Asteroids
             timer7.Start();
 
             DispatcherTimer timer8 = new DispatcherTimer();
-            timer6.Tick += new EventHandler(FireLaser);
-            timer6.Interval = TimeSpan.FromMilliseconds(12);
-            timer6.Start();
+            timer8.Tick += new EventHandler(FireLaser);
+            timer8.Interval = TimeSpan.FromMilliseconds(12);
+            timer8.Start();
 
             #endregion
         }
@@ -461,10 +461,6 @@ namespace Asteroids
             {
                 a -= 3.5;
                 Canvas.SetTop(laser, a);
-                if (a < -2)
-                {
-                    a = 500;
-                }
             }
 
         }
