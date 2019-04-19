@@ -12,7 +12,10 @@
     </Page.Background>
 
     <Grid Margin="0,0,-19,-18">
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="49,29,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Foreground="Black" FontFamily="Bradley Hand ITC" FontSize="72"/>
-
+        <TextBlock x:Name="txtGameOver" HorizontalAlignment="Center" Margin="247,0,296,400" TextWrapping="Wrap" Text="GAME OVER" VerticalAlignment="Bottom" Height="83" Width="436" Foreground="Black" FontSize="72" TextDecorations="{x:Null}" FontFamily="Bradley Hand ITC" Opacity="0.5">
+            <TextBlock.Background>
+                <ImageBrush/>
+            </TextBlock.Background>
+        </TextBlock>
     </Grid>
 </Page>
