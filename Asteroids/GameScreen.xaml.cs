@@ -124,20 +124,26 @@ namespace Asteroids
                 //applies to all of the internal if statements below for each of the asteroids
                 if (spaceShip.IntersectsWith(ast1))
                 {
+                    // reduces the score by 1 each time the asteroid interacts with the spaceship.
                     spaceShipLives -= 1;
                     isHit = true;
+                    // checks to see if the spaceshiplives is equal to 3 and then sets the lives to 3
                     if (spaceShipLives == 3)
                     {
                         shiplives4.Visibility = Visibility.Hidden;
                     }
-                    if(spaceShipLives == 2)
+                    // checks to see if the spaceshiplives is equal to 2 and then sets the lives to 2
+                    if (spaceShipLives == 2)
                     {
                         shiplives3.Visibility = Visibility.Hidden;
                     }
+                    // checks to see if the spaceshiplives is equal to 1 and then sets the lives to 1
                     if (spaceShipLives == 1)
                     {
                         shiplives2.Visibility = Visibility.Hidden;
                     }
+                    // checks to see if the spaceshiplives is equal to 0 and then sets the lives to 0
+                    // send the user to the GameOverScreen
                     if (spaceShipLives == 0)
                     {
                         shiplives1.Visibility = Visibility.Hidden;
@@ -147,20 +153,26 @@ namespace Asteroids
                 }
                 if (spaceShip.IntersectsWith(ast2))
                 {
+                    // reduces the score by 1 each time the asteroid interacts with the spaceship.
                     spaceShipLives -= 1;
                     isHit = true;
+                    // checks to see if the spaceshiplives is equal to 3 and then sets the lives to 3
                     if (spaceShipLives == 3)
                     {
                         shiplives4.Visibility = Visibility.Hidden;
                     }
+                    // checks to see if the spaceshiplives is equal to 2 and then sets the lives to 2
                     if (spaceShipLives == 2)
                     {
                         shiplives3.Visibility = Visibility.Hidden;
                     }
+                    // checks to see if the spaceshiplives is equal to 1 and then sets the lives to 1
                     if (spaceShipLives == 1)
                     {
                         shiplives2.Visibility = Visibility.Hidden;
                     }
+                    // checks to see if the spaceshiplives is equal to 0 and then sets the lives to 0
+                    // send the user to the GameOverScreen
                     if (spaceShipLives == 0)
                     {
                         shiplives1.Visibility = Visibility.Hidden;
@@ -169,20 +181,26 @@ namespace Asteroids
                 }
                 if (spaceShip.IntersectsWith(ast3))
                 {
+                    // reduces the score by 1 each time the asteroid interacts with the spaceship.
                     spaceShipLives -= 1;
                     isHit = true;
+                    // checks to see if the spaceshiplives is equal to 3 and then sets the lives to 3
                     if (spaceShipLives == 3)
                     {
                         shiplives4.Visibility = Visibility.Hidden;
                     }
+                    // checks to see if the spaceshiplives is equal to 2 and then sets the lives to 2
                     if (spaceShipLives == 2)
                     {
                         shiplives3.Visibility = Visibility.Hidden;
                     }
+                    // checks to see if the spaceshiplives is equal to 1 and then sets the lives to 1
                     if (spaceShipLives == 1)
                     {
                         shiplives2.Visibility = Visibility.Hidden;
                     }
+                    // checks to see if the spaceshiplives is equal to 0 and then sets the lives to 0
+                    // send the user to the GameOverScreen
                     if (spaceShipLives == 0)
                     {
                         shiplives1.Visibility = Visibility.Hidden;
@@ -191,20 +209,26 @@ namespace Asteroids
                 }
                 if (spaceShip.IntersectsWith(ast4))
                 {
+                    // reduces the score by 1 each time the asteroid interacts with the spaceship.
                     spaceShipLives -= 1;
                     isHit = true;
+                    // checks to see if the spaceshiplives is equal to 3 and then sets the lives to 3
                     if (spaceShipLives == 3)
                     {
                         shiplives4.Visibility = Visibility.Hidden;
                     }
+                    // checks to see if the spaceshiplives is equal to 2 and then sets the lives to 2
                     if (spaceShipLives == 2)
                     {
                         shiplives3.Visibility = Visibility.Hidden;
                     }
+                    // checks to see if the spaceshiplives is equal to 1 and then sets the lives to 1
                     if (spaceShipLives == 1)
                     {
                         shiplives2.Visibility = Visibility.Hidden;
                     }
+                    // checks to see if the spaceshiplives is equal to 0 and then sets the lives to 0
+                    // send the user to the GameOverScreen
                     if (spaceShipLives == 0)
                     {
                         shiplives1.Visibility = Visibility.Hidden;
@@ -213,20 +237,26 @@ namespace Asteroids
                 }
                 if (spaceShip.IntersectsWith(ast5))
                 {
+                    // reduces the score by 1 each time the asteroid interacts with the spaceship.
                     spaceShipLives -= 1;
                     isHit = true;
+                    // checks to see if the spaceshiplives is equal to 3 and then sets the lives to 3
                     if (spaceShipLives == 3)
                     {
                         shiplives4.Visibility = Visibility.Hidden;
                     }
+                    // checks to see if the spaceshiplives is equal to 2 and then sets the lives to 2
                     if (spaceShipLives == 2)
                     {
                         shiplives3.Visibility = Visibility.Hidden;
                     }
+                    // checks to see if the spaceshiplives is equal to 1 and then sets the lives to 1
                     if (spaceShipLives == 1)
                     {
                         shiplives2.Visibility = Visibility.Hidden;
                     }
+                    // checks to see if the spaceshiplives is equal to 0 and then sets the lives to 0
+                    // send the user to the GameOverScreen
                     if (spaceShipLives == 0)
                     {
                         shiplives1.Visibility = Visibility.Hidden;
