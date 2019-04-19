@@ -28,17 +28,20 @@ namespace Asteroids
 
         private void Start_Click(object sender, RoutedEventArgs e)
         {
+            //This will navigate the the Gamescreen when the Start button is clicked
             this.NavigationService.Navigate(new Uri("GameScreen.xaml", UriKind.Relative));
             
         }
 
         private void Highscores_Click(object sender, RoutedEventArgs e)
         {
+            //This will navigate the the HighScore screen when the HighScore button is clicked
             this.NavigationService.Navigate(new Uri("HighScoreScreen.xaml", UriKind.Relative));
         }
 
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
+            //This will exit the game when the exit button is clicked
             System.Windows.Application.Current.Shutdown();
         }
     }
