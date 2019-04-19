@@ -75,22 +75,22 @@
                     <ImageBrush/>
                 </TextBlock.Background>
             </TextBlock>
-            <Image Source="images\4Ships.png" Height="57" Width="149" Canvas.Left="71" Canvas.Top="28" Opacity="0.75">
+            <Image Source="images\4Ships.png" x:Name="shiplives4" Height="57" Width="149" Canvas.Left="71" Canvas.Top="28" Opacity="0.75">
                 <Image.OpacityMask>
                     <ImageBrush ImageSource="images/4Ships.png"/>
                 </Image.OpacityMask>
             </Image>
-            <Image Source="images\3Ships.png" Height="57" Width="149" Canvas.Left="71" Canvas.Top="28" Opacity="0.75">
+            <Image Source="images\3Ships.png" x:Name="shiplives3" Height="57" Width="149" Canvas.Left="71" Canvas.Top="28" Opacity="0.75">
                 <Image.OpacityMask>
                     <ImageBrush ImageSource="images/3Ships.png"/>
                 </Image.OpacityMask>
             </Image>
-            <Image Source="images\2Ships.png" Height="57" Width="149" Canvas.Left="71" Canvas.Top="28" Opacity="0.75">
+            <Image Source="images\2Ships.png" x:Name="shiplives2" Height="57" Width="149" Canvas.Left="71" Canvas.Top="28" Opacity="0.75">
                 <Image.OpacityMask>
                     <ImageBrush ImageSource="images/2Ships.png"/>
                 </Image.OpacityMask>
             </Image>
-            <Image Source="images\1Ship.png" Height="57" Width="149" Canvas.Left="71" Canvas.Top="28" Opacity="0.75">
+            <Image Source="images\1Ship.png" x:Name="shiplives1" Height="57" Width="149" Canvas.Left="71" Canvas.Top="28" Opacity="0.75">
                 <Image.OpacityMask>
                     <ImageBrush ImageSource="images/1Ship.png"/>
                 </Image.OpacityMask>
