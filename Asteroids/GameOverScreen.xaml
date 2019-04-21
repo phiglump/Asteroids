@@ -17,5 +17,8 @@
                 <ImageBrush/>
             </TextBlock.Background>
         </TextBlock>
+        <TextBlock x:Name="txtEnterInitials" HorizontalAlignment="Left" Margin="202,148,0,0" TextWrapping="Wrap" Text="Please enter your initials" VerticalAlignment="Top" FontFamily="Bradley Hand ITC" FontSize="48" Foreground="Black" Opacity="0.5"/>
+        <TextBox x:Name="txtboxInitials" HorizontalAlignment="Left" Height="60" Margin="377,252,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="178" Background="{x:Null}" FontSize="48" FontFamily="Bradley Hand ITC"/>
+        <Button x:Name="button" Content="Save" HorizontalAlignment="Left" Margin="413,353,0,0" VerticalAlignment="Top" Width="100" BorderBrush="{x:Null}" Background="{x:Null}" FontFamily="Bradley Hand ITC" FontSize="24" Click="Button_Click"/>
     </Grid>
 </Page>
