@@ -692,30 +692,45 @@ namespace Asteroids
         #endregion
 
         #region Laser
+        #region LaserVariables/Timers
         List<Rectangle> bullets = new List<Rectangle>(5);
         bool hasRun = false;
         double[] top = new double[5];
         double[] left = new double[5];
-        double[] bulletAngle = new double[5];
-        double bulletSpeed = 1;
+        double bulletAngle0 = 0;
+        double bulletAngle1 = 0;
+        double bulletAngle2 = 0;
+        double bulletAngle3 = 0;
+        double bulletAngle4 = 0;
+        double bulletSpeed = 3;
         bool Bullet1 = true;
         bool Bullet2 = true;
         bool Bullet3 = true;
         bool Bullet4 = true;
         bool Bullet5 = true;
+        bool getAngle0 = false;
+        bool getAngle1 = false;
+        bool getAngle2 = false;
+        bool getAngle3 = false;
+        bool getAngle4 = false;
         DispatcherTimer bulletTimer1 = new DispatcherTimer();
         DispatcherTimer bulletTimer2 = new DispatcherTimer();
         DispatcherTimer bulletTimer3 = new DispatcherTimer();
         DispatcherTimer bulletTimer4 = new DispatcherTimer();
         DispatcherTimer bulletTimer5 = new DispatcherTimer();
+        #endregion
         private void FireLaser(object sender, EventArgs e)
         {
+            //The if statement below will determine if the bullets have been initialy created if not then this will do so
             if(hasRun == false)
             {
                 int number = 5;
                 int width = 5;
                 int height = 5;
-
+                //this for loop will generate 5 rectangles designed as bullets
+                //then will each of the bullets to the canvas based on the current position of the spaceship
+                //it will also set the visibility of each of the bullets to null so that the player can see them on screen yet
+                //also adds each of the bullets to a list of bullets for reference later
                 for (int i = 0; i < number; i++)
                 {
                     // Create the rectangle
@@ -730,73 +745,73 @@ namespace Asteroids
                     bullets.Add(rec);
                     // Add to a canvas for example
                     MyCanvas.Children.Add(rec);
+                    rec.Visibility = Visibility.Hidden;
                     double tempTop = Canvas.GetTop(SpaceShip);
                     double tempLeft = Canvas.GetLeft(SpaceShip);
-                    top[i] = tempTop;
-                    left[i] = tempLeft;
+                    top[i] = tempTop - 2;
+                    left[i] = tempLeft + 9;
                     Canvas.SetTop(rec, tempTop);
                     Canvas.SetLeft(rec, tempLeft);
                 }
                 hasRun = true;
             }
+            // the following if statement will run when the space bar has been hit
             if (Keyboard.IsKeyDown(Key.Space))
             {
-                //foreach (var Rectangle in bullets)
-                //{
-                //    int iNewX = (int)(bulletSpeed * System.Math.Sin((System.Math.PI * (angle)) / 180));
-                //    int iNewY = -(int)(bulletSpeed * System.Math.Cos((System.Math.PI * (angle)) / 180));
-                //    top += iNewY;
-                //    left += iNewX;
-                //    Canvas.SetTop(Rectangle, top);
-                //    Canvas.SetLeft(Rectangle, left);
-                //}
+                //the following if statements will determine if the bullet is available to shoot and if so will then run the timer on the corresponding function
+                //and then will set bullet[i] to false essentially saying that the bullet is no longer avaiable right now
                 if(Bullet1 == true)
                 {
-                    bulletAngle[0] = angle;
                     bulletTimer1.Tick += moveBullet1;
-                    bulletTimer1.Interval = TimeSpan.FromMilliseconds(100);
+                    bulletTimer1.Interval = TimeSpan.FromMilliseconds(10);
                     bulletTimer1.Start();
                     Bullet1 = false;
                 }
                 else if(Bullet2 == true)
                 {
-                    bulletAngle[1] = angle;
                     bulletTimer2.Tick += moveBullet2;
-                    bulletTimer2.Interval = TimeSpan.FromMilliseconds(100);
+                    bulletTimer2.Interval = TimeSpan.FromMilliseconds(10);
                     bulletTimer2.Start();
                     Bullet2 = false;
                 }
                 else if (Bullet3 == true)
                 {
-                    bulletAngle[2] = angle;
                     bulletTimer3.Tick += moveBullet3;
-                    bulletTimer3.Interval = TimeSpan.FromMilliseconds(100);
+                    bulletTimer3.Interval = TimeSpan.FromMilliseconds(10);
                     bulletTimer3.Start();
                     Bullet3 = false;
                 }
                 else if (Bullet4 == true)
                 {
-                    bulletAngle[3] = angle;
                     bulletTimer4.Tick += moveBullet4;
-                    bulletTimer4.Interval = TimeSpan.FromMilliseconds(100);
+                    bulletTimer4.Interval = TimeSpan.FromMilliseconds(10);
                     bulletTimer4.Start();
                     Bullet4 = false;
                 }
                 else if (Bullet5 == true)
                 {
-                    bulletAngle[4] = angle;
                     bulletTimer5.Tick += moveBullet5;
-                    bulletTimer5.Interval = TimeSpan.FromMilliseconds(100);
+                    bulletTimer5.Interval = TimeSpan.FromMilliseconds(10);
                     bulletTimer5.Start();
                     Bullet5 = false;
                 }
             }
 
         }
+        //each of the moveBullet[i] below is what causes the bullet to move
+        //it begins by getting the current angle of the space ship or in other words the direction of the ship so that it shots in the right direction
+        //its ran off an if statement that only runs once
+        //the function sets the visibility to true and then uses the movement algorithm used with the asteroids to move the bullet.
         public void moveBullet1(object sender, EventArgs e)
         {
-            int iNewX0 = (int)(bulletSpeed * System.Math.Sin((System.Math.PI * (bulletAngle[0])) / 180));
-            int iNewY0 = -(int)(bulletSpeed * System.Math.Cos((System.Math.PI * (bulletAngle[0])) / 180));
+            if (getAngle0 == false)
+            {
+                bulletAngle0 = angle;
+                getAngle0 = true;
+            }
+            bullets[0].Visibility = Visibility.Visible;
+            int iNewX0 = (int)(bulletSpeed * System.Math.Sin((System.Math.PI * (bulletAngle0)) / 180));
+            int iNewY0 = -(int)(bulletSpeed * System.Math.Cos((System.Math.PI * (bulletAngle0)) / 180));
             top[0] += iNewY0;
             left[0] += iNewX0;
             Canvas.SetTop(bullets[0], top[0]);
@@ -804,8 +819,14 @@ namespace Asteroids
         }
         public void moveBullet2(object sender, EventArgs e)
         {
-            int iNewX1 = (int)(bulletSpeed * System.Math.Sin((System.Math.PI * (bulletAngle[1])) / 180));
-            int iNewY1 = -(int)(bulletSpeed * System.Math.Cos((System.Math.PI * (bulletAngle[1])) / 180));
+            if (getAngle1 == false)
+            {
+                bulletAngle1 = angle;
+                getAngle1 = true;
+            }
+            bullets[1].Visibility = Visibility.Visible;
+            int iNewX1 = (int)(bulletSpeed * System.Math.Sin((System.Math.PI * (bulletAngle1)) / 180));
+            int iNewY1 = -(int)(bulletSpeed * System.Math.Cos((System.Math.PI * (bulletAngle1)) / 180));
             top[1] += iNewY1;
             left[1] += iNewX1;
             Canvas.SetTop(bullets[1], top[1]);
@@ -813,8 +834,14 @@ namespace Asteroids
         }
         public void moveBullet3(object sender, EventArgs e)
         {
-            int iNewX2 = (int)(bulletSpeed * System.Math.Sin((System.Math.PI * (bulletAngle[2])) / 180));
-            int iNewY2 = -(int)(bulletSpeed * System.Math.Cos((System.Math.PI * (bulletAngle[2])) / 180));
+            if (getAngle2 == false)
+            {
+                bulletAngle2 = angle;
+                getAngle2 = true;
+            }
+            bullets[2].Visibility = Visibility.Visible;
+            int iNewX2 = (int)(bulletSpeed * System.Math.Sin((System.Math.PI * (bulletAngle2)) / 180));
+            int iNewY2 = -(int)(bulletSpeed * System.Math.Cos((System.Math.PI * (bulletAngle2)) / 180));
             top[2] += iNewY2;
             left[2] += iNewX2;
             Canvas.SetTop(bullets[2], top[2]);
@@ -822,8 +849,14 @@ namespace Asteroids
         }
         public void moveBullet4(object sender, EventArgs e)
         {
-            int iNewX3 = (int)(bulletSpeed * System.Math.Sin((System.Math.PI * (bulletAngle[3])) / 180));
-            int iNewY3 = -(int)(bulletSpeed * System.Math.Cos((System.Math.PI * (bulletAngle[3])) / 180));
+            if (getAngle3 == false)
+            {
+                bulletAngle3 = angle;
+                getAngle3 = true;
+            }
+            bullets[3].Visibility = Visibility.Visible;
+            int iNewX3 = (int)(bulletSpeed * System.Math.Sin((System.Math.PI * (bulletAngle3)) / 180));
+            int iNewY3 = -(int)(bulletSpeed * System.Math.Cos((System.Math.PI * (bulletAngle3)) / 180));
             top[3] += iNewY3;
             left[3] += iNewX3;
             Canvas.SetTop(bullets[3], top[3]);
@@ -831,8 +864,14 @@ namespace Asteroids
         }
         public void moveBullet5(object sender, EventArgs e)
         {
-            int iNewX4 = (int)(bulletSpeed * System.Math.Sin((System.Math.PI * (bulletAngle[4])) / 180));
-            int iNewY4 = -(int)(bulletSpeed * System.Math.Cos((System.Math.PI * (bulletAngle[4])) / 180));
+            if (getAngle4 == false)
+            {
+                bulletAngle4 = angle;
+                getAngle4 = true;
+            }
+            bullets[4].Visibility = Visibility.Visible;
+            int iNewX4 = (int)(bulletSpeed * System.Math.Sin((System.Math.PI * (bulletAngle4)) / 180));
+            int iNewY4 = -(int)(bulletSpeed * System.Math.Cos((System.Math.PI * (bulletAngle4)) / 180));
             top[4] += iNewY4;
             left[4] += iNewX4;
             Canvas.SetTop(bullets[4], top[4]);
