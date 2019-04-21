@@ -42,7 +42,7 @@ namespace Asteroids
             //Runs the laser for the space ship
             DispatcherTimer timerLaser = new DispatcherTimer();
             timerLaser.Tick += new EventHandler(FireLaser);
-            timerLaser.Interval = TimeSpan.FromMilliseconds(10);
+            timerLaser.Interval = TimeSpan.FromMilliseconds(70);
             timerLaser.Start();
             //Runs the Asteroids to keep the moving smoothly
             DispatcherTimer timerAsteroids = new DispatcherTimer();
@@ -692,14 +692,151 @@ namespace Asteroids
         #endregion
 
         #region Laser
+        List<Rectangle> bullets = new List<Rectangle>(5);
+        bool hasRun = false;
+        double[] top = new double[5];
+        double[] left = new double[5];
+        double[] bulletAngle = new double[5];
+        double bulletSpeed = 1;
+        bool Bullet1 = true;
+        bool Bullet2 = true;
+        bool Bullet3 = true;
+        bool Bullet4 = true;
+        bool Bullet5 = true;
+        DispatcherTimer bulletTimer1 = new DispatcherTimer();
+        DispatcherTimer bulletTimer2 = new DispatcherTimer();
+        DispatcherTimer bulletTimer3 = new DispatcherTimer();
+        DispatcherTimer bulletTimer4 = new DispatcherTimer();
+        DispatcherTimer bulletTimer5 = new DispatcherTimer();
         private void FireLaser(object sender, EventArgs e)
         {
-            if (Keyboard.IsKeyToggled(Key.Space))
+            if(hasRun == false)
             {
-                a -= 3.5;
-                Canvas.SetTop(laser, a);
+                int number = 5;
+                int width = 5;
+                int height = 5;
+
+                for (int i = 0; i < number; i++)
+                {
+                    // Create the rectangle
+                    Rectangle rec = new Rectangle()
+                    {
+                        Width = width,
+                        Height = height,
+                        Fill = Brushes.White,
+                        Stroke = Brushes.Black,
+                        StrokeThickness = 1,
+                    };
+                    bullets.Add(rec);
+                    // Add to a canvas for example
+                    MyCanvas.Children.Add(rec);
+                    double tempTop = Canvas.GetTop(SpaceShip);
+                    double tempLeft = Canvas.GetLeft(SpaceShip);
+                    top[i] = tempTop;
+                    left[i] = tempLeft;
+                    Canvas.SetTop(rec, tempTop);
+                    Canvas.SetLeft(rec, tempLeft);
+                }
+                hasRun = true;
+            }
+            if (Keyboard.IsKeyDown(Key.Space))
+            {
+                //foreach (var Rectangle in bullets)
+                //{
+                //    int iNewX = (int)(bulletSpeed * System.Math.Sin((System.Math.PI * (angle)) / 180));
+                //    int iNewY = -(int)(bulletSpeed * System.Math.Cos((System.Math.PI * (angle)) / 180));
+                //    top += iNewY;
+                //    left += iNewX;
+                //    Canvas.SetTop(Rectangle, top);
+                //    Canvas.SetLeft(Rectangle, left);
+                //}
+                if(Bullet1 == true)
+                {
+                    bulletAngle[0] = angle;
+                    bulletTimer1.Tick += moveBullet1;
+                    bulletTimer1.Interval = TimeSpan.FromMilliseconds(100);
+                    bulletTimer1.Start();
+                    Bullet1 = false;
+                }
+                else if(Bullet2 == true)
+                {
+                    bulletAngle[1] = angle;
+                    bulletTimer2.Tick += moveBullet2;
+                    bulletTimer2.Interval = TimeSpan.FromMilliseconds(100);
+                    bulletTimer2.Start();
+                    Bullet2 = false;
+                }
+                else if (Bullet3 == true)
+                {
+                    bulletAngle[2] = angle;
+                    bulletTimer3.Tick += moveBullet3;
+                    bulletTimer3.Interval = TimeSpan.FromMilliseconds(100);
+                    bulletTimer3.Start();
+                    Bullet3 = false;
+                }
+                else if (Bullet4 == true)
+                {
+                    bulletAngle[3] = angle;
+                    bulletTimer4.Tick += moveBullet4;
+                    bulletTimer4.Interval = TimeSpan.FromMilliseconds(100);
+                    bulletTimer4.Start();
+                    Bullet4 = false;
+                }
+                else if (Bullet5 == true)
+                {
+                    bulletAngle[4] = angle;
+                    bulletTimer5.Tick += moveBullet5;
+                    bulletTimer5.Interval = TimeSpan.FromMilliseconds(100);
+                    bulletTimer5.Start();
+                    Bullet5 = false;
+                }
             }
 
+        }
+        public void moveBullet1(object sender, EventArgs e)
+        {
+            int iNewX0 = (int)(bulletSpeed * System.Math.Sin((System.Math.PI * (bulletAngle[0])) / 180));
+            int iNewY0 = -(int)(bulletSpeed * System.Math.Cos((System.Math.PI * (bulletAngle[0])) / 180));
+            top[0] += iNewY0;
+            left[0] += iNewX0;
+            Canvas.SetTop(bullets[0], top[0]);
+            Canvas.SetLeft(bullets[0], left[0]);
+        }
+        public void moveBullet2(object sender, EventArgs e)
+        {
+            int iNewX1 = (int)(bulletSpeed * System.Math.Sin((System.Math.PI * (bulletAngle[1])) / 180));
+            int iNewY1 = -(int)(bulletSpeed * System.Math.Cos((System.Math.PI * (bulletAngle[1])) / 180));
+            top[1] += iNewY1;
+            left[1] += iNewX1;
+            Canvas.SetTop(bullets[1], top[1]);
+            Canvas.SetLeft(bullets[1], left[1]);
+        }
+        public void moveBullet3(object sender, EventArgs e)
+        {
+            int iNewX2 = (int)(bulletSpeed * System.Math.Sin((System.Math.PI * (bulletAngle[2])) / 180));
+            int iNewY2 = -(int)(bulletSpeed * System.Math.Cos((System.Math.PI * (bulletAngle[2])) / 180));
+            top[2] += iNewY2;
+            left[2] += iNewX2;
+            Canvas.SetTop(bullets[2], top[2]);
+            Canvas.SetLeft(bullets[2], left[2]);
+        }
+        public void moveBullet4(object sender, EventArgs e)
+        {
+            int iNewX3 = (int)(bulletSpeed * System.Math.Sin((System.Math.PI * (bulletAngle[3])) / 180));
+            int iNewY3 = -(int)(bulletSpeed * System.Math.Cos((System.Math.PI * (bulletAngle[3])) / 180));
+            top[3] += iNewY3;
+            left[3] += iNewX3;
+            Canvas.SetTop(bullets[3], top[3]);
+            Canvas.SetLeft(bullets[3], left[3]);
+        }
+        public void moveBullet5(object sender, EventArgs e)
+        {
+            int iNewX4 = (int)(bulletSpeed * System.Math.Sin((System.Math.PI * (bulletAngle[4])) / 180));
+            int iNewY4 = -(int)(bulletSpeed * System.Math.Cos((System.Math.PI * (bulletAngle[4])) / 180));
+            top[4] += iNewY4;
+            left[4] += iNewX4;
+            Canvas.SetTop(bullets[4], top[4]);
+            Canvas.SetLeft(bullets[4], left[4]);
         }
         #endregion
 
