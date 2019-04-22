@@ -807,6 +807,12 @@ namespace Asteroids
             if (getAngle0 == false)
             {
                 bulletAngle0 = angle;
+                double tempTop = Canvas.GetTop(SpaceShip);
+                double tempLeft = Canvas.GetLeft(SpaceShip);
+                top[0] = tempTop - 2;
+                left[0] = tempLeft + 9;
+                Canvas.SetTop(bullets[0], tempTop);
+                Canvas.SetLeft(bullets[0], tempLeft);
                 getAngle0 = true;
             }
             bullets[0].Visibility = Visibility.Visible;
@@ -822,6 +828,12 @@ namespace Asteroids
             if (getAngle1 == false)
             {
                 bulletAngle1 = angle;
+                double tempTop = Canvas.GetTop(SpaceShip);
+                double tempLeft = Canvas.GetLeft(SpaceShip);
+                top[1] = tempTop - 2;
+                left[1] = tempLeft + 9;
+                Canvas.SetTop(bullets[1], tempTop);
+                Canvas.SetLeft(bullets[1], tempLeft);
                 getAngle1 = true;
             }
             bullets[1].Visibility = Visibility.Visible;
@@ -837,6 +849,12 @@ namespace Asteroids
             if (getAngle2 == false)
             {
                 bulletAngle2 = angle;
+                double tempTop = Canvas.GetTop(SpaceShip);
+                double tempLeft = Canvas.GetLeft(SpaceShip);
+                top[2] = tempTop - 2;
+                left[2] = tempLeft + 9;
+                Canvas.SetTop(bullets[2], tempTop);
+                Canvas.SetLeft(bullets[2], tempLeft);
                 getAngle2 = true;
             }
             bullets[2].Visibility = Visibility.Visible;
@@ -852,6 +870,12 @@ namespace Asteroids
             if (getAngle3 == false)
             {
                 bulletAngle3 = angle;
+                double tempTop = Canvas.GetTop(SpaceShip);
+                double tempLeft = Canvas.GetLeft(SpaceShip);
+                top[3] = tempTop - 2;
+                left[3] = tempLeft + 9;
+                Canvas.SetTop(bullets[3], tempTop);
+                Canvas.SetLeft(bullets[3], tempLeft);
                 getAngle3 = true;
             }
             bullets[3].Visibility = Visibility.Visible;
@@ -867,6 +891,12 @@ namespace Asteroids
             if (getAngle4 == false)
             {
                 bulletAngle4 = angle;
+                double tempTop = Canvas.GetTop(SpaceShip);
+                double tempLeft = Canvas.GetLeft(SpaceShip);
+                top[4] = tempTop - 2;
+                left[4] = tempLeft + 9;
+                Canvas.SetTop(bullets[4], tempTop);
+                Canvas.SetLeft(bullets[4], tempLeft);
                 getAngle4 = true;
             }
             bullets[4].Visibility = Visibility.Visible;
