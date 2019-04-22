@@ -26,7 +26,6 @@ namespace Asteroids
         {
             InitializeComponent();
             cn = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = |DataDirectory|Highscores.accdb");
-            cn.Open();
             txtboxInitials.MaxLength = 3;
         }
 
@@ -34,8 +33,10 @@ namespace Asteroids
         {
             try
             {
+                cn.Open();
                 OleDbCommand cmd = new OleDbCommand();
-                cmd.CommandText = "insert into Highscores (Initials) values('" + txtboxInitials.Text + "')";
+                cmd.Connection = cn;
+                cmd.CommandText = "insert into Highscores (Initials) values (txtboxInitials.Text)";
                 cmd.ExecuteNonQuery();
 
                 this.NavigationService.Navigate(new Uri("HighScoreScreen.xaml", UriKind.Relative));
