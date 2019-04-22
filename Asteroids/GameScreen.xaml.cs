@@ -203,7 +203,7 @@ namespace Asteroids
                 //    getAngle1 = false;
                 //}
                 newWatch2.Start();
-                if (bul2.IntersectsWith(ast1) || bul2.IntersectsWith(ast2) || bul2.IntersectsWith(ast3) || bul2.IntersectsWith(ast4) || bul2.IntersectsWith(ast5) || newWatch1.ElapsedMilliseconds > 2000)
+                if (bul2.IntersectsWith(ast1) || bul2.IntersectsWith(ast2) || bul2.IntersectsWith(ast3) || bul2.IntersectsWith(ast4) || bul2.IntersectsWith(ast5) || newWatch2.ElapsedMilliseconds > 2000)
                 {
                     newWatch2.Stop();
                     newWatch2.Reset();
@@ -258,7 +258,7 @@ namespace Asteroids
                 //    getAngle2 = false;
                 //}
                 newWatch3.Start();
-                if (bul3.IntersectsWith(ast1) || bul3.IntersectsWith(ast2) || bul3.IntersectsWith(ast3) || bul3.IntersectsWith(ast4) || bul3.IntersectsWith(ast5) || newWatch1.ElapsedMilliseconds > 2000)
+                if (bul3.IntersectsWith(ast1) || bul3.IntersectsWith(ast2) || bul3.IntersectsWith(ast3) || bul3.IntersectsWith(ast4) || bul3.IntersectsWith(ast5) || newWatch3.ElapsedMilliseconds > 2000)
                 {
                     newWatch3.Stop();
                     newWatch3.Reset();
@@ -313,7 +313,7 @@ namespace Asteroids
                 //    getAngle3 = false;
                 //}
                 newWatch4.Start();
-                if (bul4.IntersectsWith(ast1) || bul4.IntersectsWith(ast2) || bul4.IntersectsWith(ast3) || bul4.IntersectsWith(ast4) || bul4.IntersectsWith(ast5) || newWatch1.ElapsedMilliseconds > 2000)
+                if (bul4.IntersectsWith(ast1) || bul4.IntersectsWith(ast2) || bul4.IntersectsWith(ast3) || bul4.IntersectsWith(ast4) || bul4.IntersectsWith(ast5) || newWatch4.ElapsedMilliseconds > 2000)
                 {
                     newWatch4.Stop();
                     newWatch4.Reset();
@@ -368,7 +368,7 @@ namespace Asteroids
                 //    getAngle4 = false;
                 //}
                 newWatch5.Start();
-                if (bul5.IntersectsWith(ast1) || bul5.IntersectsWith(ast2) || bul5.IntersectsWith(ast3) || bul5.IntersectsWith(ast4) || bul5.IntersectsWith(ast5) || newWatch1.ElapsedMilliseconds > 2000)
+                if (bul5.IntersectsWith(ast1) || bul5.IntersectsWith(ast2) || bul5.IntersectsWith(ast3) || bul5.IntersectsWith(ast4) || bul5.IntersectsWith(ast5) || newWatch5.ElapsedMilliseconds > 2000)
                 {
                     newWatch5.Stop();
                     newWatch5.Reset();
@@ -1074,6 +1074,7 @@ namespace Asteroids
                 //and then will set bullet[i] to false essentially saying that the bullet is no longer avaiable right now
                 if(Bullet1 == true)
                 {
+                    newWatch1.Start();
                     bulletTimer1.Tick += moveBullet1;
                     bulletTimer1.Interval = TimeSpan.FromMilliseconds(10);
                     bulletTimer1.Start();
@@ -1081,6 +1082,7 @@ namespace Asteroids
                 }
                 else if(Bullet2 == true)
                 {
+                    newWatch2.Start();
                     bulletTimer2.Tick += moveBullet2;
                     bulletTimer2.Interval = TimeSpan.FromMilliseconds(10);
                     bulletTimer2.Start();
@@ -1088,6 +1090,7 @@ namespace Asteroids
                 }
                 else if (Bullet3 == true)
                 {
+                    newWatch3.Start();
                     bulletTimer3.Tick += moveBullet3;
                     bulletTimer3.Interval = TimeSpan.FromMilliseconds(10);
                     bulletTimer3.Start();
@@ -1095,6 +1098,7 @@ namespace Asteroids
                 }
                 else if (Bullet4 == true)
                 {
+                    newWatch4.Start();
                     bulletTimer4.Tick += moveBullet4;
                     bulletTimer4.Interval = TimeSpan.FromMilliseconds(10);
                     bulletTimer4.Start();
@@ -1102,6 +1106,7 @@ namespace Asteroids
                 }
                 else if (Bullet5 == true)
                 {
+                    newWatch5.Start();
                     bulletTimer5.Tick += moveBullet5;
                     bulletTimer5.Interval = TimeSpan.FromMilliseconds(10);
                     bulletTimer5.Start();
