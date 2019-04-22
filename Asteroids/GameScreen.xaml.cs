@@ -140,13 +140,6 @@ namespace Asteroids
             Rect bul5 = new Rect(Canvas.GetLeft(bullets[4]), Canvas.GetTop(bullets[4]), bullets[4].Width, bullets[4].Height);
             if (Bullet1 == false)
             {
-                //if(Canvas.GetLeft(bullets[0]) > 960 || Canvas.GetLeft(bullets[0]) < 0 || Canvas.GetTop(bullets[0]) > 500 || Canvas.GetTop(bullets[0]) < 0)
-                //{
-                //    bulletTimer1.Stop();
-                //    bullets[0].Visibility = Visibility.Hidden;
-                //    Bullet1 = true;
-                //    getAngle0 = false;
-                //}
                 newWatch1.Start();
                 if (bul1.IntersectsWith(ast1) || bul1.IntersectsWith(ast2) || bul1.IntersectsWith(ast3) || bul1.IntersectsWith(ast4) || bul1.IntersectsWith(ast5) || newWatch1.ElapsedMilliseconds > 2000)
                 {
@@ -195,13 +188,6 @@ namespace Asteroids
             }
             if (Bullet2 == false)
             {
-                //if (Canvas.GetLeft(bullets[1]) > 960 || Canvas.GetLeft(bullets[1]) < 0 || Canvas.GetTop(bullets[1]) > 500 || Canvas.GetTop(bullets[1]) < 0)
-                //{
-                //    bulletTimer2.Stop();
-                //    bullets[1].Visibility = Visibility.Hidden;
-                //    Bullet2 = true;
-                //    getAngle1 = false;
-                //}
                 newWatch2.Start();
                 if (bul2.IntersectsWith(ast1) || bul2.IntersectsWith(ast2) || bul2.IntersectsWith(ast3) || bul2.IntersectsWith(ast4) || bul2.IntersectsWith(ast5) || newWatch2.ElapsedMilliseconds > 2000)
                 {
@@ -250,13 +236,6 @@ namespace Asteroids
             }
             if (Bullet3 == false)
             {
-                //if (Canvas.GetLeft(bullets[2]) > 960 || Canvas.GetLeft(bullets[2]) < 0 || Canvas.GetTop(bullets[2]) > 500 || Canvas.GetTop(bullets[2]) < 0)
-                //{
-                //    bulletTimer3.Stop();
-                //    bullets[2].Visibility = Visibility.Hidden;
-                //    Bullet3 = true;
-                //    getAngle2 = false;
-                //}
                 newWatch3.Start();
                 if (bul3.IntersectsWith(ast1) || bul3.IntersectsWith(ast2) || bul3.IntersectsWith(ast3) || bul3.IntersectsWith(ast4) || bul3.IntersectsWith(ast5) || newWatch3.ElapsedMilliseconds > 2000)
                 {
@@ -305,13 +284,6 @@ namespace Asteroids
             }
             if (Bullet4 == false)
             {
-                //if (Canvas.GetLeft(bullets[3]) > 960 || Canvas.GetLeft(bullets[3]) < 0 || Canvas.GetTop(bullets[3]) > 500 || Canvas.GetTop(bullets[3]) < 0)
-                //{
-                //    bulletTimer4.Stop();
-                //    bullets[3].Visibility = Visibility.Hidden;
-                //    Bullet4 = true;
-                //    getAngle3 = false;
-                //}
                 newWatch4.Start();
                 if (bul4.IntersectsWith(ast1) || bul4.IntersectsWith(ast2) || bul4.IntersectsWith(ast3) || bul4.IntersectsWith(ast4) || bul4.IntersectsWith(ast5) || newWatch4.ElapsedMilliseconds > 2000)
                 {
@@ -360,13 +332,6 @@ namespace Asteroids
             }
             if (Bullet5 == false)
             {
-                //if (Canvas.GetLeft(bullets[4]) > 960 || Canvas.GetLeft(bullets[4]) < 0 || Canvas.GetTop(bullets[4]) > 500 || Canvas.GetTop(bullets[4]) < 0)
-                //{
-                //    bulletTimer5.Stop();
-                //    bullets[4].Visibility = Visibility.Hidden;
-                //    Bullet5 = true;
-                //    getAngle4 = false;
-                //}
                 newWatch5.Start();
                 if (bul5.IntersectsWith(ast1) || bul5.IntersectsWith(ast2) || bul5.IntersectsWith(ast3) || bul5.IntersectsWith(ast4) || bul5.IntersectsWith(ast5) || newWatch5.ElapsedMilliseconds > 2000)
                 {
