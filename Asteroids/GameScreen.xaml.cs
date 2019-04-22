@@ -42,7 +42,7 @@ namespace Asteroids
             //Runs the laser for the space ship
             DispatcherTimer timerLaser = new DispatcherTimer();
             timerLaser.Tick += new EventHandler(FireLaser);
-            timerLaser.Interval = TimeSpan.FromMilliseconds(10);
+            timerLaser.Interval = TimeSpan.FromMilliseconds(70);
             timerLaser.Start();
             //Runs the Asteroids to keep the moving smoothly
             DispatcherTimer timerAsteroids = new DispatcherTimer();
@@ -57,6 +57,7 @@ namespace Asteroids
             DispatcherTimer timerMisc = new DispatcherTimer();
             timerMisc.Tick += RandomXYGen;
             timerMisc.Tick += HitDetection;
+            timerMisc.Tick += HitDetectionLaser;
             timerMisc.Interval = TimeSpan.FromMilliseconds(1);
             timerMisc.Start();
             
@@ -67,6 +68,11 @@ namespace Asteroids
         public TimeSpan Interval { get; set; }
         Random rand = new Random();
         Stopwatch watch = new Stopwatch();
+        Stopwatch newWatch1 = new Stopwatch();
+        Stopwatch newWatch2 = new Stopwatch();
+        Stopwatch newWatch3 = new Stopwatch();
+        Stopwatch newWatch4 = new Stopwatch();
+        Stopwatch newWatch5 = new Stopwatch();
         //Variables for the ship and its lasers
         double a = 400;
         double shipX = 451;
@@ -103,12 +109,283 @@ namespace Asteroids
         bool isHit = false;
         #endregion
 
+        #region Hit Detection for the Lasers and Score Counter
+        // sets the score equal to 0
+        int score = 0;
+        // set the score ro have an increment of 20
+        const int score_increment = 20;
+        public void GameScore()
+        {
+            if (true == int.TryParse(scoredisplayed.Text, out score))
+            {
+                // sets the new score to the score + the score increment which is 20. this will add 20 points to the score
+                score += score_increment;
+                //this will display the score
+                scoredisplayed.Text = (score).ToString();
+
+            }
+        }
+        public void HitDetectionLaser(object sender, EventArgs e)
+        {
+            
+            Rect ast1 = new Rect(Canvas.GetLeft(asteroid1), Canvas.GetTop(asteroid1), asteroid1.Width, asteroid1.Height);
+            Rect ast2 = new Rect(Canvas.GetLeft(asteroid2), Canvas.GetTop(asteroid2), asteroid2.Width, asteroid2.Height);
+            Rect ast3 = new Rect(Canvas.GetLeft(asteroid3), Canvas.GetTop(asteroid3), asteroid3.Width, asteroid3.Height);
+            Rect ast4 = new Rect(Canvas.GetLeft(asteroid4), Canvas.GetTop(asteroid4), asteroid4.Width, asteroid4.Height);
+            Rect ast5 = new Rect(Canvas.GetLeft(asteroid5), Canvas.GetTop(asteroid5), asteroid5.Width, asteroid5.Height);
+            Rect bul1 = new Rect(Canvas.GetLeft(bullets[0]), Canvas.GetTop(bullets[0]), bullets[0].Width, bullets[0].Height);
+            Rect bul2 = new Rect(Canvas.GetLeft(bullets[1]), Canvas.GetTop(bullets[1]), bullets[1].Width, bullets[1].Height);
+            Rect bul3 = new Rect(Canvas.GetLeft(bullets[2]), Canvas.GetTop(bullets[2]), bullets[2].Width, bullets[2].Height);
+            Rect bul4 = new Rect(Canvas.GetLeft(bullets[3]), Canvas.GetTop(bullets[3]), bullets[3].Width, bullets[3].Height);
+            Rect bul5 = new Rect(Canvas.GetLeft(bullets[4]), Canvas.GetTop(bullets[4]), bullets[4].Width, bullets[4].Height);
+            if (Bullet1 == false)
+            {
+                newWatch1.Start();
+                if (bul1.IntersectsWith(ast1) || bul1.IntersectsWith(ast2) || bul1.IntersectsWith(ast3) || bul1.IntersectsWith(ast4) || bul1.IntersectsWith(ast5) || newWatch1.ElapsedMilliseconds > 2000)
+                {
+                    newWatch1.Stop();
+                    newWatch1.Reset();
+                    bulletTimer1.Stop();
+                    bullets[0].Visibility = Visibility.Hidden;
+                    Bullet1 = true;
+                    getAngle0 = false;
+                    if (bul1.IntersectsWith(ast1))
+                    {
+                        Ast1X = 1000;
+                        Ast1Y = 600;
+                        counter = 1;
+                        GameScore();
+                    }
+                    if (bul1.IntersectsWith(ast2))
+                    {
+                        Ast2X = 1000;
+                        Ast2Y = 600;
+                        counter2 = 1;
+                        GameScore();
+                    }
+                    if (bul1.IntersectsWith(ast3))
+                    {
+                        Ast3X = 1000;
+                        Ast3Y = 600;
+                        counter3 = 1;
+                        GameScore();
+                    }
+                    if (bul1.IntersectsWith(ast4))
+                    {
+                        Ast4X = 1000;
+                        Ast4Y = 600;
+                        counter4 = 1;
+                        GameScore();
+                    }
+                    if (bul1.IntersectsWith(ast5))
+                    {
+                        Ast5X = 1000;
+                        Ast5Y = 600;
+                        counter5 = 1;
+                        GameScore();
+                    }
+                }
+            }
+            if (Bullet2 == false)
+            {
+                newWatch2.Start();
+                if (bul2.IntersectsWith(ast1) || bul2.IntersectsWith(ast2) || bul2.IntersectsWith(ast3) || bul2.IntersectsWith(ast4) || bul2.IntersectsWith(ast5) || newWatch2.ElapsedMilliseconds > 2000)
+                {
+                    newWatch2.Stop();
+                    newWatch2.Reset();
+                    bulletTimer2.Stop();
+                    bullets[1].Visibility = Visibility.Hidden;
+                    Bullet2 = true;
+                    getAngle1 = false;
+                    if (bul2.IntersectsWith(ast1))
+                    {
+                        Ast1X = 1000;
+                        Ast1Y = 600;
+                        counter = 1;
+                        GameScore();
+                    }
+                    if (bul2.IntersectsWith(ast2))
+                    {
+                        Ast2X = 1000;
+                        Ast2Y = 600;
+                        counter2 = 1;
+                        GameScore();
+                    }
+                    if (bul2.IntersectsWith(ast3))
+                    {
+                        Ast3X = 1000;
+                        Ast3Y = 600;
+                        counter3 = 1;
+                        GameScore();
+                    }
+                    if (bul2.IntersectsWith(ast4))
+                    {
+                        Ast4X = 1000;
+                        Ast4Y = 600;
+                        counter4 = 1;
+                        GameScore();
+                    }
+                    if (bul2.IntersectsWith(ast5))
+                    {
+                        Ast5X = 1000;
+                        Ast5Y = 600;
+                        counter5 = 1;
+                        GameScore();
+                    }
+                }
+            }
+            if (Bullet3 == false)
+            {
+                newWatch3.Start();
+                if (bul3.IntersectsWith(ast1) || bul3.IntersectsWith(ast2) || bul3.IntersectsWith(ast3) || bul3.IntersectsWith(ast4) || bul3.IntersectsWith(ast5) || newWatch3.ElapsedMilliseconds > 2000)
+                {
+                    newWatch3.Stop();
+                    newWatch3.Reset();
+                    bulletTimer3.Stop();
+                    bullets[2].Visibility = Visibility.Hidden;
+                    Bullet3 = true;
+                    getAngle2 = false;
+                    if (bul3.IntersectsWith(ast1))
+                    {
+                        Ast1X = 1000;
+                        Ast1Y = 600;
+                        counter = 1;
+                        GameScore();
+                    }
+                    if (bul3.IntersectsWith(ast2))
+                    {
+                        Ast2X = 1000;
+                        Ast2Y = 600;
+                        counter2 = 1;
+                        GameScore();
+                    }
+                    if (bul3.IntersectsWith(ast3))
+                    {
+                        Ast3X = 1000;
+                        Ast3Y = 600;
+                        counter3 = 1;
+                        GameScore();
+                    }
+                    if (bul3.IntersectsWith(ast4))
+                    {
+                        Ast4X = 1000;
+                        Ast4Y = 600;
+                        counter4 = 1;
+                        GameScore();
+                    }
+                    if (bul3.IntersectsWith(ast5))
+                    {
+                        Ast5X = 1000;
+                        Ast5Y = 600;
+                        counter5 = 1;
+                        GameScore();
+                    }
+                }
+            }
+            if (Bullet4 == false)
+            {
+                newWatch4.Start();
+                if (bul4.IntersectsWith(ast1) || bul4.IntersectsWith(ast2) || bul4.IntersectsWith(ast3) || bul4.IntersectsWith(ast4) || bul4.IntersectsWith(ast5) || newWatch4.ElapsedMilliseconds > 2000)
+                {
+                    newWatch4.Stop();
+                    newWatch4.Reset();
+                    bulletTimer4.Stop();
+                    bullets[3].Visibility = Visibility.Hidden;
+                    Bullet4 = true;
+                    getAngle3 = false;
+                    if (bul4.IntersectsWith(ast1))
+                    {
+                        Ast1X = 1000;
+                        Ast1Y = 600;
+                        counter = 1;
+                        GameScore();
+                    }
+                    if (bul4.IntersectsWith(ast2))
+                    {
+                        Ast2X = 1000;
+                        Ast2Y = 600;
+                        counter2 = 1;
+                        GameScore();
+                    }
+                    if (bul4.IntersectsWith(ast3))
+                    {
+                        Ast3X = 1000;
+                        Ast3Y = 600;
+                        counter3 = 1;
+                        GameScore();
+                    }
+                    if (bul4.IntersectsWith(ast4))
+                    {
+                        Ast4X = 1000;
+                        Ast4Y = 600;
+                        counter4 = 1;
+                        GameScore();
+                    }
+                    if (bul4.IntersectsWith(ast5))
+                    {
+                        Ast5X = 1000;
+                        Ast5Y = 600;
+                        counter5 = 1;
+                        GameScore();
+                    }
+                }
+            }
+            if (Bullet5 == false)
+            {
+                newWatch5.Start();
+                if (bul5.IntersectsWith(ast1) || bul5.IntersectsWith(ast2) || bul5.IntersectsWith(ast3) || bul5.IntersectsWith(ast4) || bul5.IntersectsWith(ast5) || newWatch5.ElapsedMilliseconds > 2000)
+                {
+                    newWatch5.Stop();
+                    newWatch5.Reset();
+                    bulletTimer5.Stop();
+                    bullets[4].Visibility = Visibility.Hidden;
+                    Bullet5 = true;
+                    getAngle4 = false;
+                    if (bul5.IntersectsWith(ast1))
+                    {
+                        Ast1X = 1000;
+                        Ast1Y = 600;
+                        counter = 1;
+                        GameScore();
+                    }
+                    if (bul5.IntersectsWith(ast2))
+                    {
+                        Ast2X = 1000;
+                        Ast2Y = 600;
+                        counter2 = 1;
+                        GameScore();
+                    }
+                    if (bul5.IntersectsWith(ast3))
+                    {
+                        Ast3X = 1000;
+                        Ast3Y = 600;
+                        counter3 = 1;
+                        GameScore();
+                    }
+                    if (bul5.IntersectsWith(ast4))
+                    {
+                        Ast4X = 1000;
+                        Ast4Y = 600;
+                        counter4 = 1;
+                        GameScore();
+                    }
+                    if (bul5.IntersectsWith(ast5))
+                    {
+                        Ast5X = 1000;
+                        Ast5Y = 600;
+                        counter5 = 1;
+                        GameScore();
+                    }
+                }
+            }
+        }
+        #endregion
+
         #region Hit Detection
         public void HitDetection(object sender, EventArgs e)
         {
             //The following creates rectangles that represent the position of the asteroids and the Spacship on the canvas
             //Allows the ability to fine tune the size of the hit box
-            scoredisplayed.Text = spaceShipLives.ToString();
             Rect spaceShip = new Rect(Canvas.GetLeft(SpaceShip), Canvas.GetTop(SpaceShip), SpaceShip.Width , SpaceShip.Height);
             Rect ast1 = new Rect(Canvas.GetLeft(asteroid1), Canvas.GetTop(asteroid1), asteroid1.Width, asteroid1.Height);
             Rect ast2 = new Rect(Canvas.GetLeft(asteroid2), Canvas.GetTop(asteroid2), asteroid2.Width, asteroid2.Height);
@@ -692,14 +969,225 @@ namespace Asteroids
         #endregion
 
         #region Laser
+        #region LaserVariables/Timers
+        List<Rectangle> bullets = new List<Rectangle>(5);
+        bool hasRun = false;
+        double[] top = new double[5];
+        double[] left = new double[5];
+        double bulletAngle0 = 0;
+        double bulletAngle1 = 0;
+        double bulletAngle2 = 0;
+        double bulletAngle3 = 0;
+        double bulletAngle4 = 0;
+        double bulletSpeed = 3;
+        bool Bullet1 = true;
+        bool Bullet2 = true;
+        bool Bullet3 = true;
+        bool Bullet4 = true;
+        bool Bullet5 = true;
+        bool getAngle0 = false;
+        bool getAngle1 = false;
+        bool getAngle2 = false;
+        bool getAngle3 = false;
+        bool getAngle4 = false;
+        DispatcherTimer bulletTimer1 = new DispatcherTimer();
+        DispatcherTimer bulletTimer2 = new DispatcherTimer();
+        DispatcherTimer bulletTimer3 = new DispatcherTimer();
+        DispatcherTimer bulletTimer4 = new DispatcherTimer();
+        DispatcherTimer bulletTimer5 = new DispatcherTimer();
+        #endregion
         private void FireLaser(object sender, EventArgs e)
         {
-            if (Keyboard.IsKeyToggled(Key.Space))
+            //The if statement below will determine if the bullets have been initialy created if not then this will do so
+            if(hasRun == false)
             {
-                a -= 3.5;
-                Canvas.SetTop(laser, a);
+                int number = 5;
+                int width = 5;
+                int height = 5;
+                //this for loop will generate 5 rectangles designed as bullets
+                //then will each of the bullets to the canvas based on the current position of the spaceship
+                //it will also set the visibility of each of the bullets to null so that the player can see them on screen yet
+                //also adds each of the bullets to a list of bullets for reference later
+                for (int i = 0; i < number; i++)
+                {
+                    // Create the rectangle
+                    Rectangle rec = new Rectangle()
+                    {
+                        Width = width,
+                        Height = height,
+                        Fill = Brushes.White,
+                        Stroke = Brushes.Black,
+                        StrokeThickness = 1,
+                    };
+                    bullets.Add(rec);
+                    // Add to a canvas for example
+                    MyCanvas.Children.Add(rec);
+                    rec.Visibility = Visibility.Hidden;
+                    double tempTop = Canvas.GetTop(SpaceShip);
+                    double tempLeft = Canvas.GetLeft(SpaceShip);
+                    top[i] = tempTop - 2;
+                    left[i] = tempLeft + 9;
+                    Canvas.SetTop(rec, tempTop);
+                    Canvas.SetLeft(rec, tempLeft);
+                }
+                hasRun = true;
+            }
+            // the following if statement will run when the space bar has been hit
+            if (Keyboard.IsKeyDown(Key.Space))
+            {
+                //the following if statements will determine if the bullet is available to shoot and if so will then run the timer on the corresponding function
+                //and then will set bullet[i] to false essentially saying that the bullet is no longer avaiable right now
+                if(Bullet1 == true)
+                {
+                    newWatch1.Start();
+                    bulletTimer1.Tick += moveBullet1;
+                    bulletTimer1.Interval = TimeSpan.FromMilliseconds(10);
+                    bulletTimer1.Start();
+                    Bullet1 = false;
+                }
+                else if(Bullet2 == true)
+                {
+                    newWatch2.Start();
+                    bulletTimer2.Tick += moveBullet2;
+                    bulletTimer2.Interval = TimeSpan.FromMilliseconds(10);
+                    bulletTimer2.Start();
+                    Bullet2 = false;
+                }
+                else if (Bullet3 == true)
+                {
+                    newWatch3.Start();
+                    bulletTimer3.Tick += moveBullet3;
+                    bulletTimer3.Interval = TimeSpan.FromMilliseconds(10);
+                    bulletTimer3.Start();
+                    Bullet3 = false;
+                }
+                else if (Bullet4 == true)
+                {
+                    newWatch4.Start();
+                    bulletTimer4.Tick += moveBullet4;
+                    bulletTimer4.Interval = TimeSpan.FromMilliseconds(10);
+                    bulletTimer4.Start();
+                    Bullet4 = false;
+                }
+                else if (Bullet5 == true)
+                {
+                    newWatch5.Start();
+                    bulletTimer5.Tick += moveBullet5;
+                    bulletTimer5.Interval = TimeSpan.FromMilliseconds(10);
+                    bulletTimer5.Start();
+                    Bullet5 = false;
+                }
             }
 
+        }
+        //each of the moveBullet[i] below is what causes the bullet to move
+        //it begins by getting the current angle of the space ship or in other words the direction of the ship so that it shots in the right direction
+        //its ran off an if statement that only runs once
+        //the function sets the visibility to true and then uses the movement algorithm used with the asteroids to move the bullet.
+        public void moveBullet1(object sender, EventArgs e)
+        {
+            if (getAngle0 == false)
+            {
+                bulletAngle0 = angle;
+                double tempTop = Canvas.GetTop(SpaceShip);
+                double tempLeft = Canvas.GetLeft(SpaceShip);
+                top[0] = tempTop - 2;
+                left[0] = tempLeft + 9;
+                Canvas.SetTop(bullets[0], tempTop);
+                Canvas.SetLeft(bullets[0], tempLeft);
+                getAngle0 = true;
+            }
+            bullets[0].Visibility = Visibility.Visible;
+            int iNewX0 = (int)(bulletSpeed * System.Math.Sin((System.Math.PI * (bulletAngle0)) / 180));
+            int iNewY0 = -(int)(bulletSpeed * System.Math.Cos((System.Math.PI * (bulletAngle0)) / 180));
+            top[0] += iNewY0;
+            left[0] += iNewX0;
+            Canvas.SetTop(bullets[0], top[0]);
+            Canvas.SetLeft(bullets[0], left[0]);
+        }
+        public void moveBullet2(object sender, EventArgs e)
+        {
+            if (getAngle1 == false)
+            {
+                bulletAngle1 = angle;
+                double tempTop = Canvas.GetTop(SpaceShip);
+                double tempLeft = Canvas.GetLeft(SpaceShip);
+                top[1] = tempTop - 2;
+                left[1] = tempLeft + 9;
+                Canvas.SetTop(bullets[1], tempTop);
+                Canvas.SetLeft(bullets[1], tempLeft);
+                getAngle1 = true;
+            }
+            bullets[1].Visibility = Visibility.Visible;
+            int iNewX1 = (int)(bulletSpeed * System.Math.Sin((System.Math.PI * (bulletAngle1)) / 180));
+            int iNewY1 = -(int)(bulletSpeed * System.Math.Cos((System.Math.PI * (bulletAngle1)) / 180));
+            top[1] += iNewY1;
+            left[1] += iNewX1;
+            Canvas.SetTop(bullets[1], top[1]);
+            Canvas.SetLeft(bullets[1], left[1]);
+        }
+        public void moveBullet3(object sender, EventArgs e)
+        {
+            if (getAngle2 == false)
+            {
+                bulletAngle2 = angle;
+                double tempTop = Canvas.GetTop(SpaceShip);
+                double tempLeft = Canvas.GetLeft(SpaceShip);
+                top[2] = tempTop - 2;
+                left[2] = tempLeft + 9;
+                Canvas.SetTop(bullets[2], tempTop);
+                Canvas.SetLeft(bullets[2], tempLeft);
+                getAngle2 = true;
+            }
+            bullets[2].Visibility = Visibility.Visible;
+            int iNewX2 = (int)(bulletSpeed * System.Math.Sin((System.Math.PI * (bulletAngle2)) / 180));
+            int iNewY2 = -(int)(bulletSpeed * System.Math.Cos((System.Math.PI * (bulletAngle2)) / 180));
+            top[2] += iNewY2;
+            left[2] += iNewX2;
+            Canvas.SetTop(bullets[2], top[2]);
+            Canvas.SetLeft(bullets[2], left[2]);
+        }
+        public void moveBullet4(object sender, EventArgs e)
+        {
+            if (getAngle3 == false)
+            {
+                bulletAngle3 = angle;
+                double tempTop = Canvas.GetTop(SpaceShip);
+                double tempLeft = Canvas.GetLeft(SpaceShip);
+                top[3] = tempTop - 2;
+                left[3] = tempLeft + 9;
+                Canvas.SetTop(bullets[3], tempTop);
+                Canvas.SetLeft(bullets[3], tempLeft);
+                getAngle3 = true;
+            }
+            bullets[3].Visibility = Visibility.Visible;
+            int iNewX3 = (int)(bulletSpeed * System.Math.Sin((System.Math.PI * (bulletAngle3)) / 180));
+            int iNewY3 = -(int)(bulletSpeed * System.Math.Cos((System.Math.PI * (bulletAngle3)) / 180));
+            top[3] += iNewY3;
+            left[3] += iNewX3;
+            Canvas.SetTop(bullets[3], top[3]);
+            Canvas.SetLeft(bullets[3], left[3]);
+        }
+        public void moveBullet5(object sender, EventArgs e)
+        {
+            if (getAngle4 == false)
+            {
+                bulletAngle4 = angle;
+                double tempTop = Canvas.GetTop(SpaceShip);
+                double tempLeft = Canvas.GetLeft(SpaceShip);
+                top[4] = tempTop - 2;
+                left[4] = tempLeft + 9;
+                Canvas.SetTop(bullets[4], tempTop);
+                Canvas.SetLeft(bullets[4], tempLeft);
+                getAngle4 = true;
+            }
+            bullets[4].Visibility = Visibility.Visible;
+            int iNewX4 = (int)(bulletSpeed * System.Math.Sin((System.Math.PI * (bulletAngle4)) / 180));
+            int iNewY4 = -(int)(bulletSpeed * System.Math.Cos((System.Math.PI * (bulletAngle4)) / 180));
+            top[4] += iNewY4;
+            left[4] += iNewX4;
+            Canvas.SetTop(bullets[4], top[4]);
+            Canvas.SetLeft(bullets[4], left[4]);
         }
         #endregion
 
