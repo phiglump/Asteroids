@@ -74,7 +74,6 @@ namespace Asteroids
         Stopwatch newWatch4 = new Stopwatch();
         Stopwatch newWatch5 = new Stopwatch();
         //Variables for the ship and its lasers
-        double a = 400;
         double shipX = 451;
         double shipY = 421;
         double angle;
@@ -404,20 +403,28 @@ namespace Asteroids
                     // reduces the score by 1 each time the asteroid interacts with the spaceship.
                     spaceShipLives -= 1;
                     isHit = true;
+                    shipY = 421;
+                    shipX = 451;
                     // checks to see if the spaceshiplives is equal to 3 and then sets the lives to 3
                     if (spaceShipLives == 3)
                     {
                         shiplives4.Visibility = Visibility.Hidden;
+                        shipY = 421;
+                        shipX = 451;
                     }
                     // checks to see if the spaceshiplives is equal to 2 and then sets the lives to 2
                     if (spaceShipLives == 2)
                     {
                         shiplives3.Visibility = Visibility.Hidden;
+                        shipY = 421;
+                        shipX = 451;
                     }
                     // checks to see if the spaceshiplives is equal to 1 and then sets the lives to 1
                     if (spaceShipLives == 1)
                     {
                         shiplives2.Visibility = Visibility.Hidden;
+                        shipY = 421;
+                        shipX = 451;
                     }
                     // checks to see if the spaceshiplives is equal to 0 and then sets the lives to 0
                     // send the user to the GameOverScreen
@@ -425,6 +432,8 @@ namespace Asteroids
                     {
                         shiplives1.Visibility = Visibility.Hidden;
                         this.NavigationService.Navigate(new Uri("GameOverScreen.xaml", UriKind.Relative));
+                        shipY = 421;
+                        shipX = 451;
                     }
 
                 }
@@ -433,20 +442,28 @@ namespace Asteroids
                     // reduces the score by 1 each time the asteroid interacts with the spaceship.
                     spaceShipLives -= 1;
                     isHit = true;
+                    shipY = 421;
+                    shipX = 451;
                     // checks to see if the spaceshiplives is equal to 3 and then sets the lives to 3
                     if (spaceShipLives == 3)
                     {
                         shiplives4.Visibility = Visibility.Hidden;
+                        shipY = 421;
+                        shipX = 451;
                     }
                     // checks to see if the spaceshiplives is equal to 2 and then sets the lives to 2
                     if (spaceShipLives == 2)
                     {
                         shiplives3.Visibility = Visibility.Hidden;
+                        shipY = 421;
+                        shipX = 451;
                     }
                     // checks to see if the spaceshiplives is equal to 1 and then sets the lives to 1
                     if (spaceShipLives == 1)
                     {
                         shiplives2.Visibility = Visibility.Hidden;
+                        shipY = 421;
+                        shipX = 451;
                     }
                     // checks to see if the spaceshiplives is equal to 0 and then sets the lives to 0
                     // send the user to the GameOverScreen
@@ -454,6 +471,8 @@ namespace Asteroids
                     {
                         shiplives1.Visibility = Visibility.Hidden;
                         this.NavigationService.Navigate(new Uri("GameOverScreen.xaml", UriKind.Relative));
+                        shipY = 421;
+                        shipX = 451;
                     }
                 }
                 if (spaceShip.IntersectsWith(ast3))
@@ -461,20 +480,28 @@ namespace Asteroids
                     // reduces the score by 1 each time the asteroid interacts with the spaceship.
                     spaceShipLives -= 1;
                     isHit = true;
+                    shipY = 421;
+                    shipX = 451;
                     // checks to see if the spaceshiplives is equal to 3 and then sets the lives to 3
                     if (spaceShipLives == 3)
                     {
                         shiplives4.Visibility = Visibility.Hidden;
+                        shipY = 421;
+                        shipX = 451;
                     }
                     // checks to see if the spaceshiplives is equal to 2 and then sets the lives to 2
                     if (spaceShipLives == 2)
                     {
                         shiplives3.Visibility = Visibility.Hidden;
+                        shipY = 421;
+                        shipX = 451;
                     }
                     // checks to see if the spaceshiplives is equal to 1 and then sets the lives to 1
                     if (spaceShipLives == 1)
                     {
                         shiplives2.Visibility = Visibility.Hidden;
+                        shipY = 421;
+                        shipX = 451;
                     }
                     // checks to see if the spaceshiplives is equal to 0 and then sets the lives to 0
                     // send the user to the GameOverScreen
@@ -482,6 +509,8 @@ namespace Asteroids
                     {
                         shiplives1.Visibility = Visibility.Hidden;
                         this.NavigationService.Navigate(new Uri("GameOverScreen.xaml", UriKind.Relative));
+                        shipY = 421;
+                        shipX = 451;
                     }
                 }
                 if (spaceShip.IntersectsWith(ast4))
@@ -489,20 +518,28 @@ namespace Asteroids
                     // reduces the score by 1 each time the asteroid interacts with the spaceship.
                     spaceShipLives -= 1;
                     isHit = true;
+                    shipY = 421;
+                    shipX = 451;
                     // checks to see if the spaceshiplives is equal to 3 and then sets the lives to 3
                     if (spaceShipLives == 3)
                     {
                         shiplives4.Visibility = Visibility.Hidden;
+                        shipY = 421;
+                        shipX = 451;
                     }
                     // checks to see if the spaceshiplives is equal to 2 and then sets the lives to 2
                     if (spaceShipLives == 2)
                     {
                         shiplives3.Visibility = Visibility.Hidden;
+                        shipY = 421;
+                        shipX = 451;
                     }
                     // checks to see if the spaceshiplives is equal to 1 and then sets the lives to 1
                     if (spaceShipLives == 1)
                     {
                         shiplives2.Visibility = Visibility.Hidden;
+                        shipY = 421;
+                        shipX = 451;
                     }
                     // checks to see if the spaceshiplives is equal to 0 and then sets the lives to 0
                     // send the user to the GameOverScreen
@@ -510,6 +547,8 @@ namespace Asteroids
                     {
                         shiplives1.Visibility = Visibility.Hidden;
                         this.NavigationService.Navigate(new Uri("GameOverScreen.xaml", UriKind.Relative));
+                        shipY = 421;
+                        shipX = 451;
                     }
                 }
                 if (spaceShip.IntersectsWith(ast5))
@@ -517,20 +556,28 @@ namespace Asteroids
                     // reduces the score by 1 each time the asteroid interacts with the spaceship.
                     spaceShipLives -= 1;
                     isHit = true;
+                    shipY = 421;
+                    shipX = 451;
                     // checks to see if the spaceshiplives is equal to 3 and then sets the lives to 3
                     if (spaceShipLives == 3)
                     {
                         shiplives4.Visibility = Visibility.Hidden;
+                        shipY = 421;
+                        shipX = 451;
                     }
                     // checks to see if the spaceshiplives is equal to 2 and then sets the lives to 2
                     if (spaceShipLives == 2)
                     {
                         shiplives3.Visibility = Visibility.Hidden;
+                        shipY = 421;
+                        shipX = 451;
                     }
                     // checks to see if the spaceshiplives is equal to 1 and then sets the lives to 1
                     if (spaceShipLives == 1)
                     {
                         shiplives2.Visibility = Visibility.Hidden;
+                        shipY = 421;
+                        shipX = 451;
                     }
                     // checks to see if the spaceshiplives is equal to 0 and then sets the lives to 0
                     // send the user to the GameOverScreen
@@ -538,6 +585,8 @@ namespace Asteroids
                     {
                         shiplives1.Visibility = Visibility.Hidden;
                         this.NavigationService.Navigate(new Uri("GameOverScreen.xaml", UriKind.Relative));
+                        shipY = 421;
+                        shipX = 451;
                     }
                 }
             }
@@ -1015,7 +1064,7 @@ namespace Asteroids
                     {
                         Width = width,
                         Height = height,
-                        Fill = Brushes.White,
+                        Fill = Brushes.Black,
                         Stroke = Brushes.Black,
                         StrokeThickness = 1,
                     };
@@ -1198,9 +1247,9 @@ namespace Asteroids
             //based off of the key a corresponding movement is applied
             if (Keyboard.IsKeyDown(Key.A))
             {
-                //the ship moves by a factor of .05
+                //the ship moves by a factor of .03
                 //if the ship has reached a boundry it will spawn on the opposite side
-                shipX -= .05;
+                shipX -= .03;
                 Canvas.SetLeft(SpaceShip, shipX);
                 if (shipX < -10)
                 {
@@ -1209,9 +1258,9 @@ namespace Asteroids
             }
             if (Keyboard.IsKeyDown(Key.W))
             {
-                //the ship moves by a factor of .05
+                //the ship moves by a factor of .03
                 //if the ship has reached a boundry it will spawn on the opposite side
-                shipY -= .05;
+                shipY -= .03;
                 Canvas.SetTop(SpaceShip, shipY);
                 if (shipY < -10)
                 {
@@ -1221,9 +1270,9 @@ namespace Asteroids
             }
             if (Keyboard.IsKeyDown(Key.S))
             {
-                //the ship moves by a factor of .05
+                //the ship moves by a factor of .03
                 //if the ship has reached a boundry it will spawn on the opposite side
-                shipY += .05;
+                shipY += .03;
                 Canvas.SetTop(SpaceShip, shipY);
                 if (shipY > 505)
                 {
@@ -1232,9 +1281,9 @@ namespace Asteroids
             }
             if (Keyboard.IsKeyDown(Key.D))
             {
-                //the ship moves by a factor of .05
+                //the ship moves by a factor of .03
                 //if the ship has reached a boundry it will spawn on the opposite side
-                shipX += .05;
+                shipX += .03;
                 Canvas.SetLeft(SpaceShip, shipX);
                 if (shipX > 965)
                 {

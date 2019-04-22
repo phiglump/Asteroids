@@ -75,27 +75,27 @@
                     <ImageBrush/>
                 </TextBlock.Background>
             </TextBlock>
-            <Image Source="images\4Ships.png" x:Name="shiplives4" Height="57" Width="149" Canvas.Left="71" Canvas.Top="28" Opacity="0.75">
+            <Image Source="images\4Ships.png" x:Name="shiplives4" Height="57" Width="149" Canvas.Left="71" Canvas.Top="28">
                 <Image.OpacityMask>
                     <ImageBrush ImageSource="images/4Ships.png"/>
                 </Image.OpacityMask>
             </Image>
-            <Image Source="images\3Ships.png" x:Name="shiplives3" Height="57" Width="149" Canvas.Left="71" Canvas.Top="28" Opacity="0.75">
+            <Image Source="images\3Ships.png" x:Name="shiplives3" Height="57" Width="149" Canvas.Left="71" Canvas.Top="28">
                 <Image.OpacityMask>
                     <ImageBrush ImageSource="images/3Ships.png"/>
                 </Image.OpacityMask>
             </Image>
-            <Image Source="images\2Ships.png" x:Name="shiplives2" Height="57" Width="149" Canvas.Left="71" Canvas.Top="28" Opacity="0.75">
+            <Image Source="images\2Ships.png" x:Name="shiplives2" Height="57" Width="149" Canvas.Left="71" Canvas.Top="28">
                 <Image.OpacityMask>
                     <ImageBrush ImageSource="images/2Ships.png"/>
                 </Image.OpacityMask>
             </Image>
-            <Image Source="images\1Ship.png" x:Name="shiplives1" Height="57" Width="149" Canvas.Left="71" Canvas.Top="28" Opacity="0.75">
+            <Image Source="images\1Ship.png" x:Name="shiplives1" Height="57" Width="149" Canvas.Left="71" Canvas.Top="28">
                 <Image.OpacityMask>
                     <ImageBrush ImageSource="images/1Ship.png"/>
                 </Image.OpacityMask>
             </Image>
-            <TextBlock x:Name="scoredisplayed" Canvas.Left="23" TextWrapping="Wrap" Text="    0" Canvas.Top="39" Foreground="Black" Height="27" Width="61" FontSize="24" RenderTransformOrigin="0.908,0.446" Opacity="0.5" FontFamily="Bradley Hand ITC">
+            <TextBlock x:Name="scoredisplayed" Canvas.Left="18" TextWrapping="Wrap" Text="    0" Canvas.Top="40" Foreground="Black" Height="27" Width="48" FontSize="22" RenderTransformOrigin="0.908,0.446" Opacity="0.5" FontFamily="Bradley Hand ITC">
                 <TextBlock.Background>
                     <ImageBrush/>
                 </TextBlock.Background>

@@ -22,7 +22,7 @@
                 <ImageBrush/>
             </Button.Background>
         </Button>
-        <TextBlock x:Name="Text1" HorizontalAlignment="Center" Margin="310,0,321,60" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Bottom" Height="346" Width="348" Foreground="Black" FontSize="26" FontFamily="Bradley Hand ITC" Opacity="0.5"/>
+        <TextBlock x:Name="Text1" HorizontalAlignment="Center" Margin="310,0,321,60" TextWrapping="Wrap" Text="" VerticalAlignment="Bottom" Height="346" Width="348" Foreground="Black" FontSize="26" FontFamily="Bradley Hand ITC" Opacity="0.5"/>
         <Button x:Name="Menu" Content="Menu" HorizontalAlignment="Center" Margin="346,0,543,22" VerticalAlignment="Bottom" Width="90" Height="38" Foreground="Black" BorderBrush="{x:Null}" FontSize="36" Click="Button_Click_Menu" FontFamily="Bradley Hand ITC" Opacity="0.5">
             <Button.Background>
                 <ImageBrush/>
