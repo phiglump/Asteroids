@@ -24,21 +24,8 @@ namespace Asteroids
         OleDbConnection cn;
         public HighScoreScreen()
         {
-            //Navigates to the where the database is stores and then opens it.
             InitializeComponent();
-            cn = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = |DataDirectory|Highscores.accdb");
-            cn.Open();
-            //Pulls the information from the highscores database.
-            string Initials = "select * from Highscores";
-            OleDbCommand cmd = new OleDbCommand(Initials, cn);
-            OleDbDataReader read = cmd.ExecuteReader();
-            string data = "";
-            //displays the information from the highscores database.
-            while (read.Read())
-            {
-                data += "" + read[0].ToString() + ".            " + read[2].ToString() + "          " + read[1].ToString() + "\n";
-            }
-            Text1.Text = data;
+
         }
         //this creates a button that when clicked exits the program.
         private void Button_Click(object sender, RoutedEventArgs e)

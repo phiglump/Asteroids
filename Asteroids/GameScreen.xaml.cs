@@ -1314,11 +1314,5 @@ namespace Asteroids
             }
         }
         #endregion
-
-        public void getScore()
-        {
-            GameOverScreen gos = new GameOverScreen();
-            gos.finalscore.Text = (score).ToString();
-        }
     }
 }

@@ -27,26 +27,11 @@ namespace Asteroids
             InitializeComponent();
             cn = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = |DataDirectory|Highscores.accdb");
             txtboxInitials.MaxLength = 3;
-            GameScreen gs = new GameScreen();
-            gs.getScore();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                cn.Open();
-                OleDbCommand cmd = new OleDbCommand();
-                cmd.Connection = cn;
-                cmd.CommandText = "insert into Highscores (Initials) values (txtboxInitials.Text)";
-                cmd.ExecuteNonQuery();
-
-                this.NavigationService.Navigate(new Uri("HighScoreScreen.xaml", UriKind.Relative));
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show("Error " + ex);
-            }
+           
         }
     }
 }
