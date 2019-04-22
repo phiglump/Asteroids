@@ -109,7 +109,7 @@ namespace Asteroids
         bool isHit = false;
         #endregion
 
-        #region Hit Detection for the Lasers and Score Counter
+        #region Score Counter
         // sets the score equal to 0
         int score = 0;
         // set the score ro have an increment of 20
@@ -125,6 +125,9 @@ namespace Asteroids
 
             }
         }
+        #endregion
+
+        #region HitDetection for the Lasers
         public void HitDetectionLaser(object sender, EventArgs e)
         {
             
@@ -381,7 +384,7 @@ namespace Asteroids
         }
         #endregion
 
-        #region Hit Detection
+        #region Hit Detection for asteroids and ship
         public void HitDetection(object sender, EventArgs e)
         {
             //The following creates rectangles that represent the position of the asteroids and the Spacship on the canvas
