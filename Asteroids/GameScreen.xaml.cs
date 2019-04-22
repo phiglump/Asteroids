@@ -129,7 +129,7 @@ namespace Asteroids
         #region HitDetection for the Lasers
         public void HitDetectionLaser(object sender, EventArgs e)
         {
-            
+            //Below rectangles are created to represent the positions of the asteroids and the bullets on screen
             Rect ast1 = new Rect(Canvas.GetLeft(asteroid1), Canvas.GetTop(asteroid1), asteroid1.Width, asteroid1.Height);
             Rect ast2 = new Rect(Canvas.GetLeft(asteroid2), Canvas.GetTop(asteroid2), asteroid2.Width, asteroid2.Height);
             Rect ast3 = new Rect(Canvas.GetLeft(asteroid3), Canvas.GetTop(asteroid3), asteroid3.Width, asteroid3.Height);
@@ -140,17 +140,27 @@ namespace Asteroids
             Rect bul3 = new Rect(Canvas.GetLeft(bullets[2]), Canvas.GetTop(bullets[2]), bullets[2].Width, bullets[2].Height);
             Rect bul4 = new Rect(Canvas.GetLeft(bullets[3]), Canvas.GetTop(bullets[3]), bullets[3].Width, bullets[3].Height);
             Rect bul5 = new Rect(Canvas.GetLeft(bullets[4]), Canvas.GetTop(bullets[4]), bullets[4].Width, bullets[4].Height);
+            //The first set of if statements determine whehter the bullet has been shot. if it has then the var will be set to false
+            //This way only when the bullet is on screen will it check to see if it is hitting an asteroid
             if (Bullet1 == false)
             {
+                //A timer below is started
+                //This timer is used so that if the player misses the target then the bullet will reset itself when the timer runs out
+                //otherwise the if statement will pass when the bullet interacts with one of the aseteroids
                 newWatch1.Start();
                 if (bul1.IntersectsWith(ast1) || bul1.IntersectsWith(ast2) || bul1.IntersectsWith(ast3) || bul1.IntersectsWith(ast4) || bul1.IntersectsWith(ast5) || newWatch1.ElapsedMilliseconds > 2000)
                 {
+                    //here the watch is stopped and reset and the bulletTimer is also stopped so that it doesn't keep moving the bullet
+                    //and so that the user can't see the bullet its visibility is set to hidden.
+                    //The var Bullet[i] and getAngle[0] are set to true and false respectively to realign the bullet to the ship when it is shot again.
                     newWatch1.Stop();
                     newWatch1.Reset();
                     bulletTimer1.Stop();
                     bullets[0].Visibility = Visibility.Hidden;
                     Bullet1 = true;
                     getAngle0 = false;
+                    //for the following if statement it will determine if one of the bullets hit the asteroid if so it will move the corresponding asteroid(respawn it/destroy it)
+                    //also the gamescore function is ran to add to the score
                     if (bul1.IntersectsWith(ast1))
                     {
                         Ast1X = 1000;
