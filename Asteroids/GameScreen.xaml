@@ -27,19 +27,6 @@
                     </TransformGroup>
                 </Rectangle.RenderTransform>
             </Rectangle>
-            <Rectangle x:Name="laser" Focusable ="True" Width="41" Height="22" Margin="0" Canvas.Left="443" Canvas.Top="345" RenderTransformOrigin="0.498,0.477" >
-                <Rectangle.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform/>
-                        <RotateTransform Angle="-18.5"/>
-                        <TranslateTransform/>
-                    </TransformGroup>
-                </Rectangle.RenderTransform>
-                <Rectangle.Fill>
-                    <ImageBrush ImageSource="images\laser.png" Stretch="UniformToFill" />
-                </Rectangle.Fill>
-            </Rectangle>
             <Rectangle x:Name="asteroid1" Focusable ="True" Width="75" Height="60" Margin="0" Canvas.Left="121" Canvas.Top="285" >
                 <Rectangle.Fill>
                     <ImageBrush ImageSource="images\Asteroid.png" Stretch="UniformToFill" />
