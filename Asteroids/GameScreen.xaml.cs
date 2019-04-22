@@ -57,6 +57,7 @@ namespace Asteroids
             DispatcherTimer timerMisc = new DispatcherTimer();
             timerMisc.Tick += RandomXYGen;
             timerMisc.Tick += HitDetection;
+            timerMisc.Tick += HitDetectionLaser;
             timerMisc.Interval = TimeSpan.FromMilliseconds(1);
             timerMisc.Start();
             
@@ -67,6 +68,11 @@ namespace Asteroids
         public TimeSpan Interval { get; set; }
         Random rand = new Random();
         Stopwatch watch = new Stopwatch();
+        Stopwatch newWatch1 = new Stopwatch();
+        Stopwatch newWatch2 = new Stopwatch();
+        Stopwatch newWatch3 = new Stopwatch();
+        Stopwatch newWatch4 = new Stopwatch();
+        Stopwatch newWatch5 = new Stopwatch();
         //Variables for the ship and its lasers
         double a = 400;
         double shipX = 451;
@@ -103,12 +109,318 @@ namespace Asteroids
         bool isHit = false;
         #endregion
 
+        #region Hit Detection for the Lasers and Score Counter
+        // sets the score equal to 0
+        int score = 0;
+        // set the score ro have an increment of 20
+        const int score_increment = 20;
+        public void GameScore()
+        {
+            if (true == int.TryParse(scoredisplayed.Text, out score))
+            {
+                // sets the new score to the score + the score increment which is 20. this will add 20 points to the score
+                score += score_increment;
+                //this will display the score
+                scoredisplayed.Text = (score).ToString();
+
+            }
+        }
+        public void HitDetectionLaser(object sender, EventArgs e)
+        {
+            
+            Rect ast1 = new Rect(Canvas.GetLeft(asteroid1), Canvas.GetTop(asteroid1), asteroid1.Width, asteroid1.Height);
+            Rect ast2 = new Rect(Canvas.GetLeft(asteroid2), Canvas.GetTop(asteroid2), asteroid2.Width, asteroid2.Height);
+            Rect ast3 = new Rect(Canvas.GetLeft(asteroid3), Canvas.GetTop(asteroid3), asteroid3.Width, asteroid3.Height);
+            Rect ast4 = new Rect(Canvas.GetLeft(asteroid4), Canvas.GetTop(asteroid4), asteroid4.Width, asteroid4.Height);
+            Rect ast5 = new Rect(Canvas.GetLeft(asteroid5), Canvas.GetTop(asteroid5), asteroid5.Width, asteroid5.Height);
+            Rect bul1 = new Rect(Canvas.GetLeft(bullets[0]), Canvas.GetTop(bullets[0]), bullets[0].Width, bullets[0].Height);
+            Rect bul2 = new Rect(Canvas.GetLeft(bullets[1]), Canvas.GetTop(bullets[1]), bullets[1].Width, bullets[1].Height);
+            Rect bul3 = new Rect(Canvas.GetLeft(bullets[2]), Canvas.GetTop(bullets[2]), bullets[2].Width, bullets[2].Height);
+            Rect bul4 = new Rect(Canvas.GetLeft(bullets[3]), Canvas.GetTop(bullets[3]), bullets[3].Width, bullets[3].Height);
+            Rect bul5 = new Rect(Canvas.GetLeft(bullets[4]), Canvas.GetTop(bullets[4]), bullets[4].Width, bullets[4].Height);
+            if (Bullet1 == false)
+            {
+                //if(Canvas.GetLeft(bullets[0]) > 960 || Canvas.GetLeft(bullets[0]) < 0 || Canvas.GetTop(bullets[0]) > 500 || Canvas.GetTop(bullets[0]) < 0)
+                //{
+                //    bulletTimer1.Stop();
+                //    bullets[0].Visibility = Visibility.Hidden;
+                //    Bullet1 = true;
+                //    getAngle0 = false;
+                //}
+                newWatch1.Start();
+                if (bul1.IntersectsWith(ast1) || bul1.IntersectsWith(ast2) || bul1.IntersectsWith(ast3) || bul1.IntersectsWith(ast4) || bul1.IntersectsWith(ast5) || newWatch1.ElapsedMilliseconds > 2000)
+                {
+                    newWatch1.Stop();
+                    newWatch1.Reset();
+                    bulletTimer1.Stop();
+                    bullets[0].Visibility = Visibility.Hidden;
+                    Bullet1 = true;
+                    getAngle0 = false;
+                    if (bul1.IntersectsWith(ast1))
+                    {
+                        Ast1X = 1000;
+                        Ast1Y = 600;
+                        counter = 1;
+                        GameScore();
+                    }
+                    if (bul1.IntersectsWith(ast2))
+                    {
+                        Ast2X = 1000;
+                        Ast2Y = 600;
+                        counter2 = 1;
+                        GameScore();
+                    }
+                    if (bul1.IntersectsWith(ast3))
+                    {
+                        Ast3X = 1000;
+                        Ast3Y = 600;
+                        counter3 = 1;
+                        GameScore();
+                    }
+                    if (bul1.IntersectsWith(ast4))
+                    {
+                        Ast4X = 1000;
+                        Ast4Y = 600;
+                        counter4 = 1;
+                        GameScore();
+                    }
+                    if (bul1.IntersectsWith(ast5))
+                    {
+                        Ast5X = 1000;
+                        Ast5Y = 600;
+                        counter5 = 1;
+                        GameScore();
+                    }
+                }
+            }
+            if (Bullet2 == false)
+            {
+                //if (Canvas.GetLeft(bullets[1]) > 960 || Canvas.GetLeft(bullets[1]) < 0 || Canvas.GetTop(bullets[1]) > 500 || Canvas.GetTop(bullets[1]) < 0)
+                //{
+                //    bulletTimer2.Stop();
+                //    bullets[1].Visibility = Visibility.Hidden;
+                //    Bullet2 = true;
+                //    getAngle1 = false;
+                //}
+                newWatch2.Start();
+                if (bul2.IntersectsWith(ast1) || bul2.IntersectsWith(ast2) || bul2.IntersectsWith(ast3) || bul2.IntersectsWith(ast4) || bul2.IntersectsWith(ast5) || newWatch1.ElapsedMilliseconds > 2000)
+                {
+                    newWatch2.Stop();
+                    newWatch2.Reset();
+                    bulletTimer2.Stop();
+                    bullets[1].Visibility = Visibility.Hidden;
+                    Bullet2 = true;
+                    getAngle1 = false;
+                    if (bul2.IntersectsWith(ast1))
+                    {
+                        Ast1X = 1000;
+                        Ast1Y = 600;
+                        counter = 1;
+                        GameScore();
+                    }
+                    if (bul2.IntersectsWith(ast2))
+                    {
+                        Ast2X = 1000;
+                        Ast2Y = 600;
+                        counter2 = 1;
+                        GameScore();
+                    }
+                    if (bul2.IntersectsWith(ast3))
+                    {
+                        Ast3X = 1000;
+                        Ast3Y = 600;
+                        counter3 = 1;
+                        GameScore();
+                    }
+                    if (bul2.IntersectsWith(ast4))
+                    {
+                        Ast4X = 1000;
+                        Ast4Y = 600;
+                        counter4 = 1;
+                        GameScore();
+                    }
+                    if (bul2.IntersectsWith(ast5))
+                    {
+                        Ast5X = 1000;
+                        Ast5Y = 600;
+                        counter5 = 1;
+                        GameScore();
+                    }
+                }
+            }
+            if (Bullet3 == false)
+            {
+                //if (Canvas.GetLeft(bullets[2]) > 960 || Canvas.GetLeft(bullets[2]) < 0 || Canvas.GetTop(bullets[2]) > 500 || Canvas.GetTop(bullets[2]) < 0)
+                //{
+                //    bulletTimer3.Stop();
+                //    bullets[2].Visibility = Visibility.Hidden;
+                //    Bullet3 = true;
+                //    getAngle2 = false;
+                //}
+                newWatch3.Start();
+                if (bul3.IntersectsWith(ast1) || bul3.IntersectsWith(ast2) || bul3.IntersectsWith(ast3) || bul3.IntersectsWith(ast4) || bul3.IntersectsWith(ast5) || newWatch1.ElapsedMilliseconds > 2000)
+                {
+                    newWatch3.Stop();
+                    newWatch3.Reset();
+                    bulletTimer3.Stop();
+                    bullets[2].Visibility = Visibility.Hidden;
+                    Bullet3 = true;
+                    getAngle2 = false;
+                    if (bul3.IntersectsWith(ast1))
+                    {
+                        Ast1X = 1000;
+                        Ast1Y = 600;
+                        counter = 1;
+                        GameScore();
+                    }
+                    if (bul3.IntersectsWith(ast2))
+                    {
+                        Ast2X = 1000;
+                        Ast2Y = 600;
+                        counter2 = 1;
+                        GameScore();
+                    }
+                    if (bul3.IntersectsWith(ast3))
+                    {
+                        Ast3X = 1000;
+                        Ast3Y = 600;
+                        counter3 = 1;
+                        GameScore();
+                    }
+                    if (bul3.IntersectsWith(ast4))
+                    {
+                        Ast4X = 1000;
+                        Ast4Y = 600;
+                        counter4 = 1;
+                        GameScore();
+                    }
+                    if (bul3.IntersectsWith(ast5))
+                    {
+                        Ast5X = 1000;
+                        Ast5Y = 600;
+                        counter5 = 1;
+                        GameScore();
+                    }
+                }
+            }
+            if (Bullet4 == false)
+            {
+                //if (Canvas.GetLeft(bullets[3]) > 960 || Canvas.GetLeft(bullets[3]) < 0 || Canvas.GetTop(bullets[3]) > 500 || Canvas.GetTop(bullets[3]) < 0)
+                //{
+                //    bulletTimer4.Stop();
+                //    bullets[3].Visibility = Visibility.Hidden;
+                //    Bullet4 = true;
+                //    getAngle3 = false;
+                //}
+                newWatch4.Start();
+                if (bul4.IntersectsWith(ast1) || bul4.IntersectsWith(ast2) || bul4.IntersectsWith(ast3) || bul4.IntersectsWith(ast4) || bul4.IntersectsWith(ast5) || newWatch1.ElapsedMilliseconds > 2000)
+                {
+                    newWatch4.Stop();
+                    newWatch4.Reset();
+                    bulletTimer4.Stop();
+                    bullets[3].Visibility = Visibility.Hidden;
+                    Bullet4 = true;
+                    getAngle3 = false;
+                    if (bul4.IntersectsWith(ast1))
+                    {
+                        Ast1X = 1000;
+                        Ast1Y = 600;
+                        counter = 1;
+                        GameScore();
+                    }
+                    if (bul4.IntersectsWith(ast2))
+                    {
+                        Ast2X = 1000;
+                        Ast2Y = 600;
+                        counter2 = 1;
+                        GameScore();
+                    }
+                    if (bul4.IntersectsWith(ast3))
+                    {
+                        Ast3X = 1000;
+                        Ast3Y = 600;
+                        counter3 = 1;
+                        GameScore();
+                    }
+                    if (bul4.IntersectsWith(ast4))
+                    {
+                        Ast4X = 1000;
+                        Ast4Y = 600;
+                        counter4 = 1;
+                        GameScore();
+                    }
+                    if (bul4.IntersectsWith(ast5))
+                    {
+                        Ast5X = 1000;
+                        Ast5Y = 600;
+                        counter5 = 1;
+                        GameScore();
+                    }
+                }
+            }
+            if (Bullet5 == false)
+            {
+                //if (Canvas.GetLeft(bullets[4]) > 960 || Canvas.GetLeft(bullets[4]) < 0 || Canvas.GetTop(bullets[4]) > 500 || Canvas.GetTop(bullets[4]) < 0)
+                //{
+                //    bulletTimer5.Stop();
+                //    bullets[4].Visibility = Visibility.Hidden;
+                //    Bullet5 = true;
+                //    getAngle4 = false;
+                //}
+                newWatch5.Start();
+                if (bul5.IntersectsWith(ast1) || bul5.IntersectsWith(ast2) || bul5.IntersectsWith(ast3) || bul5.IntersectsWith(ast4) || bul5.IntersectsWith(ast5) || newWatch1.ElapsedMilliseconds > 2000)
+                {
+                    newWatch5.Stop();
+                    newWatch5.Reset();
+                    bulletTimer5.Stop();
+                    bullets[4].Visibility = Visibility.Hidden;
+                    Bullet5 = true;
+                    getAngle4 = false;
+                    if (bul5.IntersectsWith(ast1))
+                    {
+                        Ast1X = 1000;
+                        Ast1Y = 600;
+                        counter = 1;
+                        GameScore();
+                    }
+                    if (bul5.IntersectsWith(ast2))
+                    {
+                        Ast2X = 1000;
+                        Ast2Y = 600;
+                        counter2 = 1;
+                        GameScore();
+                    }
+                    if (bul5.IntersectsWith(ast3))
+                    {
+                        Ast3X = 1000;
+                        Ast3Y = 600;
+                        counter3 = 1;
+                        GameScore();
+                    }
+                    if (bul5.IntersectsWith(ast4))
+                    {
+                        Ast4X = 1000;
+                        Ast4Y = 600;
+                        counter4 = 1;
+                        GameScore();
+                    }
+                    if (bul5.IntersectsWith(ast5))
+                    {
+                        Ast5X = 1000;
+                        Ast5Y = 600;
+                        counter5 = 1;
+                        GameScore();
+                    }
+                }
+            }
+        }
+        #endregion
+
         #region Hit Detection
         public void HitDetection(object sender, EventArgs e)
         {
             //The following creates rectangles that represent the position of the asteroids and the Spacship on the canvas
             //Allows the ability to fine tune the size of the hit box
-            scoredisplayed.Text = spaceShipLives.ToString();
             Rect spaceShip = new Rect(Canvas.GetLeft(SpaceShip), Canvas.GetTop(SpaceShip), SpaceShip.Width , SpaceShip.Height);
             Rect ast1 = new Rect(Canvas.GetLeft(asteroid1), Canvas.GetTop(asteroid1), asteroid1.Width, asteroid1.Height);
             Rect ast2 = new Rect(Canvas.GetLeft(asteroid2), Canvas.GetTop(asteroid2), asteroid2.Width, asteroid2.Height);
