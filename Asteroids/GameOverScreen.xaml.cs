@@ -27,6 +27,8 @@ namespace Asteroids
             InitializeComponent();
             cn = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = |DataDirectory|Highscores.accdb");
             txtboxInitials.MaxLength = 3;
+            GameScreen gs = new GameScreen();
+            gs.getScore();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
