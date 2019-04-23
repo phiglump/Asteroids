@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.OleDb;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,24 +22,44 @@ namespace Asteroids
     /// </summary>
     public partial class HighScoreScreen : Page
     {
-        OleDbConnection cn;
         public HighScoreScreen()
         {
-            //Navigates to the where the database is stores and then opens it.
             InitializeComponent();
-            cn = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = |DataDirectory|Highscores.accdb");
-            cn.Open();
-            //Pulls the information from the highscores database.
-            string Initials = "select * from Highscores";
-            OleDbCommand cmd = new OleDbCommand(Initials, cn);
-            OleDbDataReader read = cmd.ExecuteReader();
-            string data = "";
-            //displays the information from the highscores database.
-            while (read.Read())
+            this.databaseRead();
+
+        }
+
+        public void databaseRead()
+        {
+            String line;
+            StreamReader sr = new StreamReader("highscores.txt");
+            line = sr.ReadLine();
+            bool check = true;
+
+            while(line != null)
             {
-                data += "" + read[0].ToString() + ".            " + read[2].ToString() + "          " + read[1].ToString() + "\n";
+                if ( check == true)
+                {
+                    txtscores.AppendText(line);
+                    txtscores.AppendText(Environment.NewLine);
+                    line = sr.ReadLine();
+                    check = false;
+                }
+                else
+                {
+                    txtinitials.AppendText(line);
+                    txtinitials.AppendText(Environment.NewLine);
+                    line = sr.ReadLine();
+                    check = true;
+                }
             }
-            Text1.Text = data;
+            sr.Close();
+
+            for(int i = 1; i <= 10; i++)
+            {
+                txtnumbers.AppendText(i.ToString());
+                txtnumbers.AppendText(Environment.NewLine);
+            }
         }
         //this creates a button that when clicked exits the program.
         private void Button_Click(object sender, RoutedEventArgs e)
