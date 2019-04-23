@@ -384,7 +384,7 @@
 % Linebreaks \\ can be used within to get better formatting as desired.
 % Do not put math or special symbols in the title.
 %File name goes here: Change for every lab!
-\title{Final Project Idea\\ Asteroids}
+\title{Final Project\\ Paper Asteroids}
 %
 %
 % author names and IEEE memberships
@@ -475,7 +475,7 @@
 % in the abstract or keywords.
 \IEEEtitleabstractindextext{%
 \begin{abstract}
-Our purpose is to create an entertaining arcade game for our classic game lovers.Our goal is to create an Asteroids remake. We intend to stick  to the original as much as possible, however we may implement some of our on touches. 
+Our purpose is to create an entertaining arcade game for our classic game lovers.Our goal is to create an Asteroids remake, that will follow a basic idea of the original game, but will have our own touch to it to make it stand out from the rest.
 \end{abstract}
 
 %As the comment below states, you usually only do these when you're doing a final submission of a paper, to make it easier to find your work when searching.
@@ -540,14 +540,10 @@ For this project we plan to remake the well known game Asteroids. This 1979 game
 
 Our target audience would be those who enjoy a classic arcade game. The purpose of the project is simply to entertain the person playing. We hope to accomplish a remake of the base game along with our own tweaks. For example, an option to implement high scores stored in a database that the user can view. 
 
-\subsection{Subsection Heading Here}
-Occasionally you need to break your sections into separate parts, you will likely not need a subsection for every section
 
 % needed in second column of first page if using \IEEEpubid
 %\IEEEpubidadjcol
 
-\subsubsection{Subsubsection Heading Here}
-Occasionally you will need to break your subsections into separate parts, if you find yourself using this often, you're likely going overboard.  Don't try to go any lower down than this...
 
 
 % An example of a floating figure using the graphicx package.
@@ -646,10 +642,10 @@ Occasionally you will need to break your subsections into separate parts, if you
 % \fnbelowfloat command of the stfloats package.
 
 \subsection{Background}
-In the middle of the screen there is a spaceship that shoots lasers at incoming asteroids in which the user decides which direction the spaceship will point. The object of the game is for the user to shoot the lasers at the asteroids and destroy them before they hit the ship.
+Both of our histories in this world have included gaming. We have always had a soft spot for them and always will. We began throwing ideas out for our project that began with a cookbook. That really wouldn't make since for us as neither one of us really even cook. Then the idea of making a game came along, which is way more in our ball park when compared to a cook book. Asteroids was one of our first thoughts and eventually became the project's concept. We figured that this is one of the top of the original arcade games and that it was simple enough that we could handle it, or so we though.
 
 \subsection{Challenges}
-A challenge we expect to encounter would be implementing how objects interact with each other on the screen. Another challenge would be designing objects that can move on the screen, which does include text.
+We came across several challenges in this project. First, we have never created any sort of game in a c\# wpf or any language for that matter. This meant that we were both going in very blind, and quite often we were underestimating tasks. Another challenge that arose was the generation of objects, like the asteroids, bullets, and spaceship. We attempted to do research online to gather ideas from other works but due to confusion we had to do the work ourselves. For this challenge, we solved it by adding the objects for the asteroids and the spaceship ourselves, and then the bullets are added into an array to be referenced via its element name. For the most part this works but makes the code longer than we would prefer. Another challenge, was the hit detection and this held us back for quite awhile. Eventually we stumbled upon some research that showed us how to create reference objects for each object on screen. With those we will run a function to detect whether the reference objects had intersected and if so then a "signal" was sent showing that it was hit. 
 
 
 
@@ -659,7 +655,7 @@ We are hoping to create a full Asteroids remake. This means that there is a poin
 First we want to create a moving background to give a more pleasing look. We also want to make the asteroids break apart into smaller asteroids after destruction. Another possible goal would be to add more color to the game. 
 
 \subsection{Requirements}
-We have a total of 8 requirements for our project. Our first requirement is to have asteroids that appear randomly on screen and continue to move until destroyed. The next requirement is to implement a high score table that list the top 10 scores and that can be viewed by the user and updated when a higher score is made. This will be done in the same theme as the 1979 version entailed, displaying the top 10 scores and having a maximum of only 3 letters as the name. Our third requirement is to create a ship that moves and spins around the screen effortlessly. To install a working laser would be our forth requirement. The laser will be fired from the front of the ship and will damage/destroy hostile entities upon impact. The fifth requirement is to allow the ship, the laser beams, and hostile entities to exit from one side of the screen and appear on the adjacent side of the screen. This was also implemented in the original game by accident, however everyone liked in and so they kept it, so we intend to keep it to. The sixth and arguably the most important requirement would be to implement hit detection. This will be applied to the ship, the laser, and any hostile entities. The seventh requirement is to implement the breaking of the asteroids into smaller pieces. This will happen 2 times until finally destroyed as it was in the original game. The final requirement is to add custom audio files for the sounds effect in the game. We decided to add these custom files to bring a unique feel to the once futuristic sounding game.
+We have a total of 8 requirements for our project. Most of our requirements were gathered from research of the original game and how it worked and played. We also based it off of how we have experienced similar concepts in other games aswell. Our first requirement is to have asteroids that appear randomly on screen and continue to move until destroyed. The next requirement is to implement a high score table that list the top 10 scores and that can be viewed by the user and updated when a higher score is made. This will be done in the same theme as the 1979 version entailed, displaying the top 10 scores and having a maximum of only 3 letters as the name. Our third requirement is to create a ship that moves and spins around the screen effortlessly. To install a working laser would be our forth requirement. The laser will be fired from the front of the ship and will damage/destroy hostile entities upon impact. The fifth requirement is to allow the ship, the laser beams, and hostile entities to exit from one side of the screen and appear on the adjacent side of the screen. This was also implemented in the original game by accident, however everyone liked in and so they kept it, so we intend to keep it to. The sixth and arguably the most important requirement would be to implement hit detection. This will be applied to the ship, the laser, and any hostile entities. The seventh requirement is to implement the breaking of the asteroids into smaller pieces. This will happen 2 times until finally destroyed as it was in the original game. The final requirement is to add custom audio files for the sounds effect in the game. We decided to add these custom files to bring a unique feel to the once futuristic sounding game.
 
 \subsubsection{Functional}
 \begin{itemize}
@@ -689,11 +685,15 @@ We have a total of 8 requirements for our project. Our first requirement is to h
 \hline
 Use Case ID & Use Case Name & Primary Actor & Complexity & Priority \\
 \hline \hline
-1 & Highscore & Player & Easy & 1\\
+1 & viewing high scores & Player & Easy & 3\\
 \hline
-2 & Start & Player & Easy & 1\\
+2 & starting a new game & Player & Easy & 1\\
 \hline
-3 & Database & Player & Easy & 1\\
+3 & adding new high score & Player & Easy & 3\\
+\hline
+4 & shoots asteroid  & Player & Hard & 2\\
+\hline
+5 & player movement & Player & Medium & 1\\
 \hline
 
 \end{tabular}
@@ -704,7 +704,7 @@ Use Case ID & Use Case Name & Primary Actor & Complexity & Priority \\
 
 \begin{itemize}
 \item[Use Case Number:] 1
-\item[Use Case Name:] Highscore
+\item[Use Case Name:] viewing high scores
 \item[Description:] A player wants to access the highscore screen. The player then clicks on the highscore button on the start screen. Then the database is accessed and then displayed for the user to view.
 \end{itemize}
 
@@ -717,7 +717,7 @@ Use Case ID & Use Case Name & Primary Actor & Complexity & Priority \\
 
 \begin{itemize}
 \item[Use Case Number:] 2
-\item[Use Case Name:] Start
+\item[Use Case Name:] starting a new game
 \item[Description:] A player runs the program and is presented with the start screen. The player would then only have to click on the "start" button to begin the game. After clicking start the user is then shown the game screen where the game starts up.
 \end{itemize}
 
@@ -730,8 +730,20 @@ Use Case ID & Use Case Name & Primary Actor & Complexity & Priority \\
 
 \begin{itemize}
 \item[Use Case Number:] 3
-\item[Use Case Name:] Database 
+\item[Use Case Name:] adding new high score
 \item[Description:] A player finishes the game an is prompted to input their initials. After the player has input their initials then the screen switches to the highscores screen and displays the top 9 scores.
+\end{itemize}
+
+\begin{itemize}
+\item[Use Case Number:] 4
+\item[Use Case Name:] shoots asteroid
+\item[Description:] A player presses the fire button at an asteroid and hits the asteroid. This will cause the hitdetection funciton to be enacted to so that the asteroid is "destroyed" and then it is sent thru the respawn funciton to be respawned. With this, the player is also rewarded points for each asteroid hit.
+\end{itemize}
+
+\begin{itemize}
+\item[Use Case Number:] 5
+\item[Use Case Name:] player movement
+\item[Description:] A player presses any of the movement buttons (WASD), and based on the button pressed a corresponding movement is applied. There is a function for ship movement that keeps checking for which button is pressed and when it is it will alter the ships position based on the movement. There is also another function that runs to check if the player has reached a border and if they have then this will cause the ship to appear on the other side, making the screen borders seem connected to the opposite side. 
 \end{itemize}
 
 \begin{enumerate}
@@ -742,28 +754,30 @@ Use Case ID & Use Case Name & Primary Actor & Complexity & Priority \\
 \item[Termination Outcome:] The user sees their new score on the screen.
 \end{enumerate}
 
-You will then need to continue to flesh out all use cases you have identified for your project.
-
 
 \begin{figure}[ht!]
+\centering
 \includegraphics[height=150px, width=250px]{Start.png}
 \caption{The is what the start screen looks like}
 \label{Start screen}
 \end{figure}
 
 \begin{figure}[ht!]
+\centering
 \includegraphics[height=150px, width=250px]{Game.png}
 \caption{The is what the game screen looks like}
 \label{Game screen}
 \end{figure}
 
 \begin{figure}[ht!]
+\centering
 \includegraphics[height=150px, width=250px]{Highscore.png}
 \caption{The is what the highscore screen looks like}
 \label{High Score screen}
 \end{figure}
 
 \subsection{Interface Mockups}
+Figure \ref{Start screen} represents how we decided our starting screen to look like. This shows the title of the game and presents the player with three different buttons to press. Start will start the game and change the screen, highscores will show the highscore screen, and exit will exit the game. Figure \ref{Game screen} is our representation of the gamescreen. At the top left there is the score and the lives counter. There is also the ship and asteroid objects. The asteroid objects will be already moving on screen and the ship will be waiting for the player to move it. The last mockup is the figure \ref{High Score screen} which shows off our highscorescreen. This will have three column showing the position, initials and score of each player in the list. There are also two buttons at the bottom that allow the player to go back to the original menu screen or to exit the game.
 For example, see Figures above \ref{Start screen} (Start Screen), \ref{Game screen} (Game Screen), or \ref{High Score screen} (High Score Screen).
 
 \section{Project Timeline}
@@ -779,6 +793,7 @@ Go to \ref{Timeline} for the project timeline.
 Our project is centered around a WPF window that once certain buttons are pressed or specified events occur then the window will alter its contents into a desired page. The Main window will open and start the "StartScreen" page that includes the buttons Start, Highscores, and Exit. Based on the button press the buttons will either lead to the "GameScreen" page, "HighScoresScreen" page, or exit the entire window that the project is hosted inside. This was done so that navigation was pretty straight forward and seemless. We found that this way prevented us from having to open and close windows when a new page was needed. We have created seperate classes for both the Asteroids and the Spaceship to make it easier to understand where all of the information is stored for the program. Our project incorporates a small database to store the information for the highscores. 
 
 \subsection{UML Outline}
+So the outline starts at with a window of which all of the class exist with in as different pages. This was so that we could navigate amongst everthing fluidly. The main window immediately leads to the start screen. From there the user can access the Game screen or the Highscore screen. The highscore screen can return back to the start screen. The gamescreen is where a majority of the project is located. From here we have all of our objects such as the asteroids, spaceship and the bullets. On the gamescreen there is a state checker that will allow the game to paused and resumed if the player so desires. 
 Here is the UML outline for the Asteroids project: \ref{AsteroidsDia}.
 \begin{figure}[ht!]
 \includegraphics[height=700px, width=500px]{AsteroidsUML.png}
@@ -795,6 +810,8 @@ The second design pattern we are using is the State pattern. We implemented this
 Currently we have our 3 out of 8 requirements completely finished. Our project currently has a high scores table which in implemented through access. We also have asteroids that appear randomly on screen and move to the other side off the screen, however we do not yet have hit detection or the feature that allows objects to move of the screen and appear back on the adjacent side. We also have a ship that moves and spins effortlessly within the screen. We are working now on the 8th, 4th and 6th this week and plan to work on the last two (the 7th and 5th) from April 18th-24th.
 
 \subsection{Future Work}
+There are still some bugs that are currently in the build. Obviously we would love to fix those. This took a lot of hard work and dedication from the both of us, so definetly would not want to burn the project up. A good idea would to be finalize the project and have it on our GitHub so that we can have it either as a reference or for others to see what we accomplished. It also wouldn't be a bad idea to rebuild this project in a better engine for gaming. While a wpf was fun to work with, there is software that can make this project a bit easier to complete.
+
 
 
 % if have a single appendix:
@@ -871,13 +888,6 @@ Currently we have our 3 out of 8 requirements completely finished. Our project c
 %Make sure to reference any resource used aside from the lab itself!
 %(you can make a separate *.bib file if preferred, this just tends to be the quick and dirty approach)
 
-\begin{thebibliography}{1}
-
-\bibitem{IEEEhowto:kopka}
-H.~Kopka and P.~W. Daly, \emph{A Guide to \LaTeX}, 3rd~ed.\hskip 1em plus
-  0.5em minus 0.4em\relax Harlow, England: Addison-Wesley, 1999.
-
-\end{thebibliography}
 
 % biography section
 % 
