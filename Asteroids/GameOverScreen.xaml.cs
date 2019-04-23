@@ -35,7 +35,6 @@ namespace Asteroids
             int Score = score;
             sw.WriteLine(Score);
             sw.Close();
-            finalscore.Text = Score.ToString();
             
         }
 
