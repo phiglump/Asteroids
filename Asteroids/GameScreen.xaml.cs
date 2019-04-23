@@ -106,6 +106,8 @@ namespace Asteroids
         int counter5 = 0;
         //bool for the hit detection function
         bool isHit = false;
+        // Instantiating the GameOverScreen
+        GameOverScreen gos = new GameOverScreen();
         #endregion
 
         #region Score Counter
@@ -445,8 +447,7 @@ namespace Asteroids
                     {
                         shiplives1.Visibility = Visibility.Hidden;
                         this.NavigationService.Navigate(new Uri("GameOverScreen.xaml", UriKind.Relative));
-                        shipX = 454;
-                        shipY = 246;
+                        gos.databaseWrite(score);
                     }
 
                 }
@@ -484,8 +485,7 @@ namespace Asteroids
                     {
                         shiplives1.Visibility = Visibility.Hidden;
                         this.NavigationService.Navigate(new Uri("GameOverScreen.xaml", UriKind.Relative));
-                        shipX = 454;
-                        shipY = 246;
+                        gos.databaseWrite(score);
                     }
                 }
                 if (spaceShip.IntersectsWith(ast3))
@@ -522,8 +522,7 @@ namespace Asteroids
                     {
                         shiplives1.Visibility = Visibility.Hidden;
                         this.NavigationService.Navigate(new Uri("GameOverScreen.xaml", UriKind.Relative));
-                        shipX = 454;
-                        shipY = 246;
+                        gos.databaseWrite(score);
                     }
                 }
                 if (spaceShip.IntersectsWith(ast4))
@@ -560,8 +559,7 @@ namespace Asteroids
                     {
                         shiplives1.Visibility = Visibility.Hidden;
                         this.NavigationService.Navigate(new Uri("GameOverScreen.xaml", UriKind.Relative));
-                        shipX = 454;
-                        shipY = 246;
+                        gos.databaseWrite(score);
                     }
                 }
                 if (spaceShip.IntersectsWith(ast5))
@@ -598,8 +596,7 @@ namespace Asteroids
                     {
                         shiplives1.Visibility = Visibility.Hidden;
                         this.NavigationService.Navigate(new Uri("GameOverScreen.xaml", UriKind.Relative));
-                        shipX = 454;
-                        shipY = 246;
+                        gos.databaseWrite(score);
                     }
                 }
             }

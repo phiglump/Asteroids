@@ -64,7 +64,6 @@
     <Compile Include="HighScoreScreen.xaml.cs">
       <DependentUpon>HighScoreScreen.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Score.cs" />
     <Compile Include="StartScreen.xaml.cs">
       <DependentUpon>StartScreen.xaml</DependentUpon>
     </Compile>

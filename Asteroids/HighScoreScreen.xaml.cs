@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.OleDb;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,11 +22,44 @@ namespace Asteroids
     /// </summary>
     public partial class HighScoreScreen : Page
     {
-        OleDbConnection cn;
         public HighScoreScreen()
         {
             InitializeComponent();
+            this.databaseRead();
 
+        }
+
+        public void databaseRead()
+        {
+            String line;
+            StreamReader sr = new StreamReader("highscores.txt");
+            line = sr.ReadLine();
+            bool check = true;
+
+            while(line != null)
+            {
+                if ( check == true)
+                {
+                    txtscores.AppendText(line);
+                    txtscores.AppendText(Environment.NewLine);
+                    line = sr.ReadLine();
+                    check = false;
+                }
+                else
+                {
+                    txtinitials.AppendText(line);
+                    txtinitials.AppendText(Environment.NewLine);
+                    line = sr.ReadLine();
+                    check = true;
+                }
+            }
+            sr.Close();
+
+            for(int i = 1; i <= 10; i++)
+            {
+                txtnumbers.AppendText(i.ToString());
+                txtnumbers.AppendText(Environment.NewLine);
+            }
         }
         //this creates a button that when clicked exits the program.
         private void Button_Click(object sender, RoutedEventArgs e)

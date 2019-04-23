@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
 
 namespace Asteroids
 {
@@ -21,17 +22,35 @@ namespace Asteroids
     /// </summary>
     public partial class GameOverScreen : Page
     {
-        OleDbConnection cn;
+        TextWriter sw = new StreamWriter("highscores.txt", true);
         public GameOverScreen()
         {
             InitializeComponent();
-            cn = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = |DataDirectory|Highscores.accdb");
             txtboxInitials.MaxLength = 3;
+            txtboxInitials.CharacterCasing = CharacterCasing.Upper;
         }
+
+        public void databaseWrite(int score)
+        {
+            int Score = score;
+            sw.WriteLine(Score);
+            sw.Close();
+            finalscore.Text = Score.ToString();
+            
+        }
+
+        public void getinitials()
+        {
+            String initials = txtboxInitials.Text;
+            sw.WriteLine(initials);
+            sw.Close();
+        }
+
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-           
+            this.getinitials();
+            this.NavigationService.Navigate(new Uri("HighScoreScreen.xaml", UriKind.Relative));
         }
     }
 }
