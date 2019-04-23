@@ -17,18 +17,18 @@
                 <ImageBrush/>
             </TextBlock.Background>
         </TextBlock>
-        <Button x:Name="button" Content="Exit" HorizontalAlignment="Center" Margin="538,0,379,22" VerticalAlignment="Bottom" Width="62" Height="38" Foreground="Black" FontSize="36" Click="Button_Click" FontFamily="Bradley Hand ITC" BorderBrush="{x:Null}" Opacity="0.5">
+        <Button x:Name="button" Content="Exit" HorizontalAlignment="Center" Margin="538,0,379,83" VerticalAlignment="Bottom" Width="62" Height="38" Foreground="Black" FontSize="36" Click="Button_Click" FontFamily="Bradley Hand ITC" BorderBrush="{x:Null}" Opacity="0.5">
             <Button.Background>
                 <ImageBrush/>
             </Button.Background>
         </Button>
-        <Button x:Name="Menu" Content="Menu" HorizontalAlignment="Center" Margin="346,0,543,22" VerticalAlignment="Bottom" Width="90" Height="38" Foreground="Black" BorderBrush="{x:Null}" FontSize="36" Click="Button_Click_Menu" FontFamily="Bradley Hand ITC" Opacity="0.5">
+        <Button x:Name="Menu" Content="Menu" HorizontalAlignment="Center" Margin="332,0,557,83" VerticalAlignment="Bottom" Width="90" Height="38" Foreground="Black" BorderBrush="{x:Null}" FontSize="36" Click="Button_Click_Menu" FontFamily="Bradley Hand ITC" Opacity="0.5">
             <Button.Background>
                 <ImageBrush/>
             </Button.Background>
         </Button>
-        <TextBox x:Name="txtinitials" HorizontalAlignment="Left" Height="323" Margin="407,110,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="126" Background="{x:Null}" FontFamily="Bradley Hand ITC" FontSize="20" Opacity="0.5" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <TextBox x:Name="txtscores" HorizontalAlignment="Left" Height="323" Margin="538,110,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="126" Background="{x:Null}" FontFamily="Bradley Hand ITC" FontSize="20" Opacity="0.5" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <TextBox x:Name="txtnumbers" HorizontalAlignment="Left" Height="323" Margin="281,110,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="126" Background="{x:Null}" FontFamily="Bradley Hand ITC" FontSize="20" Opacity="0.5" BorderBrush="{x:Null}" IsEnabled="False"/>
+        <TextBox x:Name="txtinitials" HorizontalAlignment="Left" Height="248" Margin="419,110,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="78" Background="{x:Null}" FontFamily="Bradley Hand ITC" FontSize="20" Opacity="0.5" BorderBrush="{x:Null}" IsEnabled="False"/>
+        <TextBox x:Name="txtscores" HorizontalAlignment="Left" Height="248" Margin="502,110,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="72" Background="{x:Null}" FontFamily="Bradley Hand ITC" FontSize="20" Opacity="0.5" BorderBrush="{x:Null}" IsEnabled="False"/>
+        <TextBox x:Name="txtnumbers" HorizontalAlignment="Left" Height="248" Margin="350,110,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="41" Background="{x:Null}" FontFamily="Bradley Hand ITC" FontSize="20" Opacity="0.5" BorderBrush="{x:Null}" IsEnabled="False"/>
     </Grid>
 </Page>
