@@ -1084,8 +1084,8 @@ namespace Asteroids
                     rec.Visibility = Visibility.Hidden;
                     double tempTop = Canvas.GetTop(SpaceShip);
                     double tempLeft = Canvas.GetLeft(SpaceShip);
-                    top[i] = tempTop - 2;
-                    left[i] = tempLeft + 9;
+                    top[i] = tempTop + 10;
+                    left[i] = tempLeft + 10;
                     Canvas.SetTop(rec, tempTop);
                     Canvas.SetLeft(rec, tempLeft);
                 }
@@ -1150,7 +1150,7 @@ namespace Asteroids
                 bulletAngle0 = angle;
                 double tempTop = Canvas.GetTop(SpaceShip);
                 double tempLeft = Canvas.GetLeft(SpaceShip);
-                top[0] = tempTop - 2;
+                top[0] = tempTop + 10;
                 left[0] = tempLeft + 9;
                 Canvas.SetTop(bullets[0], tempTop);
                 Canvas.SetLeft(bullets[0], tempLeft);
@@ -1171,7 +1171,7 @@ namespace Asteroids
                 bulletAngle1 = angle;
                 double tempTop = Canvas.GetTop(SpaceShip);
                 double tempLeft = Canvas.GetLeft(SpaceShip);
-                top[1] = tempTop - 2;
+                top[1] = tempTop + 10;
                 left[1] = tempLeft + 9;
                 Canvas.SetTop(bullets[1], tempTop);
                 Canvas.SetLeft(bullets[1], tempLeft);
@@ -1192,7 +1192,7 @@ namespace Asteroids
                 bulletAngle2 = angle;
                 double tempTop = Canvas.GetTop(SpaceShip);
                 double tempLeft = Canvas.GetLeft(SpaceShip);
-                top[2] = tempTop - 2;
+                top[2] = tempTop + 10;
                 left[2] = tempLeft + 9;
                 Canvas.SetTop(bullets[2], tempTop);
                 Canvas.SetLeft(bullets[2], tempLeft);
@@ -1213,7 +1213,7 @@ namespace Asteroids
                 bulletAngle3 = angle;
                 double tempTop = Canvas.GetTop(SpaceShip);
                 double tempLeft = Canvas.GetLeft(SpaceShip);
-                top[3] = tempTop - 2;
+                top[3] = tempTop + 10;
                 left[3] = tempLeft + 9;
                 Canvas.SetTop(bullets[3], tempTop);
                 Canvas.SetLeft(bullets[3], tempLeft);
@@ -1234,7 +1234,7 @@ namespace Asteroids
                 bulletAngle4 = angle;
                 double tempTop = Canvas.GetTop(SpaceShip);
                 double tempLeft = Canvas.GetLeft(SpaceShip);
-                top[4] = tempTop - 2;
+                top[4] = tempTop + 10;
                 left[4] = tempLeft + 9;
                 Canvas.SetTop(bullets[4], tempTop);
                 Canvas.SetLeft(bullets[4], tempLeft);
