@@ -171,19 +171,22 @@ namespace Asteroids
         #region HitDetection for the Lasers
         public void HitDetectionLaser(object sender, EventArgs e)
         {
-            //Below rectangles are created to represent the positions of the asteroids and the bullets on screen
-            Rect ast1 = new Rect(Canvas.GetLeft(asteroid1), Canvas.GetTop(asteroid1), asteroid1.Width, asteroid1.Height);
-            Rect ast2 = new Rect(Canvas.GetLeft(asteroid2), Canvas.GetTop(asteroid2), asteroid2.Width, asteroid2.Height);
-            Rect ast3 = new Rect(Canvas.GetLeft(asteroid3), Canvas.GetTop(asteroid3), asteroid3.Width, asteroid3.Height);
-            Rect ast4 = new Rect(Canvas.GetLeft(asteroid4), Canvas.GetTop(asteroid4), asteroid4.Width, asteroid4.Height);
-            Rect ast5 = new Rect(Canvas.GetLeft(asteroid5), Canvas.GetTop(asteroid5), asteroid5.Width, asteroid5.Height);
-            Rect bul1 = new Rect(Canvas.GetLeft(bullets[0]), Canvas.GetTop(bullets[0]), bullets[0].Width, bullets[0].Height);
-            Rect bul2 = new Rect(Canvas.GetLeft(bullets[1]), Canvas.GetTop(bullets[1]), bullets[1].Width, bullets[1].Height);
-            Rect bul3 = new Rect(Canvas.GetLeft(bullets[2]), Canvas.GetTop(bullets[2]), bullets[2].Width, bullets[2].Height);
-            Rect bul4 = new Rect(Canvas.GetLeft(bullets[3]), Canvas.GetTop(bullets[3]), bullets[3].Width, bullets[3].Height);
-            Rect bul5 = new Rect(Canvas.GetLeft(bullets[4]), Canvas.GetTop(bullets[4]), bullets[4].Width, bullets[4].Height);
-            //The first set of if statements determine whehter the bullet has been shot. if it has then the var will be set to false
-            //This way only when the bullet is on screen will it check to see if it is hitting an asteroid
+            try
+            {
+                //Below rectangles are created to represent the positions of the asteroids and the bullets on screen
+                Rect ast1 = new Rect(Canvas.GetLeft(asteroid1), Canvas.GetTop(asteroid1), asteroid1.Width, asteroid1.Height);
+                Rect ast2 = new Rect(Canvas.GetLeft(asteroid2), Canvas.GetTop(asteroid2), asteroid2.Width, asteroid2.Height);
+                Rect ast3 = new Rect(Canvas.GetLeft(asteroid3), Canvas.GetTop(asteroid3), asteroid3.Width, asteroid3.Height);
+                Rect ast4 = new Rect(Canvas.GetLeft(asteroid4), Canvas.GetTop(asteroid4), asteroid4.Width, asteroid4.Height);
+                Rect ast5 = new Rect(Canvas.GetLeft(asteroid5), Canvas.GetTop(asteroid5), asteroid5.Width, asteroid5.Height);
+                Rect bul1 = new Rect(Canvas.GetLeft(bullets[0]), Canvas.GetTop(bullets[0]), bullets[0].Width, bullets[0].Height);
+                Rect bul2 = new Rect(Canvas.GetLeft(bullets[1]), Canvas.GetTop(bullets[1]), bullets[1].Width, bullets[1].Height);
+                Rect bul3 = new Rect(Canvas.GetLeft(bullets[2]), Canvas.GetTop(bullets[2]), bullets[2].Width, bullets[2].Height);
+                Rect bul4 = new Rect(Canvas.GetLeft(bullets[3]), Canvas.GetTop(bullets[3]), bullets[3].Width, bullets[3].Height);
+                Rect bul5 = new Rect(Canvas.GetLeft(bullets[4]), Canvas.GetTop(bullets[4]), bullets[4].Width, bullets[4].Height);
+                //The first set of if statements determine whehter the bullet has been shot. if it has then the var will be set to false
+                //This way only when the bullet is on screen will it check to see if it is hitting an asteroid
+           
             if (Bullet1 == false)
             {
                 //A timer below is started
@@ -432,6 +435,11 @@ namespace Asteroids
                     }
                 }
             }
+            }
+            catch (Exception ex)
+            {
+                System.Console.WriteLine(ex);
+            }
         }
         #endregion
 
@@ -460,12 +468,16 @@ namespace Asteroids
                     isHit = true;
                     shipX = 454;
                     shipY = 246;
+                    Canvas.SetLeft(SpaceShip, shipX);
+                    Canvas.SetTop(SpaceShip, shipY);
                     // checks to see if the spaceshiplives is equal to 3 and then sets the lives to 3
                     if (spaceShipLives == 3)
                     {
                         shiplives4.Visibility = Visibility.Hidden;
                         shipX = 454;
                         shipY = 246;
+                        Canvas.SetLeft(SpaceShip, shipX);
+                        Canvas.SetTop(SpaceShip, shipY);
                     }
                     // checks to see if the spaceshiplives is equal to 2 and then sets the lives to 2
                     if (spaceShipLives == 2)
@@ -473,6 +485,8 @@ namespace Asteroids
                         shiplives3.Visibility = Visibility.Hidden;
                         shipX = 454;
                         shipY = 246;
+                        Canvas.SetLeft(SpaceShip, shipX);
+                        Canvas.SetTop(SpaceShip, shipY);
                     }
                     // checks to see if the spaceshiplives is equal to 1 and then sets the lives to 1
                     if (spaceShipLives == 1)
@@ -480,6 +494,8 @@ namespace Asteroids
                         shiplives2.Visibility = Visibility.Hidden;
                         shipX = 454;
                         shipY = 246;
+                        Canvas.SetLeft(SpaceShip, shipX);
+                        Canvas.SetTop(SpaceShip, shipY);
                     }
                     // checks to see if the spaceshiplives is equal to 0 and then sets the lives to 0
                     // send the user to the GameOverScreen
@@ -498,12 +514,16 @@ namespace Asteroids
                     isHit = true;
                     shipX = 454;
                     shipY = 246;
+                    Canvas.SetLeft(SpaceShip, shipX);
+                    Canvas.SetTop(SpaceShip, shipY);
                     // checks to see if the spaceshiplives is equal to 3 and then sets the lives to 3
                     if (spaceShipLives == 3)
                     {
                         shiplives4.Visibility = Visibility.Hidden;
                         shipX = 454;
                         shipY = 246;
+                        Canvas.SetLeft(SpaceShip, shipX);
+                        Canvas.SetTop(SpaceShip, shipY);
                     }
                     // checks to see if the spaceshiplives is equal to 2 and then sets the lives to 2
                     if (spaceShipLives == 2)
@@ -511,6 +531,8 @@ namespace Asteroids
                         shiplives3.Visibility = Visibility.Hidden;
                         shipX = 454;
                         shipY = 246;
+                        Canvas.SetLeft(SpaceShip, shipX);
+                        Canvas.SetTop(SpaceShip, shipY);
                     }
                     // checks to see if the spaceshiplives is equal to 1 and then sets the lives to 1
                     if (spaceShipLives == 1)
@@ -518,6 +540,8 @@ namespace Asteroids
                         shiplives2.Visibility = Visibility.Hidden;
                         shipX = 454;
                         shipY = 246;
+                        Canvas.SetLeft(SpaceShip, shipX);
+                        Canvas.SetTop(SpaceShip, shipY);
                     }
                     // checks to see if the spaceshiplives is equal to 0 and then sets the lives to 0
                     // send the user to the GameOverScreen
@@ -535,12 +559,16 @@ namespace Asteroids
                     isHit = true;
                     shipX = 454;
                     shipY = 246;
+                    Canvas.SetLeft(SpaceShip, shipX);
+                    Canvas.SetTop(SpaceShip, shipY);
                     // checks to see if the spaceshiplives is equal to 3 and then sets the lives to 3
                     if (spaceShipLives == 3)
                     {
                         shiplives4.Visibility = Visibility.Hidden;
                         shipX = 454;
                         shipY = 246;
+                        Canvas.SetLeft(SpaceShip, shipX);
+                        Canvas.SetTop(SpaceShip, shipY);
                     }
                     // checks to see if the spaceshiplives is equal to 2 and then sets the lives to 2
                     if (spaceShipLives == 2)
@@ -548,6 +576,8 @@ namespace Asteroids
                         shiplives3.Visibility = Visibility.Hidden;
                         shipX = 454;
                         shipY = 246;
+                        Canvas.SetLeft(SpaceShip, shipX);
+                        Canvas.SetTop(SpaceShip, shipY);
                     }
                     // checks to see if the spaceshiplives is equal to 1 and then sets the lives to 1
                     if (spaceShipLives == 1)
@@ -555,6 +585,8 @@ namespace Asteroids
                         shiplives2.Visibility = Visibility.Hidden;
                         shipX = 454;
                         shipY = 246;
+                        Canvas.SetLeft(SpaceShip, shipX);
+                        Canvas.SetTop(SpaceShip, shipY);
                     }
                     // checks to see if the spaceshiplives is equal to 0 and then sets the lives to 0
                     // send the user to the GameOverScreen
@@ -572,12 +604,16 @@ namespace Asteroids
                     isHit = true;
                     shipX = 454;
                     shipY = 246;
+                    Canvas.SetLeft(SpaceShip, shipX);
+                    Canvas.SetTop(SpaceShip, shipY);
                     // checks to see if the spaceshiplives is equal to 3 and then sets the lives to 3
                     if (spaceShipLives == 3)
                     {
                         shiplives4.Visibility = Visibility.Hidden;
                         shipX = 454;
                         shipY = 246;
+                        Canvas.SetLeft(SpaceShip, shipX);
+                        Canvas.SetTop(SpaceShip, shipY);
                     }
                     // checks to see if the spaceshiplives is equal to 2 and then sets the lives to 2
                     if (spaceShipLives == 2)
@@ -585,6 +621,8 @@ namespace Asteroids
                         shiplives3.Visibility = Visibility.Hidden;
                         shipX = 454;
                         shipY = 246;
+                        Canvas.SetLeft(SpaceShip, shipX);
+                        Canvas.SetTop(SpaceShip, shipY);
                     }
                     // checks to see if the spaceshiplives is equal to 1 and then sets the lives to 1
                     if (spaceShipLives == 1)
@@ -592,6 +630,8 @@ namespace Asteroids
                         shiplives2.Visibility = Visibility.Hidden;
                         shipX = 454;
                         shipY = 246;
+                        Canvas.SetLeft(SpaceShip, shipX);
+                        Canvas.SetTop(SpaceShip, shipY);
                     }
                     // checks to see if the spaceshiplives is equal to 0 and then sets the lives to 0
                     // send the user to the GameOverScreen
@@ -609,12 +649,16 @@ namespace Asteroids
                     isHit = true;
                     shipX = 454;
                     shipY = 246;
+                    Canvas.SetLeft(SpaceShip, shipX);
+                    Canvas.SetTop(SpaceShip, shipY);
                     // checks to see if the spaceshiplives is equal to 3 and then sets the lives to 3
                     if (spaceShipLives == 3)
                     {
                         shiplives4.Visibility = Visibility.Hidden;
                         shipX = 454;
                         shipY = 246;
+                        Canvas.SetLeft(SpaceShip, shipX);
+                        Canvas.SetTop(SpaceShip, shipY);
                     }
                     // checks to see if the spaceshiplives is equal to 2 and then sets the lives to 2
                     if (spaceShipLives == 2)
@@ -622,6 +666,8 @@ namespace Asteroids
                         shiplives3.Visibility = Visibility.Hidden;
                         shipX = 454;
                         shipY = 246;
+                        Canvas.SetLeft(SpaceShip, shipX);
+                        Canvas.SetTop(SpaceShip, shipY);
                     }
                     // checks to see if the spaceshiplives is equal to 1 and then sets the lives to 1
                     if (spaceShipLives == 1)
@@ -629,6 +675,8 @@ namespace Asteroids
                         shiplives2.Visibility = Visibility.Hidden;
                         shipX = 454;
                         shipY = 246;
+                        Canvas.SetLeft(SpaceShip, shipX);
+                        Canvas.SetTop(SpaceShip, shipY);
                     }
                     // checks to see if the spaceshiplives is equal to 0 and then sets the lives to 0
                     // send the user to the GameOverScreen
@@ -647,7 +695,7 @@ namespace Asteroids
                 watch.Start();
                 //once the timer has exceeded 3 seconds then the stopwatch will stop, reset and then the isHit is set to false
                 //essentially this is giving the ship invincibility frames for 3 seconds so that the player has time to adjust
-                if(watch.ElapsedMilliseconds > 3000)
+                if(watch.ElapsedMilliseconds > 1500)
                 {
                     watch.Stop();
                     watch.Reset();
