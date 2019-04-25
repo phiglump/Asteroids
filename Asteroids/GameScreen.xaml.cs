@@ -1347,7 +1347,7 @@ namespace Asteroids
             {
                 //the ship moves by a factor of .03
                 //if the ship has reached a boundry it will spawn on the opposite side
-                shipX -= .04;
+                shipX -= .03;
                 Canvas.SetLeft(SpaceShip, shipX);
                 if (shipX < -10)
                 {
@@ -1358,7 +1358,7 @@ namespace Asteroids
             {
                 //the ship moves by a factor of .03
                 //if the ship has reached a boundry it will spawn on the opposite side
-                shipY -= .04;
+                shipY -= .03;
                 Canvas.SetTop(SpaceShip, shipY);
                 if (shipY < -10)
                 {
@@ -1370,7 +1370,7 @@ namespace Asteroids
             {
                 //the ship moves by a factor of .03
                 //if the ship has reached a boundry it will spawn on the opposite side
-                shipY += .04;
+                shipY += .03;
                 Canvas.SetTop(SpaceShip, shipY);
                 if (shipY > 505)
                 {
@@ -1381,7 +1381,7 @@ namespace Asteroids
             {
                 //the ship moves by a factor of .03
                 //if the ship has reached a boundry it will spawn on the opposite side
-                shipX += .04;
+                shipX += .03;
                 Canvas.SetLeft(SpaceShip, shipX);
                 if (shipX > 965)
                 {
