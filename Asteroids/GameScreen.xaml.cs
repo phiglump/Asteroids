@@ -60,11 +60,51 @@ namespace Asteroids
             timerMisc.Tick += HitDetectionLaser;
             timerMisc.Interval = TimeSpan.FromMilliseconds(1);
             timerMisc.Start();
+
+            DispatcherTimer timerGameStatus = new DispatcherTimer();
+            timerGameStatus.Tick += new EventHandler(getGameStatus);
+            timerGameStatus.Interval = TimeSpan.FromMilliseconds(25);
+            timerGameStatus.Start();
             
+            void getGameStatus(object sender, EventArgs e)
+            {
+                if (Keyboard.IsKeyDown(Key.Enter))
+                {
+                    gameStatus = pState.State(gameStatus);
+                    startGame();
+                }
+                if (Keyboard.IsKeyDown(Key.RightShift))
+                {
+                    gameStatus = rState.State(gameStatus);
+                    startGame();
+                }
+            }
+
+            void startGame()
+            {
+                if (gameStatus == 0)
+                {
+                    timerLaser.Stop();
+                    timerAsteroids.Stop();
+                    timerMisc.Stop();
+                    timerShip.Stop();
+                }
+                if (gameStatus == 1)
+                {
+                    timerLaser.Start();
+                    timerAsteroids.Start();
+                    timerMisc.Start();
+                    timerShip.Start();
+                }
+            }
         }
+
         #endregion
 
         #region Variables
+        int gameStatus;
+        IState rState = new RunningState();
+        IState pState = new PausedState();
         public TimeSpan Interval { get; set; }
         Random rand = new Random();
         Stopwatch watch = new Stopwatch();
@@ -74,8 +114,8 @@ namespace Asteroids
         Stopwatch newWatch4 = new Stopwatch();
         Stopwatch newWatch5 = new Stopwatch();
         //Variables for the ship and its lasers
-        double shipX = 451;
-        double shipY = 421;
+        double shipX = 480;
+        double shipY = 250;
         double angle;
         int spaceShipLives = 4;
         //All of the following is for the asteroids

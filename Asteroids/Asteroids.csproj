@@ -64,6 +64,9 @@
     <Compile Include="HighScoreScreen.xaml.cs">
       <DependentUpon>HighScoreScreen.xaml</DependentUpon>
     </Compile>
+    <Compile Include="IState.cs" />
+    <Compile Include="PausedState.cs" />
+    <Compile Include="RunningState.cs" />
     <Compile Include="StartScreen.xaml.cs">
       <DependentUpon>StartScreen.xaml</DependentUpon>
     </Compile>
