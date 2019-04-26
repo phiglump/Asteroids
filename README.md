@@ -13,6 +13,9 @@ The name of this project is "CLASTEROIDS". The project is intended to be our tak
 # Design Decisions
 At first we were going to go with the dafualt theme of space from the original Asteroids game. After doing a first presentation many of the classmates suggested that we do some sort of paper theme. We figured that this was actually a really good idea and went with it. This eventually lead to our new name CLASTEROIDS which is a mash of Class and Asteroids. In terms of the backend of the program itself, we decided to use one main window that hosts pages within it. This way you didn't have to have multiple windows pop up over each other, making a very smooth transition. 
 
+# Assumptions
+We assumed that the project was going to be difficult, but not as difficult as it was. It seemed that we really didn't understand exactly how much was going to have to go into the game iteself. We also assumed we had plenty of time, when there were moments where we really didn't. We did decent for the time we gave ourselves, but much more could have been accomplished had we been more efficent. 
+
 # Bugs
 One major bug is that the bullets will eventually start to go really fast compared to the speed that they are going at. Our idea on what is happening is that the timers for the code may be doubling over the same bullets making them go twice, or more, as fast as they should. There is also a bug that only happens on certain desktops. Every so often a exception is thrown on the Bullet[0] that causes the program to not initially load. What makes this bug even worse is that it isn't consistant. One immediate difference we can think that could be a factor is that Phil's PC is ran on an AMD CPU, while Nic's PC is ran on an INTEL CPU just like the lab machines. The INTEL CPU's are the only computers that have exhibited this bug.
 
@@ -21,3 +24,6 @@ There were plenty of issues that created challenges for us throughout the entire
 
 # Future Development
 We would love to complete this game and remove all of the bugs creating a well rounded complete game. It also wouldn't be a bad idea to make the program more dynamic in that you can have more less asteroids, different types of firing styles, bosses, and much more. There are plenty of things that this code can be improved on. 
+
+# How did the development go?
+For the most part, while there were plenty of stress full days the project went very well. A great benefit for us was that we live in the same dorm room which allowed us to be able to get with each other quite often without much effort. This made communication a breeze between the two of us aswell. 
